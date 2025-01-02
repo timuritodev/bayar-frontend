@@ -15,13 +15,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         {/* <Layout> */}
           <Head>
             <link rel="icon" href="/icons/favicon.ico" />
-            <link rel="icon" type="image/png" sizes="32x32" href="/icons/logo_beans_2.png" />
-            {/* <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
-            <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
-            <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png" />
-            <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-touch-icon-144x144.png" />
-            <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png" />
-            <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-touch-icon-114x114.png" /> */}
+            <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.ico" />
+            <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+            <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
           </Head>
           <Component {...pageProps} />
         {/* </Layout> */}

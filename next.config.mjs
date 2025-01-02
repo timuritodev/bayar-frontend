@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-      domains: ['bayarswp.ru'], 
+      domains: ['tatbayar.ru'], 
       remotePatterns: [
         {
           protocol: 'https',
-          hostname: 'bayarswp.ru',
+          hostname: 'tatbayar.ru',
           pathname: '/api/images/**', 
         },
       ],
