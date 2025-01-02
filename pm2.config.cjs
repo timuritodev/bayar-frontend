@@ -1,7 +1,7 @@
 module.exports = {
     apps: [
       {
-        name: 'beancode-frontend-nextjs',
+        name: 'frontend',
         script: 'node_modules/.bin/next',
         args: 'start', // Указывает на команду для запуска в продакшене
         env: {
