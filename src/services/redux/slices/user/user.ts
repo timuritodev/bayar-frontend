@@ -1,23 +1,23 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {
-  fetchSignUp,
-  fetchSignIn,
-  fetchGetUserInfo,
-  fetchEditUserInfo,
-  fetchChangePassword,
-  fetchRecoverPassword,
-  fetchResetPassword,
-} from "./userApi";
-import {
-  IUser,
-  ISignInData,
-  ISignUpData,
-  IEditProfileData,
   IChangePassword,
+  IEditProfileData,
   IRecoverPassword,
   IResetPassword,
+  ISignInData,
+  ISignUpData,
+  IUser,
 } from "@/types/Auth.types";
+import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import {
+  fetchChangePassword,
+  fetchEditUserInfo,
+  fetchGetUserInfo,
+  fetchRecoverPassword,
+  fetchResetPassword,
+  fetchSignIn,
+  fetchSignUp,
+} from "./userApi";
 
 export interface IUserState {
   status: "idle" | "success" | "loading" | "failed";
@@ -142,7 +142,8 @@ const initialState: IUserState = {
     address: "",
     password: "",
     city: "",
-    area: "",
+    user_type: "",
+    organization_name: "",
     token: "",
   },
 };
@@ -175,7 +176,8 @@ const userSlice = createSlice({
         state.user.email = action.payload.user.email;
         state.user.address = action.payload.user.address;
         state.user.city = action.payload.user.city;
-        state.user.area = action.payload.user.area;
+        state.user.user_type = action.payload.user.user_type;
+        state.user.organization_name = action.payload.user.organization_name;
       })
       .addCase(editUserInfo.fulfilled, (state, action) => {
         state.status = "success";
@@ -185,7 +187,8 @@ const userSlice = createSlice({
         state.user.email = action.payload.user.email;
         state.user.address = action.payload.user.address;
         state.user.city = action.payload.user.city;
-        state.user.area = action.payload.user.area;
+        state.user.user_type = action.payload.user.user_type;
+        state.user.organization_name = action.payload.user.organization_name;
       })
       .addCase(changePassword.fulfilled, (state, action) => {
         state.status = "success";

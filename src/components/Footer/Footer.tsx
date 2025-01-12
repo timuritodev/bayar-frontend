@@ -1,18 +1,11 @@
-import { FC } from "react";
-import styles from "./style.module.scss";
-import button from "../../images/paper-airplane.svg";
-import logo from "../../images/logo.svg";
-import { useAppDispatch } from "../../services/typeHooks";
-import { subcribeApi } from "../../services/redux/slices/subscription/subscription";
-import { SubmitHandler, useForm } from "react-hook-form";
-import CustomInput from "../CustomInput/CustomInput";
-import { CustomInputTypes } from "../../types/CustomInput.types";
-import { EMAIL_VALIDATION_CONFIG } from "../../utils/constants";
-import { ISubcription } from "../../types/Subcription.types";
-import { useResize } from "../../hooks/useResize";
-import { useRouter } from "next/router";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { FC } from "react";
+import { useResize } from "../../hooks/useResize";
+import logo from "../../images/logo.png";
+import { useAppDispatch } from "../../services/typeHooks";
+import styles from "./style.module.scss";
 
 const Footer: FC = () => {
   const dispatch = useAppDispatch();
@@ -20,16 +13,6 @@ const Footer: FC = () => {
 
   const { width } = useResize();
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    getValues,
-  } = useForm<ISubcription>({ mode: "onChange" });
-
-  const onSubmit: SubmitHandler<ISubcription> = () => {
-    dispatch(subcribeApi({ email: getValues("email") })).unwrap();
-  };
   return (
     <footer className={`${styles.footer} ${router.pathname === "/" ? styles.footer_dark : ""}`}>
       <div className={styles.footer__container}>
@@ -39,29 +22,6 @@ const Footer: FC = () => {
             <p className={styles.subscribe__text}>
               Чтобы узнавать о новинках и скидках
             </p>
-            <form
-              className={styles.footer_input__container}
-              onSubmit={handleSubmit(onSubmit)}
-              noValidate
-            >
-              <CustomInput
-                inputType={CustomInputTypes.email}
-                // labelText={"Электронная почта"}
-                validation={{
-                  ...register("email", EMAIL_VALIDATION_CONFIG),
-                }}
-                placeholder="email@example.com"
-                error={errors?.email?.message}
-              />
-              <button className={styles.subscribe__button}>
-                <Image
-                  className={styles.subscribe__button_img}
-                  alt="Подписаться на рассылку"
-                  src={button}
-                  onClick={handleSubmit(onSubmit)}
-                />
-              </button>
-            </form>
           </div>
           <div className={styles.faq__block}>
             <h2 className={styles.faq__title}>FAQ</h2>
@@ -91,7 +51,7 @@ const Footer: FC = () => {
           </div>
         </div>
         <div className={styles.logo__block}>
-          <Image className={styles.footer__logo} src={logo} alt="Логотип подвала" width={208} height={30}/>
+          <Image className={styles.footer__logo} src={logo} alt="Логотип подвала" width={208} height={30} />
           {width > 767 && <h2 className={styles.footer__email}>coffee@beancode.ru</h2>}
         </div>
         <div className={styles.copyright__block}>

@@ -1,19 +1,21 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
-import storage from 'redux-persist/lib/storage';
 import {
-  persistReducer,
-  persistStore,
-  PERSIST,
-  REHYDRATE,
   FLUSH,
   PAUSE,
+  PERSIST,
+  persistReducer,
+  persistStore,
   PURGE,
   REGISTER,
+  REHYDRATE,
 } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import { userReducer } from './slices/user/user';
 
 
 const rootReducer = combineReducers({
+  user: userReducer,
 });
 
 const persistConfig = {

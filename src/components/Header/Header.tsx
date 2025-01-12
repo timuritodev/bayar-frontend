@@ -7,14 +7,13 @@ import logo from "../../images/logo.svg";
 import loop from "../../images/loop.svg";
 import loop_small from "../../images/loop_small.svg";
 import icon from "../../images/person_active.svg";
-import { selectUser } from "../../services/redux/slices/user/user";
+import {
+  selectUser
+} from "../../services/redux/slices/user/user";
 import { useAppSelector } from "../../services/typeHooks";
 import { BurgerButton } from "../BurgerButton/BurgerButton";
-import CartButton from "../CartButton/CartButton";
-import Search from "../Search/Search";
+// import Search from "../Search/Search";
 import styles from "./style.module.scss";
-
-
 
 const Header: FC = () => {
   const user = useAppSelector(selectUser);
@@ -115,11 +114,11 @@ const Header: FC = () => {
                 value={values}
                 autoComplete="off"
               />
-              <Search
+              {/* <Search
                 isOpenSearch={isOpenSearch}
                 isClose={setSearchClose}
                 values={values}
-              />
+              /> */}
             </form>
           )}
           <Link href="/profile">
@@ -127,7 +126,6 @@ const Header: FC = () => {
           </Link>
         </div>
       </div>
-      <CartButton />
     </header>
   );
 };

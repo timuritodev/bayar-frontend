@@ -10,7 +10,8 @@ export interface ISignUpData {
   email: string;
   address: string;
   city: string;
-  area: string;
+  user_type: string;
+  organization_name: string;
   password: string;
 }
 
@@ -23,7 +24,8 @@ export interface IUser {
   address: string;
   password: string;
   city: string;
-  area: string;
+  user_type: string;
+  organization_name: string;
   token: string;
 }
 
@@ -33,8 +35,9 @@ export interface IEditProfileData {
   phone: string | undefined;
   email: string | undefined;
   city: string | undefined;
-  area: string | undefined;
   address: string | undefined;
+  user_type: string | undefined;
+  organization_name: string | undefined;
 }
 
 export interface IChangePassword {

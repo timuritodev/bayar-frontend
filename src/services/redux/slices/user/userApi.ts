@@ -1,13 +1,13 @@
-import { API_BASE_URL } from "../../../../utils/constants";
 import {
+  IChangePassword,
+  IEditProfileData,
+  IRecoverPassword,
+  IResetPassword,
   ISignInData,
   ISignUpData,
   IUser,
-  IEditProfileData,
-  IChangePassword,
-  IRecoverPassword,
-  IResetPassword,
 } from "@/types/Auth.types";
+import { API_BASE_URL } from "../../../../utils/constants";
 
 const checkRes = (res: Response) => {
   if (res.ok) {
@@ -89,18 +89,3 @@ export const fetchResetPassword = (
     (res) => checkRes(res)
   );
 };
-
-// export const fetchEditUserInfo = (
-//   data: IEditProfileData,
-//   token: string
-// ): Promise<Response> => {
-//   return fetchData(`${API_BASE_URL}/users-me`, "PUT", data, token).then((res) =>
-//     checkRes(res)
-//   );
-// };
-
-// export const fetchGetUserInfo = (token: string): Promise<Response> => {
-//   return fetchData(`${API_BASE_URL}/user`, "GET", undefined, token).then(
-//     (res) => checkRes(res)
-//   );
-// };
