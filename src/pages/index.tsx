@@ -1,8 +1,7 @@
+import { useAppDispatch } from "@/services/typeHooks";
 import Head from 'next/head';
-import { useAppDispatch, useAppSelector } from "@/services/typeHooks";
-import { useEffect } from "react";
-import styles from "./index.module.scss";
 import Countdown from "react-countdown";
+import styles from "./index.module.scss";
 
 const MainPage = () => {
   const dispatch = useAppDispatch();
@@ -24,7 +23,8 @@ const MainPage = () => {
         <div className={styles.container}>
           <h1 className={styles.title}>BAYAR</h1>
           <p className={styles.subtitle}>До открытия сайта производителя сэндвич панелей осталось:</p>
-          <Countdown date="2025-02-02" className={styles.timer} /> 
+          <Countdown date="2025-02-02" className={styles.timer} />
+          <p className={styles.subtitle_2}>По всем вопросам обращайтесь по номеру: +7 800 550-31-90</p>
         </div>
       </div>
     </>
