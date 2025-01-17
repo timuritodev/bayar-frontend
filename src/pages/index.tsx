@@ -2,7 +2,7 @@ import { useAppDispatch } from "@/services/typeHooks";
 import Head from 'next/head';
 import Image from "next/image";
 import Countdown from "react-countdown";
-import logo from '../images/logo.png';
+import logo from '../images/logo_2.png';
 import styles from "./index.module.scss";
 
 const MainPage = () => {
