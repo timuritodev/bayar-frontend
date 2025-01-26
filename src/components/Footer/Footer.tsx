@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
+import Link from 'next/link';
 import { useRouter } from "next/router";
 import { FC } from "react";
 import { useResize } from "../../hooks/useResize";
-import logo from "../../images/logo.png";
+import logo from "../../images/logo_s.svg";
 import { useAppDispatch } from "../../services/typeHooks";
 import styles from "./style.module.scss";
 
@@ -13,51 +13,44 @@ const Footer: FC = () => {
 
   const { width } = useResize();
 
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+
   return (
-    <footer className={`${styles.footer} ${router.pathname === "/" ? styles.footer_dark : ""}`}>
-      <div className={styles.footer__container}>
-        <div className={styles.footer__blocks}>
-          <div className={styles.subsribe__block}>
-            <h2 className={styles.subscribe__title}>Подпишитесь на нас,</h2>
-            <p className={styles.subscribe__text}>
-              Чтобы узнавать о новинках и скидках
-            </p>
+    <footer className={styles.footer}>
+      <div className={styles.container}>
+        <div className={styles.blocks}>
+          <div className={styles.block}>
+            <h5 className={styles.title}>Адрес</h5>
+            <p className={styles.text}>ул. Тверская, здание 1</p>
+            <Image className={styles.footer__logo} alt="Логотип BAYAR" src={logo} width={343} height={164} />
           </div>
-          <div className={styles.faq__block}>
-            <h2 className={styles.faq__title}>FAQ</h2>
-            <Link href="/delivery" className={styles.faq__link}>
-              О доставке
+          <div className={styles.block}>
+            <h5 className={styles.title}>Навигация</h5>
+            <Link href="/" className={styles.text}>
+              Главная
             </Link>
-            <Link href="/payment" className={styles.faq__link}>
-              Об оплате
+            <Link href="/catalog" className={styles.text}>
+              Каталог
             </Link>
-            {/* <Link href="/bonus" className={styles.faq__link}>
-              Бонусная программа
-            </Link> */}
-            <Link href="/about" className={styles.faq__link}>
-              О компании
+            <Link href="/about" className={styles.text}>
+              О нас
+            </Link>
+            <Link href="/contacts" className={styles.text}>
+              Контакты
+            </Link>
+            <Link href="/profile" className={styles.text}>
+              Профиль
             </Link>
           </div>
-          <div className={styles.contacts__block}>
-            <h2 className={styles.contacts__title}>Контакты</h2>
-            <p className={styles.contacts__text}>По всем вопросам:</p>
-            {/*<p className={styles.contacts__number}>+7911 910-33-29</p>
-            <p className={styles.contacts__text}>Интернет-магазин</p>
-            <p className={styles.contacts__number}>+921 912-00-95</p> */}
-            <p className={styles.contacts__number}>+7 960 061-33-30</p>
-            {width < 767 && (
-              <h2 className={styles.footer__email}>coffee@beancode.ru</h2>
-            )}
+          <div className={styles.block}>
+            <h5 className={styles.title}>Контакты</h5>
+            <p className={styles.text}>По вопросам:</p>
+            <p className={styles.text}>+7 800 550-31-90</p>
+            <p className={styles.text}>info@tatbayar.ru</p>
           </div>
         </div>
-        <div className={styles.logo__block}>
-          <Image className={styles.footer__logo} src={logo} alt="Логотип подвала" width={208} height={30} />
-          {width > 767 && <h2 className={styles.footer__email}>coffee@beancode.ru</h2>}
-        </div>
-        <div className={styles.copyright__block}>
-          <p className={styles.copyright__text}>© 2023. BEANCODE Все права защищены</p>
-          {/* <p className={styles.copyright__text}>Дизайн - Гюзель Саберова</p> */}
-        </div>
+        <p className={styles.copyright}>@{currentYear} Bayar Все права защищены</p>
       </div>
     </footer>
   );

@@ -3,10 +3,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
 import { useResize } from "../../hooks/useResize";
-import logo from "../../images/logo.svg";
+import logo from "../../images/logo_s.svg";
 import loop from "../../images/loop.svg";
-import loop_small from "../../images/loop_small.svg";
-import icon from "../../images/person_active.svg";
 import {
   selectUser
 } from "../../services/redux/slices/user/user";
@@ -50,80 +48,55 @@ const Header: FC = () => {
   };
 
   return (
-    <header
-      className={`${styles.header} ${router.pathname === "/" ? styles.header_dark : ""}`}
-    >
+    <header className={styles.header}>
       <div className={styles.header__container}>
         {width < 767 && (
           <BurgerButton isPopupOpen={isPopupOpen} switchPopup={switchPopup} />
         )}
         <Link href="/">
-          <Image className={styles.header__logo} alt="Логотип Beancode" src={logo} width={208} height={30} />
+          <Image className={styles.header__logo} alt="Логотип BAYAR" src={logo} width={214} height={90} />
         </Link>
         <div className={styles.header__links}>
-          {/* {user.token && (
-            <Link href="/catalog" className={styles.header__link}>
-              Интернет-магазин
-            </Link>
-          )} */}
-          {user.token === "" && (
-            <>
-              {/* <Link href="/sign-up" className={styles.header__link}>
-                Регистрация
-              </Link> */}
-              <Link href="/sign-in" className={styles.header__link}>
-                Вход
-              </Link>
-            </>
-          )}
+          <Link href="/" className={styles.header__link}>
+            Главная
+          </Link>
           <Link href="/catalog" className={styles.header__link}>
-            Товары
+            Каталог
           </Link>
-          <Link href="/coffee-machines" className={styles.header__link}>
-            Кофемашины
+          <Link href="/about" className={styles.header__link}>
+            О нас
           </Link>
-          <Link href="/wholesale" className={styles.header__link}>
-            Кофе для бизнеса
+          <Link href="/contacts" className={styles.header__link}>
+            Контакты
+          </Link>
+          <Link href="/profile" className={styles.header__link}>
+            Профиль
           </Link>
         </div>
 
         <div className={styles.header__search__container}>
-          {width < 1279 ? (
+          <form className={styles.header__search}>
             <Image
               className={styles.header__search_button_search}
-              src={loop_small}
+              src={loop}
               alt="Кнопка поиска"
-              onClick={switchPopup}
             />
-          ) : (
-            // TODO
-            <form className={styles.header__search}>
-              <Image
-                className={styles.header__search_button_search}
-                src={loop}
-                alt="Кнопка поиска"
-              />
-              <input
-                className={styles.header__search_input}
-                id="name"
-                name="name"
-                type="text"
-                placeholder="Поиск"
-                onChange={handleChange}
-                //   onBlur={setSearchClose}
-                value={values}
-                autoComplete="off"
-              />
-              {/* <Search
+            <input
+              className={styles.header__search_input}
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Поиск"
+              onChange={handleChange}
+              value={values}
+              autoComplete="off"
+            />
+            {/* <Search
                 isOpenSearch={isOpenSearch}
                 isClose={setSearchClose}
                 values={values}
               /> */}
-            </form>
-          )}
-          <Link href="/profile">
-            <Image className={styles.header__profile_icon} alt="Иконка профиля" src={icon} />
-          </Link>
+          </form>
         </div>
       </div>
     </header>

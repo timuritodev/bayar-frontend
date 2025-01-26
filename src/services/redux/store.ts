@@ -11,11 +11,13 @@ import {
   REHYDRATE,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { calculatorReducer } from './slices/calculator/calculator';
 import { userReducer } from './slices/user/user';
 
 
 const rootReducer = combineReducers({
   user: userReducer,
+  calculator: calculatorReducer,
 });
 
 const persistConfig = {

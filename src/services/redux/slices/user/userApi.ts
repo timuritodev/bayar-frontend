@@ -1,3 +1,4 @@
+import { API_BASE_URL } from '@/constants/constants';
 import {
   IChangePassword,
   IEditProfileData,
@@ -7,7 +8,6 @@ import {
   ISignUpData,
   IUser,
 } from "@/types/Auth.types";
-import { API_BASE_URL } from "../../../../utils/constants";
 
 const checkRes = (res: Response) => {
   if (res.ok) {

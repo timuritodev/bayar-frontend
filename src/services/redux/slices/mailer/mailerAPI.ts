@@ -1,5 +1,5 @@
+import { API_BASE_URL } from '@/constants/constants';
 import { IData } from "@/types/Mailer.types";
-import { API_BASE_URL } from "../../../../utils/constants";
 
 const checkRes = (res: Response) => {
   if (res.ok) {

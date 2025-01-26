@@ -1,7 +1,6 @@
+import { ICustomInput } from '@/types/CustomInput.types';
 import { FC, useEffect, useState } from "react";
 import InputMask from "react-input-mask";
-import { ICustomInput } from "../../types/CustomInput.types";
-
 import styles from "./style.module.scss";
 
 const CustomInput: FC<ICustomInput> = ({
