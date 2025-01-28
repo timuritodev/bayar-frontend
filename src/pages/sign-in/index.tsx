@@ -1,24 +1,22 @@
 import Head from 'next/head';
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import styles from "./style.module.scss";
+import { CustomButton } from "../../components/CustomButton/CustomButton";
 import CustomInput from "../../components/CustomInput/CustomInput";
-import { CustomInputTypes } from "../../types/CustomInput.types";
+import {
+  getUserInfo,
+  setUser,
+  signInUser,
+} from "../../services/redux/slices/user/user";
 import { useAppDispatch } from "../../services/typeHooks";
 import { ISignInData } from "../../types/Auth.types";
+import { CustomInputTypes } from "../../types/CustomInput.types";
 import {
   EMAIL_VALIDATION_CONFIG,
   PASSWORD_VALIDATION_CONFIG,
 } from "../../utils/constants";
-import {
-  signInUser,
-  setUser,
-  getUserInfo,
-} from "../../services/redux/slices/user/user";
-import { CustomButton } from "../../components/CustomButton/CustomButton";
-import { PopupLogin } from "../../components/Popups/PopupLogin";
-import { PopupErrorLogin } from "../../components/Popups/PopupErrorLogin";
-import Link from "next/link";
+import styles from "./style.module.scss";
 
 const SignInPage = () => {
   const dispatch = useAppDispatch();
@@ -120,14 +118,6 @@ const SignInPage = () => {
             </Link>
           </form>
         </div>
-        <PopupLogin
-          isOpened={isSavedPopupOpened}
-          setIsOpened={setIsSavedPopupOpened}
-        />
-        <PopupErrorLogin
-          isOpened={isErrorPopupOpened}
-          setIsOpened={setIsErrorPopupOpened}
-        />
       </div>
     </>
   );

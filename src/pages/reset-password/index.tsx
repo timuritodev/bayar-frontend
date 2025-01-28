@@ -4,8 +4,6 @@ import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { CustomButton } from "../../components/CustomButton/CustomButton";
 import CustomInput from "../../components/CustomInput/CustomInput";
-import { PopupErrorLogin } from "../../components/Popups/PopupErrorLogin";
-import { PopupResetPassword } from "../../components/Popups/PopupResetPassword";
 import {
   resetPassword,
   selectUser
@@ -101,14 +99,6 @@ const ResetPasswordPage = () => {
             />
           </form>
         </div>
-        <PopupResetPassword
-          isOpened={isSavedPopupOpened}
-          setIsOpened={setIsSavedPopupOpened}
-        />
-        <PopupErrorLogin
-          isOpened={isErrorPopupOpened}
-          setIsOpened={setIsErrorPopupOpened}
-        />
       </div>
     </>
   );

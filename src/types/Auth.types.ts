@@ -56,6 +56,8 @@ export interface IResetPassword {
 }
 
 export interface ICalculator {
+  building_type: string,
+  roof_type: string,
   building_length: number,
   building_width: number,
   ceiling_height: number,

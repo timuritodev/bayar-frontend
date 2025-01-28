@@ -1,21 +1,15 @@
-import { useEffect, useState } from "react";
-import styles from "./style.module.scss";
-import { SubmitHandler, useForm } from "react-hook-form";
-import CustomInput from "../../components/CustomInput/CustomInput";
-import { CustomInputTypes } from "../../types/CustomInput.types";
-import { useAppDispatch, useAppSelector } from "../../services/typeHooks";
-import { EMAIL_VALIDATION_CONFIG } from "../../utils/constants";
-import {
-  changePassword,
-  recoverPassword,
-} from "../../services/redux/slices/user/user";
-import { CustomButton } from "../../components/CustomButton/CustomButton";
-import { PopupLogin } from "../../components/Popups/PopupLogin";
-import { PopupErrorLogin } from "../../components/Popups/PopupErrorLogin";
-import { IRecoverPassword } from "../../types/Auth.types";
-import { PopupErrorRecoverPassword } from "../../components/Popups/PopupErrorRecoverPassword";
-import { PopupRecoverPassword } from "../../components/Popups/PopupRecoverPassword";
 import Head from 'next/head';
+import { useEffect, useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { CustomButton } from "../../components/CustomButton/CustomButton";
+import CustomInput from "../../components/CustomInput/CustomInput";
+import {
+  recoverPassword
+} from "../../services/redux/slices/user/user";
+import { useAppDispatch } from "../../services/typeHooks";
+import { CustomInputTypes } from "../../types/CustomInput.types";
+import { EMAIL_VALIDATION_CONFIG } from "../../utils/constants";
+import styles from "./style.module.scss";
 
 const RecoverPasswordPage = () => {
   const dispatch = useAppDispatch();
