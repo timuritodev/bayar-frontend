@@ -1,9 +1,14 @@
+import Popup from '@/components/Popup/Popup';
 import Head from 'next/head';
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { CustomButton } from "../../components/CustomButton/CustomButton";
 import CustomInput from "../../components/CustomInput/CustomInput";
+import {
+  EMAIL_VALIDATION_CONFIG,
+  PASSWORD_VALIDATION_CONFIG,
+} from "../../constants/validation";
 import {
   getUserInfo,
   setUser,
@@ -12,10 +17,6 @@ import {
 import { useAppDispatch } from "../../services/typeHooks";
 import { ISignInData } from "../../types/Auth.types";
 import { CustomInputTypes } from "../../types/CustomInput.types";
-import {
-  EMAIL_VALIDATION_CONFIG,
-  PASSWORD_VALIDATION_CONFIG,
-} from "../../utils/constants";
 import styles from "./style.module.scss";
 
 const SignInPage = () => {
@@ -87,7 +88,6 @@ const SignInPage = () => {
                 ...register("email", EMAIL_VALIDATION_CONFIG),
               }}
               error={errors?.email?.message}
-            // maxLength={VALIDATION_SETTINGS.email.maxLength}
             />
             <CustomInput
               inputType={CustomInputTypes.password}
@@ -102,7 +102,6 @@ const SignInPage = () => {
             >
               Забыли пароль?
             </Link>
-            {/* TODO recover button */}
             <CustomButton
               buttonText={"Войти"}
               handleButtonClick={handleSubmit(onSubmit)}
@@ -112,17 +111,20 @@ const SignInPage = () => {
             <Link
               href="/sign-up"
               className={styles.signup__link}
-            // TODO
             >
               Зарегистрироваться
             </Link>
           </form>
         </div>
-        <PopupLogin
+        <Popup
+          title="Авторизация"
+          text="Вы успешно зашли в личный аккаунт"
           isOpened={isSavedPopupOpened}
           setIsOpened={setIsSavedPopupOpened}
         />
-        <PopupErrorLogin
+        <Popup
+          title="Ошибка"
+          text="Вы ввели неверную почту или пароль"
           isOpened={isErrorPopupOpened}
           setIsOpened={setIsErrorPopupOpened}
         />
