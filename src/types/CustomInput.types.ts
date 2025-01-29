@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 export enum CustomInputTypes {
   name = 'name',
   surname = 'surname',
@@ -26,6 +25,8 @@ export enum CustomInputTypes {
   roof_panel_thickness = 'roof_panel_thickness',
   insulation_type = 'insulation_type',
   region = 'region',
+  user_type = 'user_type',
+  organization_name = 'organization_name',
 }
 
 export enum CustomInputColors {

@@ -1,5 +1,5 @@
 import CustomInput from "@/components/CustomInput/CustomInput";
-import Popup from "@/components/Popup/Popup";
+import Popup from '@/components/Popup/Popup';
 import {
 	BUILDING_LENGTH_VALIDATION_CONFIG,
 	BUILDING_WIDTH_VALIDATION_CONFIG,
@@ -178,7 +178,12 @@ const CalculatorPage = () => {
 					</div>
 				</form>
 			</div >
-			<Popup title="Приблизительная стоимость" text={calculator} isOpened={isPopupOpened} setIsOpened={setIsPopupOpened} />
+			<Popup
+				title="Приблизительная стоимость"
+				text={calculator}
+				isOpened={isPopupOpened}
+				setIsOpened={setIsPopupOpened}
+			/>
 		</div >
 	);
 };

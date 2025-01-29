@@ -1,39 +1,46 @@
+import CustomSelect from '@/components/CustomSelect/CustomSelect';
+import Popup from '@/components/Popup/Popup';
+import Head from 'next/head';
+import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import styles from "./style.module.scss";
+import { CustomButton } from "../../components/CustomButton/CustomButton";
 import CustomInput from "../../components/CustomInput/CustomInput";
-import { CustomInputTypes } from "../../types/CustomInput.types";
-import { useAppDispatch } from "../../services/typeHooks";
-import { ISignUpData } from "../../types/Auth.types";
 import {
   ADDRESS_VALIDATION_CONFIG,
-  AREA_VALIDATION_CONFIG,
   CITY_VALIDATION_CONFIG,
   EMAIL_VALIDATION_CONFIG,
   NAME_VALIDATION_CONFIG,
+  ORGANIZATION_NAME_VALIDATION_CONFIG,
   PASSWORD_VALIDATION_CONFIG,
   PHONE_VALIDATION_CONFIG,
-  SURNAME_VALIDATION_CONFIG,
-} from "../../utils/constants";
+  SURNAME_VALIDATION_CONFIG
+} from "../../constants/validation";
 import {
-  signUpUser,
-  setUser,
   getUserInfo,
+  setUser,
+  signUpUser,
 } from "../../services/redux/slices/user/user";
-import { CustomButton } from "../../components/CustomButton/CustomButton";
-import { useEffect, useState } from "react";
-import { PopupRegister } from "../../components/Popups/PopupRegister";
-import { PopupErrorRegister } from "../../components/Popups/PopupErrorRegister";
-import Head from 'next/head';
+import { useAppDispatch } from "../../services/typeHooks";
+import { ISignUpData } from "../../types/Auth.types";
+import { CustomInputTypes } from "../../types/CustomInput.types";
+import styles from "./style.module.scss";
 
 const SignUpPage = () => {
   const dispatch = useAppDispatch();
 
   const [isSavedPopupOpened, setIsSavedPopupOpened] = useState<boolean>(false);
   const [isErrorPopupOpened, setIsErrorPopupOpened] = useState<boolean>(false);
+  const [userType, setUserType] = useState<string>('физ');
+
+  const options: ISelectOption[] = [
+    { value: 'физ', label: 'Физ. лицо' },
+    { value: 'юр', label: 'Юр. лицо' },
+  ];
 
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isDirty, isValid },
     getValues,
   } = useForm<ISignUpData>({ mode: "onChange" });
@@ -45,11 +52,11 @@ const SignUpPage = () => {
     email: getValues("email"),
     address: getValues("address"),
     city: getValues("city"),
-    area: getValues("area") === undefined ? "" : getValues("area"),
+    user_type: userType,
+    organization_name: getValues("organization_name"),
     password: getValues("password"),
   };
 
-  console.log(data, 222)
   const onSubmit: SubmitHandler<ISignUpData> = () => {
     dispatch(
       signUpUser({
@@ -59,7 +66,8 @@ const SignUpPage = () => {
         email: getValues("email"),
         address: getValues("address"),
         city: getValues("city"),
-        area: getValues("area") === undefined ? "" : getValues("area"),
+        user_type: userType,
+        organization_name: getValues("organization_name"),
         password: getValues("password"),
       })
     )
@@ -78,6 +86,14 @@ const SignUpPage = () => {
   useEffect(() => {
     setIsSavedPopupOpened(false);
   }, []);
+
+  useEffect(() => {
+    if (userType === 'физ') {
+      reset({
+        organization_name: '',
+      });
+    }
+  }, [userType, reset]);
 
   return (
     <>
@@ -153,15 +169,20 @@ const SignUpPage = () => {
               placeholder="Москва"
               error={errors?.city?.message}
             />
-            {data.city === "Челны" && (
+            <CustomSelect
+              options={options}
+              selectedValue={userType}
+              onChange={setUserType}
+            />
+            {data.user_type === "юр" && (
               <CustomInput
-                inputType={CustomInputTypes.area}
-                labelText={"Район"}
+                inputType={CustomInputTypes.organization_name}
+                labelText={"Название организации"}
                 validation={{
-                  ...register("area", AREA_VALIDATION_CONFIG),
+                  ...register("organization_name", ORGANIZATION_NAME_VALIDATION_CONFIG),
                 }}
-                placeholder="Новый город"
-                error={errors?.area?.message}
+                placeholder=""
+                error={errors?.organization_name?.message}
               />
             )}
             <div>
@@ -174,27 +195,7 @@ const SignUpPage = () => {
                 }}
                 error={errors?.password?.message}
               />
-              {/* <span className="input__span input__span_type_password">
-              Минимум 8 символов (заглавные и строчные латинские буквы и цифры)
-            </span> */}
             </div>
-            {/* <CustomInput
-                        inputType={CustomInputTypes.repeatPassword}
-                        labelText={'Повторите пароль'}
-                        validation={{
-                            ...register('repeatPassword', {
-                                validate: (value) =>
-                                    value === watch('password') ||
-                                    VALIDATION_SETTINGS.password.messages.noMatch,
-                            }),
-                        }}
-                        error={errors?.repeatPassword?.message}
-                    /> */}
-            {/* {authError ? (
-                                <p className="auth__form-error auth__form-error_type_login">
-                                    Почта уже зарегистрирована.
-                                </p>
-                            ) : null} */}
             <CustomButton
               buttonText={"Зарегистрироваться"}
               handleButtonClick={handleSubmit(onSubmit)}
@@ -203,11 +204,15 @@ const SignUpPage = () => {
             />
           </form>
         </div>
-        <PopupRegister
+        <Popup
+          title="Регистрация"
+          text="Вы были успешно зарегистрированы"
           isOpened={isSavedPopupOpened}
           setIsOpened={setIsSavedPopupOpened}
         />
-        <PopupErrorRegister
+        <Popup
+          title="Ошибка"
+          text="Пользователь с такой почтой уже существует"
           isOpened={isErrorPopupOpened}
           setIsOpened={setIsErrorPopupOpened}
         />

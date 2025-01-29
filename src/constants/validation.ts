@@ -213,6 +213,26 @@ export const VALIDATION_SETTINGS = {
 			tooLong: "Слишком длинный регион",
 		},
 	},
+	user_type: {
+		pattern: /^[a-zа-яё\s\0-9]+$/iu,
+		minLength: 1,
+		maxLength: 42,
+		messages: {
+			noUser_type: "Необходимо ввести тип",
+			invalid: "Только кириллица или латинские буквы",
+			tooLong: "Слишком много текста",
+		},
+	},
+	organization_name: {
+		pattern: /^[a-zа-яё\s\0-9]+$/iu,
+		minLength: 1,
+		maxLength: 42,
+		messages: {
+			noOrganization_name: "Необходимо ввести название организации",
+			invalid: "Только кириллица или латинские буквы",
+			tooLong: "Слишком много текста",
+		},
+	},
 };
 
 export const EMAIL_VALIDATION_CONFIG = {
@@ -544,5 +564,31 @@ export const REGION_VALIDATION_CONFIG = {
 	maxLength: {
 		value: VALIDATION_SETTINGS.region.maxLength,
 		message: VALIDATION_SETTINGS.region.messages.tooLong,
+	},
+};
+
+export const USER_TYPE_VALIDATION_CONFIG = {
+	required: {
+		value: true,
+		message: VALIDATION_SETTINGS.user_type.messages.noUser_type,
+	},
+	pattern: {
+		value: VALIDATION_SETTINGS.user_type.pattern,
+		message: VALIDATION_SETTINGS.user_type.messages.invalid,
+	},
+	maxLength: {
+		value: VALIDATION_SETTINGS.user_type.maxLength,
+		message: VALIDATION_SETTINGS.user_type.messages.tooLong,
+	},
+};
+
+export const ORGANIZATION_NAME_VALIDATION_CONFIG = {
+	pattern: {
+		value: VALIDATION_SETTINGS.organization_name.pattern,
+		message: VALIDATION_SETTINGS.organization_name.messages.invalid,
+	},
+	maxLength: {
+		value: VALIDATION_SETTINGS.organization_name.maxLength,
+		message: VALIDATION_SETTINGS.organization_name.messages.tooLong,
 	},
 };

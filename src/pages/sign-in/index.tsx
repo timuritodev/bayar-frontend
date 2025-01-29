@@ -118,6 +118,14 @@ const SignInPage = () => {
             </Link>
           </form>
         </div>
+        <PopupLogin
+          isOpened={isSavedPopupOpened}
+          setIsOpened={setIsSavedPopupOpened}
+        />
+        <PopupErrorLogin
+          isOpened={isErrorPopupOpened}
+          setIsOpened={setIsErrorPopupOpened}
+        />
       </div>
     </>
   );
