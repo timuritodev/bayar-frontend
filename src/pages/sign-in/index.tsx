@@ -119,6 +119,7 @@ const SignInPage = () => {
         <Popup
           title="Авторизация"
           text="Вы успешно зашли в личный аккаунт"
+          link="catalog"
           isOpened={isSavedPopupOpened}
           setIsOpened={setIsSavedPopupOpened}
         />

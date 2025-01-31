@@ -15,7 +15,8 @@ import {
   PHONE_VALIDATION_CONFIG,
   SURNAME_VALIDATION_CONFIG
 } from "../../constants/validation";
-import exit_button from "../../images/exit-button.svg";
+import edit_button from "../../images/edit.svg";
+import exit_button from "../../images/exit.svg";
 import {
   editUserInfo,
   getUserInfo,
@@ -104,6 +105,18 @@ export const ProfilePage = () => {
   return (
     <div className={styles.profile}>
       <div className={styles.container}>
+        <div className={styles.title__wrapper}>
+          <h2 className={styles.title}>Мой профиль</h2>
+          <button
+            className={styles.button__profile}
+            onClick={() => {
+              dispatch(signOut());
+            }}
+          >
+            <Image className={styles.button__profile__img} src={exit_button} alt="Кнопка выхода из учетной записи" />
+            <span className={styles.button__profile__text}>Выйти</span>
+          </button>
+        </div>
         {user.token !== "" ? (
           <form
             className={styles.form}
@@ -153,16 +166,8 @@ export const ProfilePage = () => {
               />
               <Link href="/change-password" className={styles.profile__link}>
                 Сменить пароль
+                <Image className={styles.button__profile__img} src={edit_button} alt="Кнопка редактирования" />
               </Link>
-              <button
-                className={styles.button__profile}
-                onClick={() => {
-                  dispatch(signOut());
-                }}
-              >
-                <Image className={styles.button__profile__img} src={exit_button} alt="Кнопка выхода из учетной записи" />
-                <span className={styles.button__profile__text}>Выйти</span>
-              </button>
             </div>
             <div className={styles.input__container}>
               <CustomInput
