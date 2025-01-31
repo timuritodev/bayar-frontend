@@ -1,4 +1,5 @@
 import { CustomButton } from '@/components/CustomButton/CustomButton';
+import CustomSelect from '@/components/CustomSelect/CustomSelect';
 import Popup from '@/components/Popup/Popup';
 import Image from "next/image";
 import Link from "next/link";
@@ -12,8 +13,7 @@ import {
   NAME_VALIDATION_CONFIG,
   ORGANIZATION_NAME_VALIDATION_CONFIG,
   PHONE_VALIDATION_CONFIG,
-  SURNAME_VALIDATION_CONFIG,
-  USER_TYPE_VALIDATION_CONFIG,
+  SURNAME_VALIDATION_CONFIG
 } from "../../constants/validation";
 import exit_button from "../../images/exit-button.svg";
 import {
@@ -32,6 +32,12 @@ export const ProfilePage = () => {
   const user = useAppSelector(selectUser);
 
   const [isSavedPopupOpened, setIsSavedPopupOpened] = useState<boolean>(false);
+  const [userType, setUserType] = useState<string>('физ');
+
+  const options: ISelectOption[] = [
+    { value: 'физ', label: 'Физ. лицо' },
+    { value: 'юр', label: 'Юр. лицо' },
+  ];
 
   const token = user.token;
   const {
@@ -48,7 +54,7 @@ export const ProfilePage = () => {
     email: getValues("email"),
     address: getValues("address"),
     city: getValues("city"),
-    user_type: getValues("user_type"),
+    user_type: userType,
     organization_name: getValues("organization_name"),
   };
 
@@ -62,7 +68,7 @@ export const ProfilePage = () => {
           email: getValues("email"),
           address: getValues("address"),
           city: getValues("city"),
-          user_type: getValues("user_type"),
+          user_type: userType,
           organization_name: getValues("organization_name"),
         },
         token: token,
@@ -84,9 +90,7 @@ export const ProfilePage = () => {
     }
   }, [dispatch, user]);
 
-  return (
-    <>
-      {/* <Head>
+  {/* <Head>
         <title>Профиль пользователя - Beancode</title>
         <meta name="description" content="Просмотр и редактирование личных данных пользователя, управление заказами и настройка профиля на Beancode." />
         <meta name="keywords" content="профиль пользователя, личные данные, заказы, Beancode, настройки аккаунта" />
@@ -96,8 +100,11 @@ export const ProfilePage = () => {
         <meta property="og:description" content="Управление личными данными и заказами на Beancode. Просматривайте историю заказов и обновляйте настройки аккаунта." />
         <meta property="og:image" content="https://beancode.ru/api/images/open_graph.jpeg" />
       </Head> */}
-      <div className={styles.profile}>
-        <div className={styles.container}>
+
+  return (
+    <div className={styles.profile}>
+      <div className={styles.container}>
+        {user.token !== "" ? (
           <form
             className={styles.form}
             onSubmit={handleSubmit(onSubmit)}
@@ -150,7 +157,7 @@ export const ProfilePage = () => {
               <button
                 className={styles.button__profile}
                 onClick={() => {
-                  dispatch(signOut());;
+                  dispatch(signOut());
                 }}
               >
                 <Image className={styles.button__profile__img} src={exit_button} alt="Кнопка выхода из учетной записи" />
@@ -178,26 +185,24 @@ export const ProfilePage = () => {
                 defaultValue={user.city}
                 error={errors?.city?.message}
               />
-              <CustomInput
-                inputType={CustomInputTypes.user_type}
+              <CustomSelect
                 labelText={"Тип пользователя"}
-                validation={{
-                  ...register("user_type", USER_TYPE_VALIDATION_CONFIG),
-                }}
-                placeholder=""
-                defaultValue={user.user_type}
-                error={errors?.user_type?.message}
+                options={options}
+                selectedValue={userType}
+                onChange={setUserType}
               />
-              <CustomInput
-                inputType={CustomInputTypes.organization_name}
-                labelText={"Название организации"}
-                validation={{
-                  ...register("organization_name", ORGANIZATION_NAME_VALIDATION_CONFIG),
-                }}
-                placeholder=""
-                defaultValue={user.organization_name}
-                error={errors?.organization_name?.message}
-              />
+              {data.user_type === "юр" && (
+                <CustomInput
+                  inputType={CustomInputTypes.organization_name}
+                  labelText={"Название организации"}
+                  validation={{
+                    ...register("organization_name", ORGANIZATION_NAME_VALIDATION_CONFIG),
+                  }}
+                  placeholder=""
+                  defaultValue={user.organization_name}
+                  error={errors?.organization_name?.message}
+                />
+              )}
               <CustomButton
                 buttonText={"Изменить данные"}
                 handleButtonClick={handleSubmit(onSubmit)}
@@ -205,17 +210,26 @@ export const ProfilePage = () => {
                 type="button"
               />
             </div>
-
           </form>
-        </div >
-        <Popup
-          title="Сохранить изменения"
-          text="Изменения сохранены"
-          isOpened={isSavedPopupOpened}
-          setIsOpened={setIsSavedPopupOpened}
-        />
-      </div >
-    </>
+        ) : (
+          <div className={styles.profile__links__container}>
+            <Link href="/sign-up" className={styles.profile__link}>
+              Нужно Зарегистрироваться
+            </Link>
+            <p className={styles.profile__link}>или</p>
+            <Link href="/sign-in" className={styles.profile__link}>
+              Войти в учетную запись
+            </Link>
+          </div>
+        )}
+      </div>
+      <Popup
+        title="Сохранить изменения"
+        text="Изменения сохранены"
+        isOpened={isSavedPopupOpened}
+        setIsOpened={setIsSavedPopupOpened}
+      />
+    </div>
   );
 };
 

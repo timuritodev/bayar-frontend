@@ -170,6 +170,7 @@ const SignUpPage = () => {
               error={errors?.city?.message}
             />
             <CustomSelect
+              labelText={"Тип пользователя"}
               options={options}
               selectedValue={userType}
               onChange={setUserType}
@@ -207,6 +208,7 @@ const SignUpPage = () => {
         <Popup
           title="Регистрация"
           text="Вы были успешно зарегистрированы"
+          link="catalog"
           isOpened={isSavedPopupOpened}
           setIsOpened={setIsSavedPopupOpened}
         />
