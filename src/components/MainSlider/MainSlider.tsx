@@ -7,15 +7,14 @@ import styles from './style.module.scss';
 export const MainSlider = ({ }) => {
 
 	const settings = {
-		dots: true,
+		dots: false,
 		infinite: true,
 		speed: 500,
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		arrows: false,
+		arrows: true,
 		autoplay: true,
 		autoplaySpeed: 4000,
-		dotsClass: 'slick-numbers',
 	};
 
 	return (
