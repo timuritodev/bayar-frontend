@@ -8,7 +8,7 @@ import third_img from '../../images/first_scren/third.jpg';
 export const data: IFirstScreen[] = [
 	{
 		id: 1,
-		title: '',
+		title: '1',
 		img: third_img
 	},
 	{

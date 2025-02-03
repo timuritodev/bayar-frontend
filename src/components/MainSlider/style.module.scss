@@ -1,5 +1,5 @@
 .slick_slider {
-	max-width: 1440px;
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	text-align: left;
@@ -8,4 +8,21 @@
 .container {
 	width: 100%;
 	max-height: 690px;
+}
+
+.nextArrow,
+.prevArrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+	z-index: 10;
+}
+
+.nextArrow {
+	right: 20px;
+}
+
+.prevArrow {
+	left: 20px;
 }

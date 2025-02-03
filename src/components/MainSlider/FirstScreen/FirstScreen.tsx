@@ -8,9 +8,6 @@ interface IFirstScreenProps {
 }
 
 export const FirstScreen: FC<IFirstScreenProps> = ({ data }) => {
-	const handleImgClick = () => {
-	};
-
 	return (
 		<div className={styles.first_screen}>
 			<Image className={styles.img} src={data.img} alt={data.title} />

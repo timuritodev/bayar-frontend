@@ -1,20 +1,41 @@
+import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
+import prev from "../../images/arrow_left.svg";
+import next from "../../images/arrow_right.svg";
+
 import { FirstScreen } from './FirstScreen/FirstScreen';
 import { data } from './constants';
 import styles from './style.module.scss';
 
-export const MainSlider = ({ }) => {
+const NextArrow = (props: { onClick?: () => void }) => {
+	return (
+		<div className={styles.nextArrow} onClick={props.onClick}>
+			<Image src={next} alt="Next" width={40} height={40} />
+		</div>
+	);
+};
 
+const PrevArrow = (props: { onClick?: () => void }) => {
+	return (
+		<div className={styles.prevArrow} onClick={props.onClick}>
+			<Image src={prev} alt="Prev" width={40} height={40} />
+		</div>
+	);
+};
+
+
+export const MainSlider = () => {
 	const settings = {
 		dots: false,
 		infinite: true,
 		speed: 500,
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		arrows: true,
 		autoplay: true,
 		autoplaySpeed: 4000,
+		nextArrow: <NextArrow />,
+		prevArrow: <PrevArrow />,
 	};
 
 	return (
