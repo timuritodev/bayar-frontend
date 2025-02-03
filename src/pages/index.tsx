@@ -1,3 +1,4 @@
+import { MainSlider } from '@/components/MainSlider/MainSlider';
 import { useAppDispatch } from "@/services/typeHooks";
 import Head from 'next/head';
 import styles from "./index.module.scss";
@@ -21,11 +22,7 @@ const MainPage = () => {
       <div className={styles.main}>
         <div className={styles.container}>
           <h1 className={styles.title}>BAYAR</h1>
-          {/* <Image className={styles.img} src={logo} alt="Логотип" width={600} height={300} />
-          <p className={styles.subtitle}>До открытия сайта производителя сэндвич панелей осталось:</p>
-          <Countdown date="2025-02-02" className={styles.timer} />
-          <p className={styles.subtitle_2}>По всем вопросам обращайтесь по номеру: +7 800 550-31-90</p>
-          <p className={styles.subtitle_2}>info@tatbayar.ru</p> */}
+          <MainSlider />
         </div>
       </div>
     </>

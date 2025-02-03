@@ -1,4 +1,5 @@
 import CustomInput from "@/components/CustomInput/CustomInput";
+import CustomSelect from '@/components/CustomSelect/CustomSelect';
 import Popup from '@/components/Popup/Popup';
 import {
 	BUILDING_LENGTH_VALIDATION_CONFIG,
@@ -67,52 +68,34 @@ const CalculatorPage = () => {
 		setIsPopupOpened(false);
 	}, []);
 
+	const optionsBuilding: ISelectOption[] = [
+		{ value: 'односкатная', label: 'Односкатная кровля' },
+		{ value: 'двускатная', label: 'Двускатная кровля' },
+	];
+
+	const optionsRoof: ISelectOption[] = [
+		{ value: 'с', label: 'С парапетом' },
+		{ value: 'без', label: 'Без парапета' },
+	];
+
 	return (
 		<div className={styles.calculator}>
 			<div className={styles.container}>
 				<h1 className={styles.title}>Калькулятор</h1>
 				<form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
 					<div className={styles.form__container}>
-						<div className={styles.select__container}>
-							<div
-								className={`${styles.select} ${buildingType === "односкатная"
-									? styles.selected
-									: styles.not_selected
-									}`}
-								onClick={() => setBuildingType("односкатная")}
-							>
-								<p className={styles.select__text}>Односкатная кровля</p>
-							</div>
-							<div
-								className={`${styles.select} ${buildingType === "двускатная"
-									? styles.selected
-									: styles.not_selected
-									}`}
-								onClick={() => setBuildingType("двускатная")}
-							>
-								<p className={styles.select__text}>Двускатная кровля</p>
-							</div>
-						</div>
-						<div className={styles.select__container}>
-							<div
-								className={`${styles.select} ${roofType === "с"
-									? styles.selected
-									: styles.not_selected
-									}`}
-								onClick={() => setRoofType("с")}
-							>
-								<p className={styles.select__text}>С парапетом</p>
-							</div>
-							<div
-								className={`${styles.select} ${roofType === "без"
-									? styles.selected
-									: styles.not_selected
-									}`}
-								onClick={() => setRoofType("без")}
-							>
-								<p className={styles.select__text}>Без парапета</p>
-							</div>
-						</div>
+						<CustomSelect
+							labelText={"Тип здания"}
+							options={optionsBuilding}
+							selectedValue={buildingType}
+							onChange={setBuildingType}
+						/>
+						<CustomSelect
+							labelText={"Тип кровли"}
+							options={optionsRoof}
+							selectedValue={roofType}
+							onChange={setRoofType}
+						/>
 						<CustomInput
 							inputType={CustomInputTypes.building_length}
 							labelText="Длина здания"
