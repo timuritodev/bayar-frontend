@@ -66,8 +66,8 @@ const Header: FC = () => {
           <Link href="/about" className={styles.header__link}>
             О нас
           </Link>
-          <Link href="/contacts" className={styles.header__link}>
-            Контакты
+          <Link href="/calculator" className={styles.header__link}>
+            Калькулятор
           </Link>
           <Link href="/profile" className={styles.header__link}>
             Профиль

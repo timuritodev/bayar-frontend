@@ -21,7 +21,6 @@ const MainPage = () => {
       </Head>
       <div className={styles.main}>
         <div className={styles.container}>
-          <h1 className={styles.title}>BAYAR</h1>
           <MainSlider />
         </div>
       </div>

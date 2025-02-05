@@ -98,31 +98,31 @@ const CalculatorPage = () => {
 						/>
 						<CustomInput
 							inputType={CustomInputTypes.building_length}
-							labelText="Длина здания"
+							labelText="Длина здания, м"
 							validation={{ ...register("building_length", BUILDING_LENGTH_VALIDATION_CONFIG) }}
 							error={errors?.building_length?.message}
 						/>
 						<CustomInput
 							inputType={CustomInputTypes.building_width}
-							labelText="Ширина здания"
+							labelText="Ширина здания, м"
 							validation={{ ...register("building_width", BUILDING_WIDTH_VALIDATION_CONFIG) }}
 							error={errors?.building_width?.message}
 						/>
 						<CustomInput
 							inputType={CustomInputTypes.ceiling_height}
-							labelText="Высота до потолка"
+							labelText="Высота до потолка, м"
 							validation={{ ...register("ceiling_height", CEILING_HEIGHT_VALIDATION_CONFIG) }}
 							error={errors?.ceiling_height?.message}
 						/>
 						<CustomInput
 							inputType={CustomInputTypes.door_area}
-							labelText="Площадь проёмов ворот, дверей"
+							labelText="Площадь проёмов ворот, дверей, кв. м"
 							validation={{ ...register("door_area", DOOR_AREA_VALIDATION_CONFIG) }}
 							error={errors?.door_area?.message}
 						/>
 						<CustomInput
 							inputType={CustomInputTypes.window_area}
-							labelText="Площадь оконных проёмов"
+							labelText="Площадь оконных проёмов, кв. м"
 							validation={{ ...register("window_area", WINDOW_AREA_VALIDATION_CONFIG) }}
 							error={errors?.window_area?.message}
 						/>
