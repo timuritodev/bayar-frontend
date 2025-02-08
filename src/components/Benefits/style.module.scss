@@ -8,14 +8,21 @@
 .img {
 	width: 120px;
 	height: 120px;
-	background-color: #6975b3;
-	padding: 60px 60px;
-	border-radius: 100px;
 }
 
+.img__wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 208px;
+	height: 208px;
+	background-color: #6975b3;
+	border-radius: 150px;
+	margin: 0 0 30px 0;
+}
 .text {
 	font-family: Ubuntu;
-	font-size: 32px;
+	font-size: 24px;
 	font-weight: 400;
 	line-height: 43.27px;
 	margin: 0;
@@ -25,5 +32,5 @@
 .list {
 	display: flex;
 	flex-direction: row;
-	gap: 60px;
+	gap: 40px;
 }

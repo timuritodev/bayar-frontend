@@ -18,6 +18,7 @@ const CatalogPage = () => {
 			</Head>
 			<div className={styles.catalog}>
 				<div className={styles.container}>
+					<h3 className={styles.subtitle}>Преимущества сэндвич-панелей</h3>
 					<BenefitsList data={data} />
 				</div>
 			</div>

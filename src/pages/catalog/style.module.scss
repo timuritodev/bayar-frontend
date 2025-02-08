@@ -1,0 +1,22 @@
+.signup {
+	width: 100%;
+	margin: 0 auto;
+	background: var(--White_bg, #fff);
+}
+
+.container {
+	max-width: 1280px;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	align-items: center;
+	padding: 48px 0 120px 0;
+}
+
+.subtitle {
+	font-family: Ubuntu;
+	font-size: 48px;
+	font-weight: 700;
+	line-height: 54.85px;
+	text-align: center;
+}

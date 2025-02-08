@@ -1,5 +1,6 @@
 .wrapper {
 	display: block;
+	box-sizing: border-box;
 }
 .select__container {
 	display: flex;
@@ -10,7 +11,7 @@
 
 .select {
 	flex: 1;
-	padding: 20px 5px;
+	padding: 17px 5px;
 	border-radius: 30px;
 	cursor: pointer;
 	transition: background-color 0.3s, border-color 0.3s;
