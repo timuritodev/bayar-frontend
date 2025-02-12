@@ -176,7 +176,7 @@ export const VALIDATION_SETTINGS = {
 		minLength: 1,
 		maxLength: 15,
 		messages: {
-			noWall_panel_thickness: "Необходимо ввести толщина стеновых панелей",
+			noWall_panel_thickness: "Необходимо ввести толщину стеновых панелей",
 			invalid: "Только цифры",
 			tooShort: "Слишком короткая толщина",
 			tooLong: "Слишком длинная толщина",
@@ -187,7 +187,7 @@ export const VALIDATION_SETTINGS = {
 		minLength: 1,
 		maxLength: 15,
 		messages: {
-			noRoof_panel_thickness: "Необходимо ввести толщина кровельных панелей",
+			noRoof_panel_thickness: "Необходимо ввести толщину кровельных панелей",
 			invalid: "Только цифры",
 			tooShort: "Слишком короткая толщина",
 			tooLong: "Слишком длинная толщина",
@@ -231,6 +231,50 @@ export const VALIDATION_SETTINGS = {
 			noOrganization_name: "Необходимо ввести название организации",
 			invalid: "Только кириллица или латинские буквы",
 			tooLong: "Слишком много текста",
+		},
+	},
+	wall_panel_width: {
+		pattern: /^[0-9]+$/iu,
+		minLength: 1,
+		maxLength: 15,
+		messages: {
+			noWall_panel_width: "Необходимо ввести ширину стеновой панели",
+			invalid: "Только цифры",
+			tooShort: "Слишком короткая ширина",
+			tooLong: "Слишком длинная ширина",
+		},
+	},
+	metal_thickness: {
+		pattern: /^[0-9]+$/iu,
+		minLength: 1,
+		maxLength: 15,
+		messages: {
+			noMetal_thickness: "Необходимо ввести толщину металла",
+			invalid: "Только цифры",
+			tooShort: "Слишком короткая толщина",
+			tooLong: "Слишком длинная толщина",
+		},
+	},
+	insulation_density: {
+		pattern: /^[0-9]+$/iu,
+		minLength: 1,
+		maxLength: 15,
+		messages: {
+			noInsulation_density: "Необходимо ввести плотность утеплителя",
+			invalid: "Только цифры",
+			tooShort: "Слишком короткая плотность",
+			tooLong: "Слишком длинная плотность",
+		},
+	},
+	color: {
+		pattern: /^[0-9]+$/iu,
+		minLength: 1,
+		maxLength: 15,
+		messages: {
+			noСolor: "Необходимо ввести номер цвета",
+			invalid: "Только цифры",
+			tooShort: "Слишком короткая номер",
+			tooLong: "Слишком длинная номер",
 		},
 	},
 };
@@ -590,5 +634,81 @@ export const ORGANIZATION_NAME_VALIDATION_CONFIG = {
 	maxLength: {
 		value: VALIDATION_SETTINGS.organization_name.maxLength,
 		message: VALIDATION_SETTINGS.organization_name.messages.tooLong,
+	},
+};
+
+export const WALL_PANEL_WIDTH_VALIDATION_CONFIG = {
+	required: {
+		value: true,
+		message: VALIDATION_SETTINGS.wall_panel_width.messages.noWall_panel_width,
+	},
+	pattern: {
+		value: VALIDATION_SETTINGS.wall_panel_width.pattern,
+		message: VALIDATION_SETTINGS.wall_panel_width.messages.invalid,
+	},
+	minLength: {
+		value: VALIDATION_SETTINGS.wall_panel_width.minLength,
+		message: VALIDATION_SETTINGS.wall_panel_width.messages.tooShort,
+	},
+	maxLength: {
+		value: VALIDATION_SETTINGS.wall_panel_width.maxLength,
+		message: VALIDATION_SETTINGS.wall_panel_width.messages.tooLong,
+	},
+};
+
+export const METAL_THICKNESS_VALIDATION_CONFIG = {
+	required: {
+		value: true,
+		message: VALIDATION_SETTINGS.metal_thickness.messages.noMetal_thickness,
+	},
+	pattern: {
+		value: VALIDATION_SETTINGS.metal_thickness.pattern,
+		message: VALIDATION_SETTINGS.metal_thickness.messages.invalid,
+	},
+	minLength: {
+		value: VALIDATION_SETTINGS.metal_thickness.minLength,
+		message: VALIDATION_SETTINGS.metal_thickness.messages.tooShort,
+	},
+	maxLength: {
+		value: VALIDATION_SETTINGS.metal_thickness.maxLength,
+		message: VALIDATION_SETTINGS.metal_thickness.messages.tooLong,
+	},
+};
+
+export const INSULATION_DENSITY_VALIDATION_CONFIG = {
+	required: {
+		value: true,
+		message: VALIDATION_SETTINGS.insulation_density.messages.noInsulation_density,
+	},
+	pattern: {
+		value: VALIDATION_SETTINGS.insulation_density.pattern,
+		message: VALIDATION_SETTINGS.insulation_density.messages.invalid,
+	},
+	minLength: {
+		value: VALIDATION_SETTINGS.insulation_density.minLength,
+		message: VALIDATION_SETTINGS.insulation_density.messages.tooShort,
+	},
+	maxLength: {
+		value: VALIDATION_SETTINGS.insulation_density.maxLength,
+		message: VALIDATION_SETTINGS.insulation_density.messages.tooLong,
+	},
+};
+
+export const COLOR_VALIDATION_CONFIG = {
+	required: {
+		value: true,
+		message: VALIDATION_SETTINGS.color.messages.noСolor,
+	},
+	pattern: {
+		value: VALIDATION_SETTINGS.color.pattern,
+		message: VALIDATION_SETTINGS.color.messages.invalid,
+	},
+	minLength: {
+		value: VALIDATION_SETTINGS.color.minLength,
+		message: VALIDATION_SETTINGS.color.messages.tooShort,
+	},
+	maxLength: {
+		value: VALIDATION_SETTINGS.color.maxLength,
+		message: VALIDATION_SETTINGS.color.messages.tooLong,
 	},
 };

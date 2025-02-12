@@ -1,19 +1,21 @@
 import CustomInput from "@/components/CustomInput/CustomInput";
-import CustomSelect from '@/components/CustomSelect/CustomSelect';
 import Popup from '@/components/Popup/Popup';
 import {
 	BUILDING_LENGTH_VALIDATION_CONFIG,
 	BUILDING_WIDTH_VALIDATION_CONFIG,
 	CEILING_HEIGHT_VALIDATION_CONFIG,
 	DOOR_AREA_VALIDATION_CONFIG,
+	INSULATION_DENSITY_VALIDATION_CONFIG,
 	INSULATION_TYPE_VALIDATION_CONFIG,
+	METAL_THICKNESS_VALIDATION_CONFIG,
 	REGION_VALIDATION_CONFIG,
 	ROOF_PANEL_THICKNESS_VALIDATION_CONFIG,
 	WALL_PANEL_THICKNESS_VALIDATION_CONFIG,
-	WINDOW_AREA_VALIDATION_CONFIG,
+	WALL_PANEL_WIDTH_VALIDATION_CONFIG,
+	WINDOW_AREA_VALIDATION_CONFIG
 } from "@/constants/validation";
 import { calculateApi } from "@/services/redux/slices/calculator/calculator";
-import { ICalculator } from "@/types/Auth.types";
+import { ICalculator } from '@/types/Calculator.types';
 import { CustomInputTypes } from "@/types/CustomInput.types";
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -29,6 +31,16 @@ const CalculatorPage = () => {
 	const [buildingType, setBuildingType] = useState("односкатная");
 	const [roofType, setRoofType] = useState("с");
 
+	const optionsBuilding: ISelectOption[] = [
+		{ value: 'односкатная', label: 'Односкатная кровля' },
+		{ value: 'двускатная', label: 'Двускатная кровля' },
+	];
+
+	const optionsRoof: ISelectOption[] = [
+		{ value: 'с', label: 'С парапетом' },
+		{ value: 'без', label: 'Без парапета' },
+	];
+
 	const {
 		register,
 		handleSubmit,
@@ -42,8 +54,8 @@ const CalculatorPage = () => {
 	const onSubmit: SubmitHandler<ICalculator> = () => {
 		dispatch(
 			calculateApi({
-				building_type: buildingType,
-				roof_type: roofType,
+				// building_type: buildingType,
+				// roof_type: roofType,
 				building_length: getValues("building_length"),
 				building_width: getValues("building_width"),
 				ceiling_height: getValues("ceiling_height"),
@@ -51,8 +63,12 @@ const CalculatorPage = () => {
 				window_area: getValues("window_area"),
 				wall_panel_thickness: getValues("wall_panel_thickness"),
 				roof_panel_thickness: getValues("roof_panel_thickness"),
+				wall_panel_width: getValues("wall_panel_width"),
+				metal_thickness: getValues("metal_thickness"),
 				insulation_type: getValues("insulation_type"),
+				insulation_density: getValues("insulation_density"),
 				region: getValues("region"),
+				color: getValues("color"),
 			})
 		)
 			.unwrap()
@@ -68,34 +84,24 @@ const CalculatorPage = () => {
 		setIsPopupOpened(false);
 	}, []);
 
-	const optionsBuilding: ISelectOption[] = [
-		{ value: 'односкатная', label: 'Односкатная кровля' },
-		{ value: 'двускатная', label: 'Двускатная кровля' },
-	];
-
-	const optionsRoof: ISelectOption[] = [
-		{ value: 'с', label: 'С парапетом' },
-		{ value: 'без', label: 'Без парапета' },
-	];
-
 	return (
 		<div className={styles.calculator}>
 			<div className={styles.container}>
 				<h1 className={styles.title}>Калькулятор</h1>
 				<form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
 					<div className={styles.form__container}>
-						<CustomSelect
+						{/* <CustomSelect
 							labelText={"Тип здания"}
 							options={optionsBuilding}
 							selectedValue={buildingType}
 							onChange={setBuildingType}
-						/>
-						<CustomSelect
+						/> */}
+						{/* <CustomSelect
 							labelText={"Тип кровли"}
 							options={optionsRoof}
 							selectedValue={roofType}
 							onChange={setRoofType}
-						/>
+						/> */}
 						<CustomInput
 							inputType={CustomInputTypes.building_length}
 							labelText="Длина здания, м"
@@ -140,6 +146,30 @@ const CalculatorPage = () => {
 							validation={{ ...register("roof_panel_thickness", ROOF_PANEL_THICKNESS_VALIDATION_CONFIG) }}
 							error={errors?.roof_panel_thickness?.message}
 						/>
+						<CustomInput
+							inputType={CustomInputTypes.wall_panel_width}
+							labelText="Ширина стеновой панели, м."
+							validation={{ ...register("wall_panel_width", WALL_PANEL_WIDTH_VALIDATION_CONFIG) }}
+							error={errors?.wall_panel_width?.message}
+						/>
+						<CustomInput
+							inputType={CustomInputTypes.metal_thickness}
+							labelText="Толщина металла, мм."
+							validation={{ ...register("metal_thickness", METAL_THICKNESS_VALIDATION_CONFIG) }}
+							error={errors?.metal_thickness?.message}
+						/>
+						<CustomInput
+							inputType={CustomInputTypes.insulation_density}
+							labelText="Плотность утеплителя"
+							validation={{ ...register("insulation_density", INSULATION_DENSITY_VALIDATION_CONFIG) }}
+							error={errors?.insulation_density?.message}
+						/>
+						{/* <CustomInput
+							inputType={CustomInputTypes.color}
+							labelText="Цвет панелей"
+							validation={{ ...register("color", COLOR_VALIDATION_CONFIG) }}
+							error={errors?.color?.message}
+						/> */}
 						<CustomInput
 							inputType={CustomInputTypes.insulation_type}
 							labelText="Тип наполнителя"

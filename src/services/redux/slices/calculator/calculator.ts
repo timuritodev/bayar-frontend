@@ -1,4 +1,4 @@
-import { ICalculator, ICalculatorState } from '@/types/Auth.types';
+import { ICalculator, ICalculatorState } from '@/types/Calculator.types';
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { fetchCalculate } from './calculatorAPI';
 
