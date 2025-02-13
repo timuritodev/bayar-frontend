@@ -27,8 +27,9 @@ export const calculatorSlice = createSlice({
 	reducers: {},
 	extraReducers: (builder) => {
 		builder
-			.addCase(calculateApi.fulfilled, (state) => {
+			.addCase(calculateApi.fulfilled, (state, action) => {
 				state.status = "success";
+				state.total_cost = action.payload.total_cost;
 			})
 			.addCase(calculateApi.pending, (state) => {
 				state.status = "loading";

@@ -1,4 +1,5 @@
 import CustomInput from "@/components/CustomInput/CustomInput";
+import CustomOptions from '@/components/CustomOptions/CustomOptions';
 import Popup from '@/components/Popup/Popup';
 import {
 	BUILDING_LENGTH_VALIDATION_CONFIG,
@@ -6,12 +7,10 @@ import {
 	CEILING_HEIGHT_VALIDATION_CONFIG,
 	DOOR_AREA_VALIDATION_CONFIG,
 	INSULATION_DENSITY_VALIDATION_CONFIG,
-	INSULATION_TYPE_VALIDATION_CONFIG,
 	METAL_THICKNESS_VALIDATION_CONFIG,
 	REGION_VALIDATION_CONFIG,
 	ROOF_PANEL_THICKNESS_VALIDATION_CONFIG,
 	WALL_PANEL_THICKNESS_VALIDATION_CONFIG,
-	WALL_PANEL_WIDTH_VALIDATION_CONFIG,
 	WINDOW_AREA_VALIDATION_CONFIG
 } from "@/constants/validation";
 import { calculateApi } from "@/services/redux/slices/calculator/calculator";
@@ -63,9 +62,9 @@ const CalculatorPage = () => {
 				window_area: getValues("window_area"),
 				wall_panel_thickness: getValues("wall_panel_thickness"),
 				roof_panel_thickness: getValues("roof_panel_thickness"),
-				wall_panel_width: getValues("wall_panel_width"),
+				wall_panel_width: +wall_panel_width,
 				metal_thickness: getValues("metal_thickness"),
-				insulation_type: getValues("insulation_type"),
+				insulation_type: mineral_wool,
 				insulation_density: getValues("insulation_density"),
 				region: getValues("region"),
 				color: getValues("color"),
@@ -83,6 +82,18 @@ const CalculatorPage = () => {
 	useEffect(() => {
 		setIsPopupOpened(false);
 	}, []);
+
+	const [mineral_wool, setMineral_wool] = useState('mineral_wool'); // TODO сменить название
+	const [wall_panel_width, setWall_panel_width] = useState('1');
+
+	const options_mineral_wool = [
+		{ value: "mineral_wool", label: "Минеральная вата", },
+	];
+
+	const options_wall_panel_width = [
+		{ value: "1", label: "1м" },
+		{ value: "1.19", label: "1.19м" },
+	];
 
 	return (
 		<div className={styles.calculator}>
@@ -102,6 +113,18 @@ const CalculatorPage = () => {
 							selectedValue={roofType}
 							onChange={setRoofType}
 						/> */}
+						<CustomOptions
+							label="Тип наполнителя"
+							options={options_mineral_wool}
+							selectedValue={mineral_wool}
+							onChange={setMineral_wool}
+						/>
+						<CustomOptions
+							label="Ширина стеновой панели"
+							options={options_wall_panel_width}
+							selectedValue={wall_panel_width}
+							onChange={setWall_panel_width}
+						/>
 						<CustomInput
 							inputType={CustomInputTypes.building_length}
 							labelText="Длина здания, м"
@@ -146,12 +169,12 @@ const CalculatorPage = () => {
 							validation={{ ...register("roof_panel_thickness", ROOF_PANEL_THICKNESS_VALIDATION_CONFIG) }}
 							error={errors?.roof_panel_thickness?.message}
 						/>
-						<CustomInput
+						{/* <CustomInput
 							inputType={CustomInputTypes.wall_panel_width}
 							labelText="Ширина стеновой панели, м."
 							validation={{ ...register("wall_panel_width", WALL_PANEL_WIDTH_VALIDATION_CONFIG) }}
 							error={errors?.wall_panel_width?.message}
-						/>
+						/> */}
 						<CustomInput
 							inputType={CustomInputTypes.metal_thickness}
 							labelText="Толщина металла, мм."
@@ -170,12 +193,12 @@ const CalculatorPage = () => {
 							validation={{ ...register("color", COLOR_VALIDATION_CONFIG) }}
 							error={errors?.color?.message}
 						/> */}
-						<CustomInput
+						{/* <CustomInput
 							inputType={CustomInputTypes.insulation_type}
 							labelText="Тип наполнителя"
 							validation={{ ...register("insulation_type", INSULATION_TYPE_VALIDATION_CONFIG) }}
 							error={errors?.insulation_type?.message}
-						/>
+						/> */}
 						<CustomInput
 							inputType={CustomInputTypes.region}
 							labelText="Район строительства"

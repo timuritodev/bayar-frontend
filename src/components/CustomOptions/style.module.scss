@@ -1,0 +1,63 @@
+.selectWrapper {
+	position: relative;
+	width: 100%;
+	max-width: 300px;
+}
+
+.selectLabel {
+	display: block;
+	margin-bottom: 8px;
+	font-size: 14px;
+	color: #333;
+}
+
+.selectBox {
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background: #fff;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.arrow {
+	width: 10px;
+	height: 10px;
+	border-left: 2px solid #333;
+	border-bottom: 2px solid #333;
+	transform: rotate(-45deg);
+	transition: transform 0.3s ease;
+}
+
+.arrow.open {
+	transform: rotate(135deg);
+}
+
+.optionsList {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background: #fff;
+	margin-top: 4px;
+	list-style: none;
+	padding: 0;
+	max-height: 200px;
+	overflow-y: auto;
+	z-index: 100;
+}
+
+.option {
+	padding: 10px;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+
+.option:hover,
+.option.selected {
+	background: #f0f0f0;
+}
