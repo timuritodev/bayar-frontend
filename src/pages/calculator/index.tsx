@@ -64,7 +64,7 @@ const CalculatorPage = () => {
 				roof_panel_thickness: getValues("roof_panel_thickness"),
 				wall_panel_width: +wall_panel_width,
 				metal_thickness: getValues("metal_thickness"),
-				insulation_type: mineral_wool,
+				insulation_type: insulation_type,
 				insulation_density: getValues("insulation_density"),
 				region: getValues("region"),
 				color: getValues("color"),
@@ -83,11 +83,11 @@ const CalculatorPage = () => {
 		setIsPopupOpened(false);
 	}, []);
 
-	const [mineral_wool, setMineral_wool] = useState('mineral_wool'); // TODO сменить название
+	const [insulation_type, setInsulation_type] = useState('insulation_type'); // TODO сменить название
 	const [wall_panel_width, setWall_panel_width] = useState('1');
 
-	const options_mineral_wool = [
-		{ value: "mineral_wool", label: "Минеральная вата", },
+	const options_insulation_type = [
+		{ value: "insulation_type", label: "Минеральная вата", },
 	];
 
 	const options_wall_panel_width = [
@@ -115,9 +115,9 @@ const CalculatorPage = () => {
 						/> */}
 						<CustomOptions
 							label="Тип наполнителя"
-							options={options_mineral_wool}
-							selectedValue={mineral_wool}
-							onChange={setMineral_wool}
+							options={options_insulation_type}
+							selectedValue={insulation_type}
+							onChange={setInsulation_type}
 						/>
 						<CustomOptions
 							label="Ширина стеновой панели"
