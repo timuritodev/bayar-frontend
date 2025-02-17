@@ -26,7 +26,7 @@ const MainPage = () => {
           {/* <h1 className={styles.title}>BAYAR</h1> */}
           <Image className={styles.img} src={logo} alt="Логотип" width={600} height={300} />
           <p className={styles.subtitle}>До открытия сайта производителя сэндвич панелей осталось:</p>
-          <Countdown date="2025-02-02" className={styles.timer} />
+          <Countdown date="2025-03-18" className={styles.timer} />
           <p className={styles.subtitle_2}>По всем вопросам обращайтесь по номеру: +7 800 550-31-90</p>
           <p className={styles.subtitle_2}>info@tatbayar.ru</p>
         </div>
