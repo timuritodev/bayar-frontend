@@ -6,8 +6,6 @@ import {
 	BUILDING_WIDTH_VALIDATION_CONFIG,
 	CEILING_HEIGHT_VALIDATION_CONFIG,
 	DOOR_AREA_VALIDATION_CONFIG,
-	INSULATION_DENSITY_VALIDATION_CONFIG,
-	METAL_THICKNESS_VALIDATION_CONFIG,
 	REGION_VALIDATION_CONFIG,
 	ROOF_PANEL_THICKNESS_VALIDATION_CONFIG,
 	WALL_PANEL_THICKNESS_VALIDATION_CONFIG,
@@ -63,9 +61,9 @@ const CalculatorPage = () => {
 				wall_panel_thickness: getValues("wall_panel_thickness"),
 				roof_panel_thickness: getValues("roof_panel_thickness"),
 				wall_panel_width: +wall_panel_width,
-				metal_thickness: getValues("metal_thickness"),
+				metal_thickness: +metal_thickness,
 				insulation_type: insulation_type,
-				insulation_density: getValues("insulation_density"),
+				insulation_density: +insulation_density,
 				region: getValues("region"),
 				color: getValues("color"),
 			})
@@ -83,16 +81,34 @@ const CalculatorPage = () => {
 		setIsPopupOpened(false);
 	}, []);
 
-	const [insulation_type, setInsulation_type] = useState('insulation_type'); // TODO сменить название
+	const [insulation_type, setInsulation_type] = useState('mineral_wool');
 	const [wall_panel_width, setWall_panel_width] = useState('1');
+	const [metal_thickness, setMetal_thickness] = useState('0,45');
+	const [insulation_density, setInsulation_density] = useState('95');
 
 	const options_insulation_type = [
-		{ value: "insulation_type", label: "Минеральная вата", },
+		{ value: "mineral_wool", label: "Минеральная вата", },
 	];
 
 	const options_wall_panel_width = [
 		{ value: "1", label: "1м" },
 		{ value: "1.19", label: "1.19м" },
+	];
+
+	const options_metal_thickness = [
+		{ value: "0,45", label: "0,45мм" },
+		{ value: "0,5", label: "0,5мм" },
+		{ value: "0,6", label: "0,6мм" },
+		{ value: "0,7", label: "0,7мм" },
+	];
+
+	const options_insulation_density = [
+		{ value: "95", label: "95" },
+		{ value: "100", label: "100" },
+		{ value: "105", label: "105" },
+		{ value: "110", label: "110" },
+		{ value: "115", label: "115" },
+		{ value: "120", label: "120" },
 	];
 
 	return (
@@ -113,18 +129,6 @@ const CalculatorPage = () => {
 							selectedValue={roofType}
 							onChange={setRoofType}
 						/> */}
-						<CustomOptions
-							label="Тип наполнителя"
-							options={options_insulation_type}
-							selectedValue={insulation_type}
-							onChange={setInsulation_type}
-						/>
-						<CustomOptions
-							label="Ширина стеновой панели"
-							options={options_wall_panel_width}
-							selectedValue={wall_panel_width}
-							onChange={setWall_panel_width}
-						/>
 						<CustomInput
 							inputType={CustomInputTypes.building_length}
 							labelText="Длина здания, м"
@@ -155,6 +159,12 @@ const CalculatorPage = () => {
 							validation={{ ...register("window_area", WINDOW_AREA_VALIDATION_CONFIG) }}
 							error={errors?.window_area?.message}
 						/>
+						<CustomOptions
+							label="Ширина стеновой панели"
+							options={options_wall_panel_width}
+							selectedValue={wall_panel_width}
+							onChange={setWall_panel_width}
+						/>
 					</div>
 					<div className={styles.form__container}>
 						<CustomInput
@@ -169,35 +179,29 @@ const CalculatorPage = () => {
 							validation={{ ...register("roof_panel_thickness", ROOF_PANEL_THICKNESS_VALIDATION_CONFIG) }}
 							error={errors?.roof_panel_thickness?.message}
 						/>
-						{/* <CustomInput
-							inputType={CustomInputTypes.wall_panel_width}
-							labelText="Ширина стеновой панели, м."
-							validation={{ ...register("wall_panel_width", WALL_PANEL_WIDTH_VALIDATION_CONFIG) }}
-							error={errors?.wall_panel_width?.message}
-						/> */}
-						<CustomInput
-							inputType={CustomInputTypes.metal_thickness}
-							labelText="Толщина металла, мм."
-							validation={{ ...register("metal_thickness", METAL_THICKNESS_VALIDATION_CONFIG) }}
-							error={errors?.metal_thickness?.message}
+						<CustomOptions
+							label="Толщина металла, мм."
+							options={options_metal_thickness}
+							selectedValue={metal_thickness}
+							onChange={setMetal_thickness}
 						/>
-						<CustomInput
-							inputType={CustomInputTypes.insulation_density}
-							labelText="Плотность утеплителя"
-							validation={{ ...register("insulation_density", INSULATION_DENSITY_VALIDATION_CONFIG) }}
-							error={errors?.insulation_density?.message}
+						<CustomOptions
+							label="Тип наполнителя"
+							options={options_insulation_type}
+							selectedValue={insulation_type}
+							onChange={setInsulation_type}
+						/>
+						<CustomOptions
+							label="Плотность утеплителя"
+							options={options_insulation_density}
+							selectedValue={insulation_density}
+							onChange={setInsulation_density}
 						/>
 						{/* <CustomInput
 							inputType={CustomInputTypes.color}
 							labelText="Цвет панелей"
 							validation={{ ...register("color", COLOR_VALIDATION_CONFIG) }}
 							error={errors?.color?.message}
-						/> */}
-						{/* <CustomInput
-							inputType={CustomInputTypes.insulation_type}
-							labelText="Тип наполнителя"
-							validation={{ ...register("insulation_type", INSULATION_TYPE_VALIDATION_CONFIG) }}
-							error={errors?.insulation_type?.message}
 						/> */}
 						<CustomInput
 							inputType={CustomInputTypes.region}

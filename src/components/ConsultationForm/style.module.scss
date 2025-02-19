@@ -1,0 +1,36 @@
+.container {
+	max-width: 1280px;
+}
+
+.form {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	gap: 20px;
+	background-color: #dde2fb;
+	padding: 35px 42px;
+	border-radius: 32px;
+}
+
+.title {
+	font-family: Ubuntu;
+	font-weight: 700;
+	font-size: 48px;
+	line-height: 54.85px;
+	letter-spacing: 0%;
+	text-align: center;
+}
+.wrapper {
+	display: grid;
+	grid-template-columns: 620px 524px;
+	align-items: flex-end;
+	gap: 30px;
+}
+
+.subtitle {
+	font-family: Ubuntu;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 27.04px;
+	letter-spacing: 0%;
+	text-align: center;
+}

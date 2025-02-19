@@ -1,25 +1,30 @@
 .selectWrapper {
 	position: relative;
 	width: 100%;
-	max-width: 300px;
 }
 
 .selectLabel {
-	display: block;
-	margin-bottom: 8px;
-	font-size: 14px;
-	color: #333;
+	color: var(--Black-600, #000);
+	font-family: Ubuntu;
+	font-size: 32px;
+	font-weight: 400;
+	line-height: 43.27px;
 }
 
 .selectBox {
-	padding: 10px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
+	padding: 11px 25px 11px 25px;
+	border: 2px solid #000;
+	border-radius: 32px;
 	background: #fff;
 	cursor: pointer;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	font-family: Ubuntu;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 43.27px;
+	margin: 8px 0 0 0;
 }
 
 .arrow {
@@ -55,6 +60,10 @@
 	padding: 10px;
 	cursor: pointer;
 	transition: background 0.2s;
+	font-family: Ubuntu;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 32.45px;
 }
 
 .option:hover,

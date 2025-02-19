@@ -1,0 +1,70 @@
+.container {
+	position: relative;
+	width: 100%;
+	height: 685px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	color: #fff;
+}
+
+.imgWrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+.imgWrapper img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.title {
+	z-index: 2;
+	font-family: Ubuntu;
+	font-weight: 700;
+	font-size: 48px;
+	line-height: 54.85px;
+	letter-spacing: 0%;
+	text-align: center;
+	margin: 0;
+}
+
+.subtitle {
+	z-index: 2;
+	font-family: Ubuntu;
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 43.27px;
+	letter-spacing: 0%;
+	max-width: 1105px;
+	white-space: pre-line;
+	margin: 35px 0 40px 0;
+}
+
+.button {
+	background-color: #f08b23;
+	font-family: Ubuntu;
+	font-weight: 400;
+	font-size: 34.69px;
+	line-height: 46.91px;
+	letter-spacing: 0%;
+	text-align: center;
+	padding: 20px 140px;
+	border: none;
+	border-radius: 23.13px;
+	cursor: pointer;
+	transition: background 0.3s ease;
+	position: relative;
+	z-index: 2;
+	color: #fff;
+	&:hover {
+		background-color: #d16c36;
+	}
+}
