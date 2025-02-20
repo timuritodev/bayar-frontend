@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
-import prev from "../../images/arrow_left.svg";
+import prev from "../../images/ral_arrow_left.svg";
 import next from "../../images/ral_arrow_right.svg";
 import { RalColor } from './RalColor/RalColor';
 import { ral_colors } from './constants';
@@ -10,7 +10,7 @@ import styles from './style.module.scss';
 const NextArrow = (props: { onClick?: () => void }) => {
 	return (
 		<div className={styles.nextArrow} onClick={props.onClick}>
-			<Image src={next} alt="Next" width={40} height={40} />
+			<Image src={next} alt="next_arrow" width={40} height={60} />
 		</div>
 	);
 };
@@ -18,11 +18,10 @@ const NextArrow = (props: { onClick?: () => void }) => {
 const PrevArrow = (props: { onClick?: () => void }) => {
 	return (
 		<div className={styles.prevArrow} onClick={props.onClick}>
-			<Image src={prev} alt="Prev" width={40} height={40} />
+			<Image src={prev} alt="prev_arrow" width={40} height={60} />
 		</div>
 	);
 };
-
 
 export const RalColorSlider = () => {
 	const settings = {

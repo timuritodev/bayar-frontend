@@ -1,6 +1,8 @@
 .container {
-	width: 142px;
-	height: 170px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 144px;
 }
 
 .color {
@@ -10,11 +12,11 @@
 }
 
 .title {
-	font-family: Ubuntu;
+	font-family: ClearSans;
 	font-weight: 400;
 	font-size: 32px;
 	line-height: 43.27px;
-	letter-spacing: 0%;
+	letter-spacing: 0em;
 	text-align: center;
-	margin: 0;
+	margin: 21px 0 0 0;
 }

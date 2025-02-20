@@ -29,10 +29,11 @@ const Page = () => {
 					/>
 					<h2 className={styles.subtitle}>Преимущества сэндвич-панелей</h2>
 					<BenefitsList data={benefits} />
-					<h2 className={styles.subtitle}>Цветовое решение</h2>
-					<RalColorSlider />
 					<h2 className={styles.subtitle}>Возможные сердечники для сэндвич-панелей</h2>
 					<UniCardsList data={roof} />
+					<h2 className={styles.subtitle}>Цветовое решение</h2>
+					<RalColorSlider />
+					<h2 className={styles.subtitle}>Профили</h2>
 					<Table />
 					<h2 className={styles.subtitle}>Заказать консультацию</h2>
 					<div ref={formRef}>
