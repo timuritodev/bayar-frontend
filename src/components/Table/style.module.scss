@@ -1,0 +1,43 @@
+.tableWrapper {
+	text-align: center;
+	padding: 20px;
+}
+
+.title {
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+	background-color: #e8ebfa;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.table th,
+.table td {
+	padding: 15px;
+	text-align: center;
+	border: 1px solid #c0c3d9;
+}
+
+.header {
+	background-color: #6c6fbf;
+	color: white;
+	font-weight: bold;
+	padding: 20px;
+}
+
+/* Убираем границы у столбцов "Ширина" и "Цена" */
+.noBorder {
+	border: none;
+}
+
+/* Делаем текст по центру */
+.centerText {
+	text-align: center;
+	font-weight: bold;
+}

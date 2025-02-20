@@ -7,6 +7,7 @@ interface CatalogIntroProps {
 	subtitle: string;
 	buttonText: string;
 	img: StaticImageData;
+	onButtonClick?: () => void;
 }
 
 export const CatalogIntro: FC<CatalogIntroProps> = ({
@@ -14,6 +15,7 @@ export const CatalogIntro: FC<CatalogIntroProps> = ({
 	subtitle,
 	buttonText,
 	img,
+	onButtonClick,
 }) => {
 	return (
 		<div className={styles.container}>
@@ -29,7 +31,7 @@ export const CatalogIntro: FC<CatalogIntroProps> = ({
 			</div>
 			<h1 className={styles.title}>{title}</h1>
 			<p className={styles.subtitle}>{subtitle}</p>
-			<button className={styles.button}>{buttonText}</button>
+			<button className={styles.button} onClick={onButtonClick}>{buttonText}</button>
 		</div>
 	);
 };

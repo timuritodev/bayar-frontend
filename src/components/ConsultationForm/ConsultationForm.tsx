@@ -55,7 +55,6 @@ export const ConsultationForm = () => {
 	}, []);
 	return (
 		<div className={styles.container}>
-			<h3 className={styles.title}>Заказать консультацию</h3>
 			<form
 				className={styles.form}
 				onSubmit={handleSubmit(onSubmit)}

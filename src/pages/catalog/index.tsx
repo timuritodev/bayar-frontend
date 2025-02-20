@@ -1,6 +1,6 @@
 import { BenefitsList } from '@/components/Benefits/BenefitsList';
 import Head from 'next/head';
-import { data } from './constants';
+import { benefits } from './constants';
 import styles from "./style.module.scss";
 
 const CatalogPage = () => {
@@ -19,7 +19,7 @@ const CatalogPage = () => {
 			<div className={styles.catalog}>
 				<div className={styles.container}>
 					<h3 className={styles.subtitle}>Преимущества сэндвич-панелей</h3>
-					<BenefitsList data={data} />
+					<BenefitsList data={benefits} />
 				</div>
 			</div>
 		</>

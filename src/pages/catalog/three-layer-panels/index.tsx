@@ -1,11 +1,19 @@
 import { BenefitsList } from '@/components/Benefits/BenefitsList';
 import { CatalogIntro } from '@/components/CatalogIntro/CatalogIntro';
 import { ConsultationForm } from '@/components/ConsultationForm/ConsultationForm';
+import { UniCardsList } from '@/components/UniCard/UniCardList';
+import { useRef } from 'react';
 import pic from '../../../images/catalog/three_layer.jpg';
-import { data } from '../constants';
+import { benefits, panels } from '../constants';
 import styles from "./style.module.scss";
 
 const Page = () => {
+	const formRef = useRef<HTMLDivElement | null>(null);
+
+	const scrollToForm = () => {
+		formRef.current?.scrollIntoView({ behavior: "smooth" });
+	};
+
 	return (
 		<>
 			<div className={styles.page}>
@@ -20,10 +28,16 @@ const Page = () => {
 							стен, крыш и перегородок в промышленных и гражданских зданиях.`}
 						buttonText="Консультация"
 						img={pic}
+						onButtonClick={scrollToForm}
 					/>
 					<h2 className={styles.subtitle}>Преимущества сэндвич-панелей</h2>
-					<BenefitsList data={data} />
-					<ConsultationForm />
+					<BenefitsList data={benefits} />
+					<h2 className={styles.subtitle}>Виды сэндвич-панелей</h2>
+					<UniCardsList data={panels} />
+					<h2 className={styles.subtitle}>Заказать консультацию</h2>
+					<div ref={formRef}>
+						<ConsultationForm />
+					</div>
 				</div>
 			</div>
 		</>

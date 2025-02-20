@@ -1,0 +1,47 @@
+import Image from 'next/image';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import prev from "../../images/arrow_left.svg";
+import next from "../../images/ral_arrow_right.svg";
+import { RalColor } from './RalColor/RalColor';
+import { ral_colors } from './constants';
+import styles from './style.module.scss';
+
+const NextArrow = (props: { onClick?: () => void }) => {
+	return (
+		<div className={styles.nextArrow} onClick={props.onClick}>
+			<Image src={next} alt="Next" width={40} height={40} />
+		</div>
+	);
+};
+
+const PrevArrow = (props: { onClick?: () => void }) => {
+	return (
+		<div className={styles.prevArrow} onClick={props.onClick}>
+			<Image src={prev} alt="Prev" width={40} height={40} />
+		</div>
+	);
+};
+
+
+export const RalColorSlider = () => {
+	const settings = {
+		dots: false,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 7,
+		slidesToScroll: 3,
+		nextArrow: <NextArrow />,
+		prevArrow: <PrevArrow />,
+	};
+
+	return (
+		<div className={styles.slick_slider}>
+			<Slider {...settings} className={styles.container}>
+				{ral_colors.map((item) => (
+					<RalColor key={item.id} data={item} />
+				))}
+			</Slider>
+		</div>
+	);
+};
