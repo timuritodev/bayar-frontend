@@ -1,6 +1,6 @@
 import styles from "./style.module.scss";
 
-export const Table = () => {
+export const WallTable = () => {
 	return (
 		<table className={styles.table}>
 			<thead>
@@ -17,12 +17,18 @@ export const Table = () => {
 			</thead>
 			<tbody>
 				<tr>
-					<td className={styles.td}>100 мм</td>
-					<td rowSpan={3} className={`${styles.td}`}>1000 см</td>
-					<td rowSpan={3} className={`${styles.td} ${styles.td_small_padding}`}>
+					<td className={styles.td}>80 мм</td>
+					<td rowSpan={5} className={`${styles.td}`}>1000 см<br />или<br />1190 см</td>
+					<td rowSpan={5} className={`${styles.td} ${styles.td_small_padding}`}>
 						Точную стоимость можно<br />узнать у наших менеджеров<br />по телефону<br />
 						<strong>+79600000000</strong>
 					</td>
+				</tr>
+				<tr>
+					<td className={styles.td}>100 мм</td>
+				</tr>
+				<tr>
+					<td className={styles.td}>120 мм</td>
 				</tr>
 				<tr>
 					<td className={styles.td}>150 мм</td>
