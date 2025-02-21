@@ -47,6 +47,45 @@ const Header: FC = () => {
     setIsPopupOpen(!isPopupOpen);
   };
 
+  // const [isCatalogOpen, setIsCatalogOpen] = useState(false);
+
+  // // Обработчик клика по каталогу
+  // const toggleCatalogMenu = () => {
+  //   setIsCatalogOpen(!isCatalogOpen);
+  // };
+
+  // // Закрытие меню при клике вне области
+  // const catalogRef = useRef<HTMLDivElement>(null);
+
+  // useEffect(() => {
+  //   const handleClickOutside = (e: MouseEvent) => {
+  //     if (catalogRef.current && !catalogRef.current.contains(e.target as Node)) {
+  //       setIsCatalogOpen(false);
+  //     }
+  //   };
+
+  //   document.addEventListener("mousedown", handleClickOutside);
+  //   return () => document.removeEventListener("mousedown", handleClickOutside);
+  // }, []);
+
+  // useEffect(() => {
+  //   setIsCatalogOpen(false);
+  // }, [router.pathname]); // Закрывает меню при смене маршрута
+
+  // // В компоненте меню
+  // const isCatalogActive = router.pathname.startsWith('/catalog');
+
+  const [isCatalogOpen, setIsCatalogOpen] = useState(false);
+
+  // Убрали клик и добавили обработчики наведения
+  const handleMouseEnter = () => {
+    setIsCatalogOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsCatalogOpen(false);
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.header__container}>
@@ -60,9 +99,53 @@ const Header: FC = () => {
           <Link href="/" className={styles.header__link}>
             Главная
           </Link>
-          <Link href="/catalog" className={styles.header__link}>
+          <div
+            className={`${styles.catalog_container} ${isCatalogOpen ? styles.active : ""}`}
+            onMouseEnter={() => setIsCatalogOpen(true)}
+            onMouseLeave={() => setIsCatalogOpen(false)}
+          >
+            <div className={styles.header__link}>
+              Каталог
+              {isCatalogOpen && (
+                <div
+                  className={styles.dropdown}
+                  onMouseEnter={() => setIsCatalogOpen(true)}
+                  onMouseLeave={() => setIsCatalogOpen(false)}
+                >
+                  <Link href="/catalog/option1" className={styles.dropdown__item}>
+                    Вариант 1
+                  </Link>
+                  <Link href="/catalog/option2" className={styles.dropdown__item}>
+                    Вариант 2
+                  </Link>
+                  <Link href="/catalog/option3" className={styles.dropdown__item}>
+                    Вариант 3
+                  </Link>
+                </div>
+              )}
+            </div>
+          </div>
+          {/* <div
+            className={styles.header__link}
+            onClick={toggleCatalogMenu}
+            ref={catalogRef}
+            style={{ position: 'relative', cursor: 'pointer' }}
+          >
             Каталог
-          </Link>
+            {isCatalogOpen && (
+              <div className={styles.dropdown}>
+                <Link href="/catalog/option1" className={styles.dropdown__item}>
+                  Вариант 1
+                </Link>
+                <Link href="/catalog/option2" className={styles.dropdown__item}>
+                  Вариант 2
+                </Link>
+                <Link href="/catalog/option3" className={styles.dropdown__item}>
+                  Вариант 3
+                </Link>
+              </div>
+            )}
+          </div> */}
           <Link href="/about" className={styles.header__link}>
             О нас
           </Link>

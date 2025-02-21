@@ -74,6 +74,90 @@
 	margin: 0 8px 0 12px;
 }
 
+// .dropdown {
+// 	position: absolute;
+// 	top: 100%;
+// 	left: 0;
+// 	background: #fff;
+// 	border: 1px solid #ddd;
+// 	border-radius: 4px;
+// 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+// 	z-index: 1000;
+// 	min-width: 200px;
+// 	padding: 8px 0;
+
+// 	&__item {
+// 		display: block;
+// 		padding: 12px 16px;
+// 		color: #333;
+// 		text-decoration: none;
+// 		font-size: 16px;
+// 		transition: background 0.2s;
+
+// 		&:hover {
+// 			background: #f5f5f5;
+// 		}
+// 	}
+// }
+
+// .header__link[data-open='true']::after {
+// 	content: '▼';
+// 	margin-left: 8px;
+// 	font-size: 0.8em;
+// }
+
+// .dropdown {
+// 	opacity: 0;
+// 	transform: translateY(-10px);
+// 	transition: all 0.3s ease;
+
+// 	&[data-visible='true'] {
+// 		opacity: 1;
+// 		transform: translateY(0);
+// 	}
+// }
+
+// Стили для контейнера каталога
+.catalog_container {
+	position: relative;
+	display: inline-block;
+
+	// Создаем "мост" между кнопкой и меню
+	&:hover::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		height: 20px; // Высота области перехода
+		background: transparent;
+	}
+}
+
+.dropdown {
+	position: absolute;
+	top: calc(100% + 10px); // Учитываем "мост"
+	left: 0;
+	// ... остальные стили ...
+	transition: opacity 0.2s, transform 0.2s;
+}
+.catalog_container::before {
+	content: '';
+	position: absolute;
+	bottom: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #fff;
+	opacity: 0;
+	transition: opacity 0.2s;
+}
+
+.catalog_container.active::before {
+	opacity: 1;
+}
 @media screen and (max-width: 1279px) {
 	.header {
 		padding: 24px 0 16px 0;
