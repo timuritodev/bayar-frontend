@@ -77,15 +77,6 @@ const Header: FC = () => {
 
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
 
-  // Убрали клик и добавили обработчики наведения
-  const handleMouseEnter = () => {
-    setIsCatalogOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsCatalogOpen(false);
-  };
-
   return (
     <header className={styles.header}>
       <div className={styles.header__container}>
@@ -99,7 +90,41 @@ const Header: FC = () => {
           <Link href="/" className={styles.header__link}>
             Главная
           </Link>
-          <div
+          <ul className={styles.header__links_container}>
+            <li className={styles.header__link}>
+              Каталог
+              <ul className={styles.header__sub_menu}>
+                <div className={styles.header__sub_menu__container}>
+                  <li>
+                    <a className={styles.header__sub_link} href="#">
+                      Подпункт меню 1
+                    </a>
+                  </li>
+                  <li>
+                    <a className={styles.header__sub_link} href="#">
+                      Подпункт меню 1
+                    </a>
+                  </li>
+                  <li>
+                    <a className={styles.header__sub_link} href="#">
+                      Подпункт меню 1
+                    </a>
+                  </li>
+                  <li>
+                    <a className={styles.header__sub_link} href="#">
+                      Подпункт меню 1
+                    </a>
+                  </li>
+                  <li>
+                    <a className={styles.header__sub_link} href="#">
+                      Подпункт меню 1
+                    </a>
+                  </li>
+                </div>
+              </ul>
+            </li>
+          </ul>
+          {/* <div
             className={`${styles.catalog_container} ${isCatalogOpen ? styles.active : ""}`}
             onMouseEnter={() => setIsCatalogOpen(true)}
             onMouseLeave={() => setIsCatalogOpen(false)}
@@ -112,19 +137,19 @@ const Header: FC = () => {
                   onMouseEnter={() => setIsCatalogOpen(true)}
                   onMouseLeave={() => setIsCatalogOpen(false)}
                 >
-                  <Link href="/catalog/option1" className={styles.dropdown__item}>
+                  <Link href="/catalog/three-layers" className={styles.dropdown__item}>
                     Вариант 1
                   </Link>
-                  <Link href="/catalog/option2" className={styles.dropdown__item}>
+                  <Link href="/catalog/roof-panels" className={styles.dropdown__item}>
                     Вариант 2
                   </Link>
-                  <Link href="/catalog/option3" className={styles.dropdown__item}>
+                  <Link href="/catalog/wall-panels" className={styles.dropdown__item}>
                     Вариант 3
                   </Link>
                 </div>
               )}
             </div>
-          </div>
+          </div> */}
           {/* <div
             className={styles.header__link}
             onClick={toggleCatalogMenu}
