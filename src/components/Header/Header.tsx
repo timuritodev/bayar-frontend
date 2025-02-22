@@ -47,45 +47,11 @@ const Header: FC = () => {
     setIsPopupOpen(!isPopupOpen);
   };
 
-  // const [isCatalogOpen, setIsCatalogOpen] = useState(false);
-
-  // // Обработчик клика по каталогу
-  // const toggleCatalogMenu = () => {
-  //   setIsCatalogOpen(!isCatalogOpen);
-  // };
-
-  // // Закрытие меню при клике вне области
-  // const catalogRef = useRef<HTMLDivElement>(null);
-
-  // useEffect(() => {
-  //   const handleClickOutside = (e: MouseEvent) => {
-  //     if (catalogRef.current && !catalogRef.current.contains(e.target as Node)) {
-  //       setIsCatalogOpen(false);
-  //     }
-  //   };
-
-  //   document.addEventListener("mousedown", handleClickOutside);
-  //   return () => document.removeEventListener("mousedown", handleClickOutside);
-  // }, []);
-
-  // useEffect(() => {
-  //   setIsCatalogOpen(false);
-  // }, [router.pathname]); // Закрывает меню при смене маршрута
-
-  // // В компоненте меню
-  // const isCatalogActive = router.pathname.startsWith('/catalog');
+  const isActive = (path: string) => {
+    return router.pathname === path;
+  };
 
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
-
-  // Убрали клик и добавили обработчики наведения
-  const handleMouseEnter = () => {
-    setIsCatalogOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsCatalogOpen(false);
-  };
-
   return (
     <header className={styles.header}>
       <div className={styles.header__container}>
@@ -96,7 +62,7 @@ const Header: FC = () => {
           <Image className={styles.header__logo} alt="Логотип BAYAR" src={logo} width={214} height={90} />
         </Link>
         <div className={styles.header__links}>
-          <Link href="/" className={styles.header__link}>
+          <Link href="/" className={`${styles.header__link} ${isActive("/") ? styles.active : ""}`}>
             Главная
           </Link>
           <div
@@ -104,7 +70,7 @@ const Header: FC = () => {
             onMouseEnter={() => setIsCatalogOpen(true)}
             onMouseLeave={() => setIsCatalogOpen(false)}
           >
-            <div className={styles.header__link}>
+            <div className={`${styles.header__link} ${isActive("/") ? styles.active : ""}`}>
               Каталог
               {isCatalogOpen && (
                 <div
@@ -146,13 +112,13 @@ const Header: FC = () => {
               </div>
             )}
           </div> */}
-          <Link href="/about" className={styles.header__link}>
+          <Link href="/about" className={`${styles.header__link} ${isActive("/about") ? styles.active : ""}`}>
             О нас
           </Link>
-          <Link href="/calculator" className={styles.header__link}>
+          <Link href="/calculator" className={`${styles.header__link} ${isActive("/calculator") ? styles.active : ""}`}>
             Калькулятор
           </Link>
-          <Link href="/profile" className={styles.header__link}>
+          <Link href="/profile" className={`${styles.header__link} ${isActive("/profile") ? styles.active : ""}`}>
             Профиль
           </Link>
         </div>
