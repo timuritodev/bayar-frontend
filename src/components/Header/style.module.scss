@@ -100,15 +100,11 @@
 	display: none;
 	position: absolute;
 	top: 104px;
-	left: 100px;
 	width: 634px;
 	padding: 0;
-	// height: 30vh;
 	background-color: #fff;
 	z-index: 3;
 	list-style-type: none;
-	align-items: center;
-	justify-content: center;
 }
 
 .header__link:hover .header__sub_menu {
@@ -117,9 +113,10 @@
 
 .header__sub_menu__container {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	flex-wrap: wrap;
-	gap: 30px;
+	gap: 5px;
+	width: 100%;
 }
 
 .header__sub_link {
@@ -129,7 +126,11 @@
 	font-size: 32px;
 	line-height: 43.27px;
 	letter-spacing: 0%;
+	width: 100%;
 	color: #000;
+	text-align: start;
+	padding: 11px 0 11px 45px;
+	box-sizing: border-box;
 }
 
 .header__sub_link:hover {

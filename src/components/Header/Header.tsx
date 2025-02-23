@@ -47,35 +47,9 @@ const Header: FC = () => {
     setIsPopupOpen(!isPopupOpen);
   };
 
-  // const [isCatalogOpen, setIsCatalogOpen] = useState(false);
-
-  // // Обработчик клика по каталогу
-  // const toggleCatalogMenu = () => {
-  //   setIsCatalogOpen(!isCatalogOpen);
-  // };
-
-  // // Закрытие меню при клике вне области
-  // const catalogRef = useRef<HTMLDivElement>(null);
-
-  // useEffect(() => {
-  //   const handleClickOutside = (e: MouseEvent) => {
-  //     if (catalogRef.current && !catalogRef.current.contains(e.target as Node)) {
-  //       setIsCatalogOpen(false);
-  //     }
-  //   };
-
-  //   document.addEventListener("mousedown", handleClickOutside);
-  //   return () => document.removeEventListener("mousedown", handleClickOutside);
-  // }, []);
-
-  // useEffect(() => {
-  //   setIsCatalogOpen(false);
-  // }, [router.pathname]); // Закрывает меню при смене маршрута
-
-  // // В компоненте меню
-  // const isCatalogActive = router.pathname.startsWith('/catalog');
-
-  const [isCatalogOpen, setIsCatalogOpen] = useState(false);
+  const is_active = (path: string) => {
+    return router.pathname === path;
+  };
 
   return (
     <header className={styles.header}>
@@ -87,40 +61,35 @@ const Header: FC = () => {
           <Image className={styles.header__logo} alt="Логотип BAYAR" src={logo} width={214} height={90} />
         </Link>
         <div className={styles.header__links}>
-          <Link href="/" className={styles.header__link}>
+          <Link href="/" className={`${styles.header__link} ${is_active("/") ? styles.active : ""}`}>
             Главная
           </Link>
           <ul className={styles.header__links_container}>
-            <li className={styles.header__link}>
+            <li className={`${styles.header__link} ${is_active("/catalog") ? styles.active : ""}`}>
               Каталог
               <ul className={styles.header__sub_menu}>
                 <div className={styles.header__sub_menu__container}>
-                  <li>
-                    <Link href="/catalog/three-layer-panels" className={styles.header__sub_link}>
-                      Трёхслойные сэндвич-панели
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/catalog/roof-panels" className={styles.header__sub_link}>
-                      Кровельные сэндвич-панели
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/catalog/wall-panels" className={styles.header__sub_link}>
-                      Стеновые сэндвич-панели
-                    </Link>
-                  </li>
+                  <Link href="/catalog/three-layer-panels" className={styles.header__sub_link}>
+                    Трёхслойные сэндвич-панели
+                  </Link>
+                  <Link href="/catalog/roof-panels" className={styles.header__sub_link}>
+                    Кровельные сэндвич-панели
+                  </Link>
+
+                  <Link href="/catalog/wall-panels" className={styles.header__sub_link}>
+                    Стеновые сэндвич-панели
+                  </Link>
                 </div>
               </ul>
             </li>
           </ul>
-          <Link href="/about" className={styles.header__link}>
+          <Link href="/about" className={`${styles.header__link} ${is_active("/about") ? styles.active : ""}`}>
             О нас
           </Link>
-          <Link href="/calculator" className={styles.header__link}>
+          <Link href="/calculator" className={`${styles.header__link} ${is_active("/calculator") ? styles.active : ""}`}>
             Калькулятор
           </Link>
-          <Link href="/profile" className={styles.header__link}>
+          <Link href="/profile" className={`${styles.header__link} ${is_active("/profile") ? styles.active : ""}`}>
             Профиль
           </Link>
         </div>
