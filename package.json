@@ -10,6 +10,8 @@
 		"postbuild": "next-sitemap"
 	},
 	"dependencies": {
+		"@react-three/drei": "^9.94.0",
+		"@react-three/fiber": "^8.14.0",
 		"@reduxjs/toolkit": "^1.9.5",
 		"dotenv": "^16.4.4",
 		"next": "14.2.5",
@@ -27,7 +29,8 @@
 		"redux-toolkit": "^1.1.2",
 		"sass": "^1.77.8",
 		"scss": "^0.2.4",
-		"slick-carousel": "^1.8.1"
+		"slick-carousel": "^1.8.1",
+		"three": "^0.150.0"
 	},
 	"devDependencies": {
 		"@types/node": "^20.11.19",

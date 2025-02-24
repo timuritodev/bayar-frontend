@@ -1,5 +1,6 @@
 import CustomInput from "@/components/CustomInput/CustomInput";
 import CustomOptions from '@/components/CustomOptions/CustomOptions';
+import House from '@/components/House/House';
 import Popup from '@/components/Popup/Popup';
 import {
 	BUILDING_LENGTH_VALIDATION_CONFIG,
@@ -115,6 +116,8 @@ const CalculatorPage = () => {
 		<div className={styles.calculator}>
 			<div className={styles.container}>
 				<h1 className={styles.title}>Калькулятор</h1>
+				<House />
+				{/* <House3d /> */}
 				<form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
 					<div className={styles.form__container}>
 						{/* <CustomSelect
