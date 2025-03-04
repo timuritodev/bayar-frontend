@@ -4,7 +4,7 @@ import { FC, useEffect, useState } from "react";
 import logo from "../../images/logo.png";
 import loop from "../../images/loop.svg";
 import loop_small from "../../images/loop_small.svg";
-import icon from "../../images/person_active.svg";
+import icon from "../../images/profile.svg";
 import { selectUser } from "../../services/redux/slices/user/user";
 import { useAppSelector } from "../../services/typeHooks";
 // import Search from "../Search/Search";

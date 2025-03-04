@@ -26,3 +26,23 @@
 .prevArrow {
 	left: 60px;
 }
+
+@media screen and (max-width: 767px) {
+	.container {
+		width: 100%;
+		height: 515px;
+	}
+
+	.arrow {
+		width: 10px;
+		height: 17px;
+	}
+
+	.nextArrow {
+		right: 12px;
+	}
+
+	.prevArrow {
+		left: 12px;
+	}
+}

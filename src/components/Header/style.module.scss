@@ -21,7 +21,6 @@
 .header__logo {
 	width: 214px;
 	height: 90px;
-	display: b;
 }
 
 .header__links {
@@ -138,60 +137,35 @@
 	background-color: #6975b3;
 }
 
-@media screen and (max-width: 1279px) {
-	.header {
-		padding: 24px 0 16px 0;
-	}
-
-	.header__container {
-		max-width: 768px;
-		justify-content: space-around;
-		height: 24px;
-	}
-
-	.header__logo {
-		width: 160px;
-		height: 23px;
-	}
-
-	.header__links {
-		display: flex;
-		gap: 24px;
-		text-decoration: none;
-	}
-	.header__link {
-		font-family: Ubuntu;
-		font-size: 18px;
-		font-weight: 400;
-		line-height: 21px;
-		letter-spacing: 0em;
-	}
-
-	.header__search_button_search {
-		width: 18px;
-		height: 18px;
-		margin: 0;
-	}
-
-	.header__search__container {
-		display: flex;
-		gap: 24px;
-		align-items: center;
-	}
+.header__profile_icon {
+	width: 22px;
+	height: 26px;
 }
 
 @media screen and (max-width: 767px) {
 	.header {
-		padding: 24px 0 16px 0;
+		padding: 15px 0 10px 0;
 	}
 
 	.header__container {
 		max-width: 768px;
+		display: flex;
+		align-items: center;
 		justify-content: space-around;
-		height: 24px;
+		height: 41px;
 	}
 
 	.header__links {
 		display: none;
+	}
+
+	.header__logo {
+		width: 97px;
+		height: 41px;
+	}
+
+	.header__profile_icon {
+		width: 15px;
+		height: 15px;
 	}
 }

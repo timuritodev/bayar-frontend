@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
 import { useResize } from "../../hooks/useResize";
 import logo from "../../images/logo_s.svg";
-import loop from "../../images/loop.svg";
+import profile from "../../images/profile.svg";
 import {
   selectUser
 } from "../../services/redux/slices/user/user";
@@ -58,7 +58,7 @@ const Header: FC = () => {
           <BurgerButton isPopupOpen={isPopupOpen} switchPopup={switchPopup} />
         )}
         <Link href="/">
-          <Image className={styles.header__logo} alt="Логотип BAYAR" src={logo} width={214} height={90} />
+          <Image className={styles.header__logo} alt="Логотип BAYAR" src={logo} />
         </Link>
         <div className={styles.header__links}>
           <Link href="/" className={`${styles.header__link} ${is_active("/") ? styles.active : ""}`}>
@@ -89,13 +89,16 @@ const Header: FC = () => {
           <Link href="/calculator" className={`${styles.header__link} ${is_active("/calculator") ? styles.active : ""}`}>
             Калькулятор
           </Link>
-          <Link href="/profile" className={`${styles.header__link} ${is_active("/profile") ? styles.active : ""}`}>
+          {/* <Link href="/profile" className={`${styles.header__link} ${is_active("/profile") ? styles.active : ""}`}>
             Профиль
-          </Link>
+          </Link> */}
         </div>
 
         <div className={styles.header__search__container}>
-          <form className={styles.header__search}>
+          <Link href="/profile">
+            <Image className={styles.header__profile_icon} alt="Иконка профиля" src={profile} />
+          </Link>
+          {/*<form className={styles.header__search}>
             <Image
               className={styles.header__search_button_search}
               src={loop}
@@ -111,12 +114,12 @@ const Header: FC = () => {
               value={values}
               autoComplete="off"
             />
-            {/* <Search
+            <Search
                 isOpenSearch={isOpenSearch}
                 isClose={setSearchClose}
                 values={values}
-              /> */}
-          </form>
+              />
+          </form>*/}
         </div>
       </div>
     </header>
