@@ -12,7 +12,7 @@
 
 .input__label {
 	color: var(--Black-600, #000);
-	font-family: Ubuntu;
+	font-family: ClearSans;
 	font-size: 32px;
 	font-weight: 400;
 	line-height: 43.27px;
@@ -21,12 +21,12 @@
 
 .input__field {
 	color: var(--Black-600, #000);
-	font-family: Ubuntu;
+	font-family: ClearSans;
 	font-size: 32px;
 	font-weight: 400;
 	line-height: 43.27px;
 	border-radius: 32px;
-	border: 2px solid #000;
+	border: 1px solid #000;
 	background-color: transparent;
 	padding: 11px 0 11px 25px;
 }
@@ -104,4 +104,21 @@
 
 .input__field_type_date {
 	text-transform: uppercase;
+}
+
+@media screen and (max-width: 767px) {
+	.input__label {
+		font-weight: 400;
+		font-size: 14.06px;
+		line-height: 100%;
+		letter-spacing: 0%;
+	}
+
+	.input__field {
+		font-weight: 400;
+		font-size: 14.06px;
+		line-height: 100%;
+		letter-spacing: 0%;
+		padding: 8px 0 11px 15px;
+	}
 }

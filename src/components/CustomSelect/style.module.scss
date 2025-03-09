@@ -5,7 +5,7 @@
 .select__container {
 	display: flex;
 	flex-direction: row;
-	border: 2px solid #000;
+	border: 1px solid #000;
 	border-radius: 32px;
 }
 
@@ -29,7 +29,7 @@
 
 .select__text {
 	margin: 0;
-	font-family: Ubuntu;
+	font-family: ClearSans;
 	font-size: 24px;
 	font-weight: 400;
 	line-height: 32.45px;
@@ -44,9 +44,34 @@
 
 .input__label {
 	color: var(--Black-600, #000);
-	font-family: Ubuntu;
+	font-family: ClearSans;
 	font-size: 32px;
 	font-weight: 400;
 	line-height: 43.27px;
 	margin: 0 0 8px 0;
+}
+
+@media screen and (max-width: 767px) {
+	.select {
+		flex: 1;
+		padding: 12px 5px;
+		border-radius: 30px;
+		border-collapse: collapse;
+		cursor: pointer;
+		transition: background-color 0.3s, border-color 0.3s;
+	}
+
+	.input__label {
+		font-weight: 400;
+		font-size: 14.06px;
+		line-height: 100%;
+		letter-spacing: 0%;
+	}
+
+	.select__text {
+		font-weight: 400;
+		font-size: 14.06px;
+		line-height: 100%;
+		letter-spacing: 0%;
+	}
 }

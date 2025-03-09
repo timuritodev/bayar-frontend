@@ -107,15 +107,17 @@ export const ProfilePage = () => {
       <div className={styles.container}>
         <div className={styles.title__wrapper}>
           <h2 className={styles.title}>Мой профиль</h2>
-          <button
-            className={styles.button__profile}
-            onClick={() => {
-              dispatch(signOut());
-            }}
-          >
-            <Image className={styles.button__profile__img} src={exit_button} alt="Кнопка выхода из учетной записи" />
-            <span className={styles.button__profile__text}>Выйти</span>
-          </button>
+          {user.token !== "" && (
+            <button
+              className={styles.button__profile}
+              onClick={() => {
+                dispatch(signOut());
+              }}
+            >
+              <Image className={styles.button__profile__img} src={exit_button} alt="Кнопка выхода из учетной записи" />
+              <span className={styles.button__profile__text}>Выйти</span>
+            </button>
+          )}
         </div>
         {user.token !== "" ? (
           <form
