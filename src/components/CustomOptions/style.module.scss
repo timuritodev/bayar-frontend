@@ -5,22 +5,22 @@
 
 .selectLabel {
 	color: var(--Black-600, #000);
-	font-family: Ubuntu;
+	font-family: ClearSans;
 	font-size: 32px;
 	font-weight: 400;
 	line-height: 43.27px;
 }
 
 .selectBox {
-	padding: 11px 25px 11px 25px;
-	border: 2px solid #000;
-	border-radius: 32px;
-	background: #fff;
+	padding: 12px 25px 12px 15px;
+	border: 1px solid #000;
+	border-radius: 29.84px;
+	// background: #fff;
 	cursor: pointer;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	font-family: Ubuntu;
+	font-family: ClearSans;
 	font-size: 24px;
 	font-weight: 400;
 	line-height: 43.27px;
@@ -60,7 +60,7 @@
 	padding: 10px;
 	cursor: pointer;
 	transition: background 0.2s;
-	font-family: Ubuntu;
+	font-family: ClearSans;
 	font-size: 24px;
 	font-weight: 400;
 	line-height: 32.45px;
@@ -69,4 +69,29 @@
 .option:hover,
 .option.selected {
 	background: #f0f0f0;
+}
+
+@media screen and (max-width: 767px) {
+	.selectLabel {
+		font-weight: 400;
+		font-size: 14.06px;
+		line-height: 100%;
+		letter-spacing: 0%;
+	}
+
+	.selectBox {
+		font-weight: 400;
+		font-size: 14.06px;
+		line-height: 100%;
+		letter-spacing: 0%;
+		border-radius: 20px;
+		padding: 14.5px 25px 14.5px 15px;
+	}
+
+	.option {
+		font-weight: 400;
+		font-size: 14.06px;
+		line-height: 100%;
+		letter-spacing: 0%;
+	}
 }

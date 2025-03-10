@@ -114,7 +114,7 @@ const CalculatorPage = () => {
 	return (
 		<div className={styles.calculator}>
 			<div className={styles.container}>
-				<h1 className={styles.title}>Калькулятор</h1>
+				<h1 className={styles.title}>Расчет панелей</h1>
 				<form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
 					<div className={styles.form__container}>
 						{/* <CustomSelect
