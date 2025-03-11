@@ -1,3 +1,4 @@
+import { useResize } from '@/hooks/useResize';
 import { sendEmailApi } from '@/services/redux/slices/mailer/mailer';
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -20,6 +21,7 @@ interface Form {
 
 export const ConsultationForm = () => {
 	const dispatch = useAppDispatch();
+	const { width } = useResize();
 	const [isPopupOpened, setIsPopupOpened] = useState<boolean>(false);
 
 	const {
@@ -60,36 +62,67 @@ export const ConsultationForm = () => {
 				onSubmit={handleSubmit(onSubmit)}
 				noValidate
 			>
-				<div className={styles.wrapper}>
-
-					<CustomInput
-						inputType={CustomInputTypes.fio}
-						labelText={"ФИО"}
-						validation={{
-							...register("fio", NAME_VALIDATION_CONFIG),
-						}}
-						placeholder="Иван"
-						error={errors?.fio?.message}
-					/>
-					<CustomButton
-						buttonText={"Отправить"}
-						handleButtonClick={handleSubmit(onSubmit)}
-						disabled={!isDirty || !isValid}
-						type="submit"
-					/>
-				</div>
-				<div className={styles.wrapper}>
-					<CustomInput
-						inputType={CustomInputTypes.email}
-						labelText={"Электронная почта"}
-						validation={{
-							...register("email", EMAIL_VALIDATION_CONFIG),
-						}}
-						placeholder="email@example.com"
-						error={errors?.email?.message}
-					/>
-					<p className={styles.subtitle}>Нажимая кнопку «Отправить», я даю своё согласие на обработку и распространение персональных данных.</p>
-				</div>
+				{width > 767 ? (
+					<>
+						<div className={styles.wrapper}>
+							<CustomInput
+								inputType={CustomInputTypes.fio}
+								labelText={"ФИО"}
+								validation={{
+									...register("fio", NAME_VALIDATION_CONFIG),
+								}}
+								placeholder="Иван"
+								error={errors?.fio?.message}
+							/>
+							<CustomButton
+								buttonText={"Отправить"}
+								handleButtonClick={handleSubmit(onSubmit)}
+								disabled={!isDirty || !isValid}
+								type="submit"
+							/>
+						</div>
+						<div className={styles.wrapper}>
+							<CustomInput
+								inputType={CustomInputTypes.email}
+								labelText={"Электронная почта"}
+								validation={{
+									...register("email", EMAIL_VALIDATION_CONFIG),
+								}}
+								placeholder="email@example.com"
+								error={errors?.email?.message}
+							/>
+							<p className={styles.subtitle}>Нажимая кнопку «Отправить», я даю своё согласие на обработку и распространение персональных данных.</p>
+						</div>
+					</>
+				) : (
+					<div className={styles.wrapper}>
+						<CustomInput
+							inputType={CustomInputTypes.fio}
+							labelText={"ФИО"}
+							validation={{
+								...register("fio", NAME_VALIDATION_CONFIG),
+							}}
+							placeholder="Иван"
+							error={errors?.fio?.message}
+						/>
+						<CustomInput
+							inputType={CustomInputTypes.email}
+							labelText={"Электронная почта"}
+							validation={{
+								...register("email", EMAIL_VALIDATION_CONFIG),
+							}}
+							placeholder="email@example.com"
+							error={errors?.email?.message}
+						/>
+						<CustomButton
+							buttonText={"Отправить"}
+							handleButtonClick={handleSubmit(onSubmit)}
+							disabled={!isDirty || !isValid}
+							type="submit"
+						/>
+						<p className={styles.subtitle}>Нажимая кнопку «Отправить», я даю своё согласие на обработку и распространение персональных данных.</p>
+					</div>
+				)}
 			</form>
 			<Popup
 				title="Заявка отправлена"

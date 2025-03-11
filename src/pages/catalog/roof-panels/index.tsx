@@ -4,6 +4,7 @@ import { ConsultationForm } from '@/components/ConsultationForm/ConsultationForm
 import { RalColorSlider } from '@/components/RalColorSlider/RalColorSlider';
 import { RoofTable } from '@/components/Table/RoofTable';
 import { UniCardsList } from '@/components/UniCard/UniCardList';
+import { useResize } from '@/hooks/useResize';
 import { useRef } from 'react';
 import pic from '../../../images/catalog/roof.jpg';
 import { benefits, roof } from '../constants';
@@ -11,6 +12,7 @@ import styles from "./style.module.scss";
 
 const Page = () => {
 	const formRef = useRef<HTMLDivElement | null>(null);
+	const { width } = useResize();
 
 	const scrollToForm = () => {
 		formRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -33,8 +35,12 @@ const Page = () => {
 					<UniCardsList data={roof} />
 					<h2 className={styles.subtitle}>Цветовое решение</h2>
 					<RalColorSlider />
-					<h2 className={styles.subtitle}>Профили</h2>
-					<RoofTable />
+					{width > 767 &&
+						<>
+							<h2 className={styles.subtitle}>Профили</h2>
+							<RoofTable />
+						</>
+					}
 					<h2 className={styles.subtitle}>Заказать консультацию</h2>
 					<div ref={formRef}>
 						<ConsultationForm />

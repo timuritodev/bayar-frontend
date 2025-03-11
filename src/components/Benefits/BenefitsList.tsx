@@ -7,7 +7,7 @@ interface BenefitsListProps {
 	data: IBenefit[];
 }
 
-export const BenefitsList: FC<BenefitsListProps> = ({ data }) => {
+export const BenefitsList: FC<BenefitsListProps> = ({ data }) => { // TODO сделать как в макете для 360px
 	return (
 		<div className={styles.list}>
 			{data.length !== 0 &&

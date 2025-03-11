@@ -20,3 +20,21 @@
 	text-align: center;
 	margin: 21px 0 0 0;
 }
+
+@media screen and (max-width: 767px) {
+	.container {
+		width: 107px;
+	}
+
+	.color {
+		width: 106px;
+		height: 95px;
+	}
+
+	.title {
+		font-size: 22px;
+		line-height: 100%;
+		letter-spacing: 0%;
+		margin: 10px 0 0 0;
+	}
+}

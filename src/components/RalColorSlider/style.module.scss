@@ -16,9 +16,20 @@
 }
 
 .nextArrow {
-	right: -40px;
+	right: -20px;
 }
 
 .prevArrow {
-	left: -50px;
+	left: -35px;
+}
+
+@media screen and (max-width: 767px) {
+	.slick_slider {
+		max-width: 250px;
+	}
+
+	.arrow {
+		width: 20px;
+		height: 30px;
+	}
 }
