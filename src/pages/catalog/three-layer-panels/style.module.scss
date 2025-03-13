@@ -15,10 +15,20 @@
 }
 
 .subtitle {
-	font-family: Ubuntu;
+	font-family: ClearSans;
 	font-size: 48px;
 	font-weight: 700;
 	line-height: 54.85px;
 	text-align: center;
+	letter-spacing: 0%;
 	margin: 100px 0 60px 0;
+}
+
+@media screen and (max-width: 767px) {
+	.subtitle {
+		font-size: 20px;
+		line-height: 100%;
+		text-align: center;
+		margin: 40px 0 20px 0;
+	}
 }

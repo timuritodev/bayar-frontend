@@ -1,3 +1,4 @@
+import { useResize } from '@/hooks/useResize';
 import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -10,7 +11,7 @@ import styles from './style.module.scss';
 const NextArrow = (props: { onClick?: () => void }) => {
 	return (
 		<div className={styles.nextArrow} onClick={props.onClick}>
-			<Image src={next} alt="next_arrow" width={40} height={60} />
+			<Image className={styles.arrow} src={next} alt="next_arrow" width={40} height={60} />
 		</div>
 	);
 };
@@ -18,18 +19,20 @@ const NextArrow = (props: { onClick?: () => void }) => {
 const PrevArrow = (props: { onClick?: () => void }) => {
 	return (
 		<div className={styles.prevArrow} onClick={props.onClick}>
-			<Image src={prev} alt="prev_arrow" width={40} height={60} />
+			<Image className={styles.arrow} src={prev} alt="prev_arrow" width={40} height={60} />
 		</div>
 	);
 };
 
 export const RalColorSlider = () => {
+	const { width } = useResize();
+
 	const settings = {
 		dots: false,
 		infinite: true,
 		speed: 500,
-		slidesToShow: 7,
-		slidesToScroll: 3,
+		slidesToShow: width < 767 ? 2 : 7,
+		slidesToScroll: width < 767 ? 1 : 3,
 		nextArrow: <NextArrow />,
 		prevArrow: <PrevArrow />,
 	};

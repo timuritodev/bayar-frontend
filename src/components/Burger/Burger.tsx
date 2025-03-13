@@ -1,10 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FC, useEffect, useState } from "react";
-import logo from "../../images/logo.png";
-import loop from "../../images/loop.svg";
-import loop_small from "../../images/loop_small.svg";
-import icon from "../../images/person_active.svg";
+import logo from "../../images/logo_s.svg";
+import icon from "../../images/profile.svg";
 import { selectUser } from "../../services/redux/slices/user/user";
 import { useAppSelector } from "../../services/typeHooks";
 // import Search from "../Search/Search";
@@ -62,12 +60,12 @@ export const Burger: FC<BurgerProps> = ({ isPopupOpen, switchPopup }) => {
               />
             </Link>
             <div className={styles.burger_links__wrapper}>
-              <Image
+              {/* <Image
                 className={styles.header__search_button_search}
                 src={loop_small}
                 alt="Кнопка поиска"
                 onClick={switchPopup}
-              />
+              /> */}
               <Link href="/profile">
                 <Image
                   className={styles.header__profile_icon}
@@ -78,7 +76,7 @@ export const Burger: FC<BurgerProps> = ({ isPopupOpen, switchPopup }) => {
               </Link>
             </div>
           </div>
-          <form className={styles.burger__search}>
+          {/*<form className={styles.burger__search}>
             <Image
               className={styles.burger__search_button_search}
               src={loop}
@@ -95,23 +93,14 @@ export const Burger: FC<BurgerProps> = ({ isPopupOpen, switchPopup }) => {
               value={values}
               autoComplete="off"
             />
-            {/* <Search
+             <Search
               isOpenSearch={isOpenSearch}
               isClose={setSearchClose}
               values={values}
               switchPopup={switchPopup}
-            /> */}
-          </form>
+            /> 
+          </form>*/}
           <div className={styles.burger__links_container}>
-            {/* {user.token && (
-              <Link
-                href="/catalog"
-                className={styles.burger__link}
-                onClick={handleLinkClick}
-              >
-                Интернет-магазин
-              </Link>
-            )} */}
             {user.token === "" && (
               <>
                 <Link
@@ -130,26 +119,44 @@ export const Burger: FC<BurgerProps> = ({ isPopupOpen, switchPopup }) => {
                 </Link>
               </>
             )}
+            <li className={styles.hover__link}>
+              Каталог
+              <ul className={styles.hover__menu}>
+                <div className={styles.hover__menu_container}>
+                  <Link
+                    href="/catalog/three-layer-panels"
+                    className={styles.burger__link}
+                    onClick={handleLinkClick}>
+                    Трёхслойные сэндвич-панели
+                  </Link>
+                  <Link
+                    href="/catalog/roof-panels"
+                    className={styles.burger__link}
+                    onClick={handleLinkClick}>
+                    Кровельные сэндвич-панели
+                  </Link>
+                  <Link
+                    href="/catalog/wall-panels"
+                    className={styles.burger__link}
+                    onClick={handleLinkClick}>
+                    Стеновые сэндвич-панели
+                  </Link>
+                </div>
+              </ul>
+            </li>
             <Link
-              href="/catalog"
+              href="/calculator"
               className={styles.burger__link}
               onClick={handleLinkClick}
             >
-              Товары
+              Калькулятор
             </Link>
             <Link
-              href="/coffee-machines"
+              href="/about"
               className={styles.burger__link}
               onClick={handleLinkClick}
             >
-              Кофемашины
-            </Link>
-            <Link
-              href="/wholesale"
-              className={styles.burger__link}
-              onClick={handleLinkClick}
-            >
-              Кофе для бизнеса
+              О нас
             </Link>
           </div>
         </div>

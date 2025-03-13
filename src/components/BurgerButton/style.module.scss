@@ -1,16 +1,17 @@
 .burgerButton__image {
-  width: 22px;
-  height: 16px;
-  background-image: url(../../images/burger-menu.svg);
-  background-color: unset;
-  background-repeat: no-repeat;
-  border: none;
-  display: none;
-    padding: 0;
+	width: 22px;
+	height: 22px;
+	background-image: url(../../images/burger-menu.svg);
+	background-color: unset;
+	background-repeat: no-repeat;
+	border: none;
+	display: none;
+	padding: 0;
+	object-fit: cover;
 }
 
 @media screen and (max-width: 1410px) {
-  .burgerButton__image {
-    display: block;
-  }
+	.burgerButton__image {
+		display: block;
+	}
 }

@@ -27,7 +27,7 @@
 
 .title {
 	z-index: 2;
-	font-family: Ubuntu;
+	font-family: ClearSans;
 	font-weight: 700;
 	font-size: 48px;
 	line-height: 54.85px;
@@ -38,7 +38,7 @@
 
 .subtitle {
 	z-index: 2;
-	font-family: Ubuntu;
+	font-family: ClearSans;
 	font-weight: 400;
 	font-size: 32px;
 	line-height: 43.27px;
@@ -50,7 +50,7 @@
 
 .button {
 	background-color: #f08b23;
-	font-family: Ubuntu;
+	font-family: ClearSans;
 	font-weight: 400;
 	font-size: 34.69px;
 	line-height: 46.91px;
@@ -66,5 +66,30 @@
 	color: #fff;
 	&:hover {
 		background-color: #d16c36;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.title {
+		font-size: 24px;
+		line-height: 100%;
+		letter-spacing: 0%;
+		text-align: center;
+	}
+
+	.subtitle {
+		font-size: 16px;
+		line-height: 100%;
+		letter-spacing: 0%;
+		margin: 40px 45px;
+	}
+
+	.button {
+		font-size: 19.77px;
+		line-height: 100%;
+		letter-spacing: 0%;
+		padding: 17px 53px;
+		border-radius: 13.13px;
+		width: 80%;
 	}
 }

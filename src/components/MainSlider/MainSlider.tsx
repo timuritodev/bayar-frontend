@@ -11,7 +11,7 @@ import styles from './style.module.scss';
 const NextArrow = (props: { onClick?: () => void }) => {
 	return (
 		<div className={styles.nextArrow} onClick={props.onClick}>
-			<Image src={next} alt="Next" width={40} height={40} />
+			<Image src={next} className={styles.arrow} alt="Next" width={40} height={40} />
 		</div>
 	);
 };
@@ -19,7 +19,7 @@ const NextArrow = (props: { onClick?: () => void }) => {
 const PrevArrow = (props: { onClick?: () => void }) => {
 	return (
 		<div className={styles.prevArrow} onClick={props.onClick}>
-			<Image src={prev} alt="Prev" width={40} height={40} />
+			<Image src={prev} className={styles.arrow} alt="Prev" width={40} height={40} />
 		</div>
 	);
 };
