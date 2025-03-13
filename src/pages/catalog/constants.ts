@@ -5,10 +5,12 @@ import house from '../../images/benefits/house.svg';
 import leaf from '../../images/benefits/leaf.svg';
 import star from '../../images/benefits/star.svg';
 import sun from '../../images/benefits/sun.svg';
+import fasteners from '../../images/catalog/fasteners.jpeg';
 import mineral from '../../images/catalog/mineral.jpeg';
 import polystyrene from '../../images/catalog/polystyrene.jpeg';
 import roof_panel from '../../images/catalog/roof_panel.png';
 import wall_panel from '../../images/catalog/wall_panel.jpeg';
+import waterproof from '../../images/catalog/waterproofing.png';
 
 
 export const benefits: IBenefit[] = [
@@ -62,5 +64,23 @@ export const roof: IUniCard[] = [
 		id: 2,
 		title: 'Пенополистирол',
 		img: polystyrene
+	},
+]
+
+export const accessories: IUniCard[] = [
+	{
+		id: 1,
+		title: 'Гидроизоляция, ветрозащита',
+		img: waterproof,
+		width: 460,
+		height: 440,
+		link: 'accessories/water-wind-proofing'
+	},
+	{
+		id: 2,
+		title: 'Крепёж',
+		img: fasteners,
+		width: 460,
+		height: 440,
 	},
 ]

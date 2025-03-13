@@ -1,0 +1,24 @@
+.main {
+	width: 100%;
+	margin: 0 auto;
+	background: #fff;
+}
+
+.container {
+	// max-width: 1280px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	// padding: 48px 0 120px 0;
+}
+
+.subtitle {
+	font-family: Ubuntu;
+	font-size: 48px;
+	font-weight: 700;
+	line-height: 54.85px;
+	text-align: center;
+	margin: 100px 0 60px 0;
+}
