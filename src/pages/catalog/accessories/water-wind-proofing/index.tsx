@@ -8,7 +8,6 @@ const Page = () => {
 	const dispatch = useAppDispatch();
 	const products = useAppSelector((state) => state.water_accessory.products);
 
-	console.log(products, 'products');
 	useEffect(() => {
 		dispatch(getWater_accessoryApi());
 	}, []);
