@@ -12,14 +12,27 @@
 	justify-content: center;
 	align-items: center;
 	margin: 0 auto;
-	padding: 48px 0 120px 0;
+	padding: 60px 0 60px 0;
 }
 
-.subtitle {
+.title {
 	font-family: Ubuntu;
 	font-size: 48px;
 	font-weight: 700;
 	line-height: 54.85px;
 	text-align: center;
-	margin: 100px 0 60px 0;
+	margin: 0 0 60px 0;
+}
+
+@media screen and (max-width: 767px) {
+	.container {
+		padding: 40px 0 40px 0;
+	}
+
+	.title {
+		font-size: 20px;
+		line-height: 100%;
+		text-align: center;
+		margin: 0 0 20px 0;
+	}
 }

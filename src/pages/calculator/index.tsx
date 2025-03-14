@@ -220,7 +220,7 @@ const CalculatorPage = () => {
 			</div >
 			<Popup
 				title="Приблизительная стоимость"
-				text={calculator}
+				text={calculator} // TODO сделать нормальный вывод цены 
 				isOpened={isPopupOpened}
 				setIsOpened={setIsPopupOpened}
 			/>

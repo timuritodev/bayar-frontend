@@ -16,7 +16,7 @@ const Page = () => {
 		<>
 			<div className={styles.page}>
 				<div className={styles.container}>
-					<h2 className={styles.subtitle}>Гидроизоляция, ветрозащита</h2>
+					<h1 className={styles.title}>Гидроизоляция, ветрозащита</h1>
 					<WaterAccList data={products} />
 				</div>
 			</div>
