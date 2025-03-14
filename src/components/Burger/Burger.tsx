@@ -141,6 +141,11 @@ export const Burger: FC<BurgerProps> = ({ isPopupOpen, switchPopup }) => {
                     onClick={handleLinkClick}>
                     Стеновые сэндвич-панели
                   </Link>
+                  <Link
+                    href="/catalog/accessories"
+                    className={styles.burger__link}> {/*TODO тут все съезжает при открытии, пофиксить и еще надо залочить прокрутку страницы при открытом бургере */}
+                    Комплектующие для сэндвич-панелей
+                  </Link>
                 </div>
               </ul>
             </li>

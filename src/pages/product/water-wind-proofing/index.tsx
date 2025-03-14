@@ -6,7 +6,7 @@ import styles from "./style.module.scss";
 
 const Page = () => {
 	const dispatch = useAppDispatch();
-	const product = useAppSelector((state) => state.water_accessory.product);
+	const product = useAppSelector((state) => state.water_accessory.product); // сейчас в пути не пишется id, надо попробовать перейти на этот способ
 	console.log(product, 'products');
 
 

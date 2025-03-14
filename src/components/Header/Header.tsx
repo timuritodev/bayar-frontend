@@ -13,7 +13,7 @@ import { BurgerButton } from "../BurgerButton/BurgerButton";
 // import Search from "../Search/Search";
 import styles from "./style.module.scss";
 
-const Header: FC = () => {
+const Header: FC = () => { // TODO хедер съехал из-за того что я убрад поиск
   const user = useAppSelector(selectUser);
   const router = useRouter();
 
@@ -75,9 +75,11 @@ const Header: FC = () => {
                   <Link href="/catalog/roof-panels" className={styles.header__sub_link}>
                     Кровельные сэндвич-панели
                   </Link>
-
                   <Link href="/catalog/wall-panels" className={styles.header__sub_link}>
                     Стеновые сэндвич-панели
+                  </Link>
+                  <Link href="/catalog/accessories" className={styles.header__sub_link}>
+                    Комплектующие для сэндвич-панелей
                   </Link>
                 </div>
               </ul>

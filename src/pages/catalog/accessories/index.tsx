@@ -3,7 +3,7 @@ import { UniCardsList } from '@/components/UniCard/UniCardList';
 import { accessories } from '../constants';
 import styles from "./style.module.scss";
 
-const Page = () => {
+const Page = () => { // надо все переименовать с accessories на components
 
 	return (
 		<>
