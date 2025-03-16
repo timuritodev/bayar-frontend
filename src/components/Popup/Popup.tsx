@@ -4,7 +4,7 @@ import styles from './style.module.scss';
 
 interface IPopup {
 	title: string;
-	text: string;
+	text: string | JSX.Element[];
 	link?: string;
 	isOpened: boolean;
 	setIsOpened: React.Dispatch<React.SetStateAction<boolean>>;

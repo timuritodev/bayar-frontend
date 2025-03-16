@@ -18,7 +18,24 @@ export const calculateApi = createAsyncThunk(
 const initialState: ICalculatorState = {
 	status: "idle",
 	error: "",
-	total_cost: "",
+	total_cost: 0,
+	details: {
+		wall_panel_cost: 0,
+		roof_panel_cost: 0,
+		insulation_cost: 0,
+		basePrices: {
+			wall: 0,
+			roof: 0,
+		},
+		multipliers: {
+			metalFactor: 0,
+			wallPanelWidthFactor: 0,
+			wallThicknessFactor: 0,
+			roofThicknessFactor: 0,
+			colorMultiplier: 0,
+		},
+		vat_included: false,
+	}
 };
 
 export const calculatorSlice = createSlice({
@@ -30,9 +47,14 @@ export const calculatorSlice = createSlice({
 			.addCase(calculateApi.fulfilled, (state, action) => {
 				state.status = "success";
 				state.total_cost = action.payload.total_cost;
+				state.details = action.payload.details;
 			})
 			.addCase(calculateApi.pending, (state) => {
 				state.status = "loading";
+			})
+			.addCase(calculateApi.rejected, (state, action) => {
+				state.status = "failed";
+				state.error = action.payload as string;
 			});
 	},
 });

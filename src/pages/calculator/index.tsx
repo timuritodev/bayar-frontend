@@ -18,25 +18,20 @@ import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { CustomButton } from "../../components/CustomButton/CustomButton";
 import { useAppDispatch, useAppSelector } from "../../services/typeHooks";
+import { options_insulation_density, options_insulation_type, options_metal_thickness, options_wall_panel_width } from './constants';
 import styles from "./style.module.scss";
 
 const CalculatorPage = () => {
 	const dispatch = useAppDispatch();
-	const calculator = useAppSelector((state) => state.calculator.total_cost);
+	const calculator = useAppSelector((state) => state.calculator);
 
 	const [isPopupOpened, setIsPopupOpened] = useState<boolean>(false);
+	const [insulation_type, setInsulation_type] = useState('mineral_wool');
+	const [wall_panel_width, setWall_panel_width] = useState('1');
+	const [metal_thickness, setMetal_thickness] = useState('0,45');
+	const [insulation_density, setInsulation_density] = useState('95');
 	const [buildingType, setBuildingType] = useState("односкатная");
 	const [roofType, setRoofType] = useState("с");
-
-	const optionsBuilding: ISelectOption[] = [
-		{ value: 'односкатная', label: 'Односкатная кровля' },
-		{ value: 'двускатная', label: 'Двускатная кровля' },
-	];
-
-	const optionsRoof: ISelectOption[] = [
-		{ value: 'с', label: 'С парапетом' },
-		{ value: 'без', label: 'Без парапета' },
-	];
 
 	const {
 		register,
@@ -81,35 +76,18 @@ const CalculatorPage = () => {
 		setIsPopupOpened(false);
 	}, []);
 
-	const [insulation_type, setInsulation_type] = useState('mineral_wool');
-	const [wall_panel_width, setWall_panel_width] = useState('1');
-	const [metal_thickness, setMetal_thickness] = useState('0,45');
-	const [insulation_density, setInsulation_density] = useState('95');
+	const formatPrice = (price: number) => {
+		return new Intl.NumberFormat("ru-RU").format(price);
+	};
 
-	const options_insulation_type = [
-		{ value: "mineral_wool", label: "Минеральная вата", },
-	];
-
-	const options_wall_panel_width = [
-		{ value: "1", label: "1м" },
-		{ value: "1.19", label: "1.19м" },
-	];
-
-	const options_metal_thickness = [
-		{ value: "0,45", label: "0,45мм" },
-		{ value: "0,5", label: "0,5мм" },
-		{ value: "0,6", label: "0,6мм" },
-		{ value: "0,7", label: "0,7мм" },
-	];
-
-	const options_insulation_density = [
-		{ value: "95", label: "95" },
-		{ value: "100", label: "100" },
-		{ value: "105", label: "105" },
-		{ value: "110", label: "110" },
-		{ value: "115", label: "115" },
-		{ value: "120", label: "120" },
-	];
+	const calculator_formatted = [
+		`Стоимость стен: ${formatPrice(calculator.details.basePrices.wall)} ₽/м²`,
+		`Стоимость крыши: ${formatPrice(calculator.details.basePrices.roof)} ₽/м²`,
+		`Утепление: ${formatPrice(calculator.details.insulation_cost)} ₽`,
+		`Панели крыши: ${formatPrice(calculator.details.roof_panel_cost)} ₽`,
+		`Панели стен: ${formatPrice(calculator.details.wall_panel_cost)} ₽`,
+		`Общая стоимость: ${formatPrice(calculator.total_cost)} ₽`
+	].map((line, index) => <p key={index}>{line}</p>);
 
 	return (
 		<div className={styles.calculator}>
@@ -202,7 +180,7 @@ const CalculatorPage = () => {
 							labelText="Цвет панелей"
 							validation={{ ...register("color", COLOR_VALIDATION_CONFIG) }}
 							error={errors?.color?.message}
-						/> */}
+						/> TODO добавить выбор цвета*/}
 						<CustomInput
 							inputType={CustomInputTypes.region}
 							labelText="Район строительства"
@@ -220,7 +198,7 @@ const CalculatorPage = () => {
 			</div >
 			<Popup
 				title="Приблизительная стоимость"
-				text={calculator} // TODO сделать нормальный вывод цены 
+				text={calculator_formatted}
 				isOpened={isPopupOpened}
 				setIsOpened={setIsPopupOpened}
 			/>
