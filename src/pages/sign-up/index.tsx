@@ -1,6 +1,6 @@
 import CustomSelect from '@/components/CustomSelect/CustomSelect';
 import Popup from '@/components/Popup/Popup';
-import Head from 'next/head';
+import SEO from '@/components/SEO/SEO';
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { CustomButton } from "../../components/CustomButton/CustomButton";
@@ -97,16 +97,8 @@ const SignUpPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Регистрация - Beancode</title>
-        <meta name="description" content="Зарегистрируйтесь на Beancode, чтобы получить доступ к личному кабинету и эксклюзивным функциям. Заполните форму регистрации и начните пользоваться всеми преимуществами нашего сервиса." />
-        <meta name="keywords" content="регистрация, личный кабинет, Beancode, создать аккаунт, регистрация на сайте" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://beancode.ru/sign-up" />
-        <meta property="og:title" content="Регистрация - Beancode" />
-        <meta property="og:description" content="Присоединяйтесь к Beancode! Заполните форму регистрации, чтобы получить доступ к вашему личному кабинету и использовать все наши возможности." />
-        <meta property="og:image" content="https://beancode.ru/api/images/open_graph.jpeg" />
-      </Head>
+      <SEO title="Регистрация - BAYAR" description="Зарегистрируйтесь на BAYAR, чтобы получить доступ к личному кабинету и эксклюзивным функциям. Заполните форму регистрации и начните пользоваться всеми преимуществами нашего сервиса." keywords="регистрация, личный кабинет, BAYAR, создать аккаунт, регистрация на сайте" />
+
       <div className={styles.signup}>
         <div className={styles.signup__container}>
           <h1 className={styles.signup__title}>Регистрация</h1>

@@ -1,5 +1,5 @@
 import Popup from '@/components/Popup/Popup';
-import Head from 'next/head';
+import SEO from '@/components/SEO/SEO';
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -64,15 +64,8 @@ const SignInPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Вход в личный кабинет - Beancode</title>
-        <meta name="description" content="Введите свои данные для доступа в личный кабинет. Если у вас нет аккаунта, вы можете зарегистрироваться здесь." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://beancode.ru/sign-in" />
-        <meta property="og:title" content="Вход в личный кабинет - Beancode" />
-        <meta property="og:description" content="Введите свои данные для доступа в личный кабинет. Если у вас нет аккаунта, вы можете зарегистрироваться здесь." />
-        <meta property="og:image" content="https://beancode.ru/api/images/open_graph.jpeg" />
-      </Head>
+      <SEO title="Вход в личный кабинет - BAYAR" description="Введите свои данные для доступа в личный кабинет. Если у вас нет аккаунта, вы можете зарегистрироваться здесь." keywords="личный кабинет, войти, вход, bayar" />
+
       <div className={styles.signup}>
         <div className={styles.signup__container}>
           <h1 className={styles.signup__title}>Вход в личный кабинет</h1>

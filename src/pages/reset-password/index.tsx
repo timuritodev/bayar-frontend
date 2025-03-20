@@ -1,5 +1,5 @@
 import Popup from '@/components/Popup/Popup';
-import Head from 'next/head';
+import SEO from '@/components/SEO/SEO';
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -65,16 +65,8 @@ const ResetPasswordPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Сброс пароля - Beancode</title>
-        <meta name="description" content="Страница сброса пароля на Beancode. Введите новый пароль для восстановления доступа к вашему аккаунту." />
-        <meta name="keywords" content="сброс пароля, восстановление пароля, смена пароля, Beancode" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://beancode.ru/reset-password" />
-        <meta property="og:title" content="Сброс пароля - Beancode" />
-        <meta property="og:description" content="Введите новый пароль для восстановления доступа к вашему аккаунту на Beancode. Быстро и просто восстановите доступ." />
-        <meta property="og:image" content="https://beancode.ru/api/images/open_graph.jpeg" />
-      </Head>
+      <SEO title="Сброс пароля - BAYAR" description="Страница сброса пароля на BAYAR. Введите новый пароль для восстановления доступа к вашему аккаунту." keywords="сброс пароля, восстановление пароля, смена пароля, BAYAR" />
+
       <div className={styles.signup}>
         <div className={styles.signup__container}>
           <h1 className={styles.signup__title}>Введите новый пароль</h1>

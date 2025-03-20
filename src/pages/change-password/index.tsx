@@ -1,5 +1,5 @@
 import Popup from '@/components/Popup/Popup';
-import Head from 'next/head';
+import SEO from '@/components/SEO/SEO';
 import React, { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { CustomButton } from "../../components/CustomButton/CustomButton";
@@ -54,16 +54,8 @@ const ChangePasswordPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Смена пароля - Beancode</title>
-        <meta name="description" content="Измените свой пароль для безопасного доступа к вашей учетной записи Beancode." />
-        <meta name="keywords" content="смена пароля, безопасность, учетная запись, Beancode" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://beancode.ru/change-password" />
-        <meta property="og:title" content="Смена пароля - Beancode" />
-        <meta property="og:description" content="Измените свой пароль для безопасного доступа к вашей учетной записи Beancode." />
-        <meta property="og:image" content="https://beancode.ru/api/images/open_graph.jpeg" />
-      </Head>
+      <SEO title="Смена пароля - BAYAR" description="Измените свой пароль для безопасного доступа к вашей учетной записи Beancode." keywords="смена пароля, безопасность, учетная запись, BAYAR" />
+
       <div className={styles.signup}>
         <div className={styles.signup__container}>
           <h1 className={styles.signup__title}>Смена пароля</h1>

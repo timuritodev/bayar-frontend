@@ -3,6 +3,7 @@ import styles from "./style.module.scss";
 const Page = () => {
 	return (
 		<>
+			<SEO title="О компании - BAYAR" description="" keywords="" />
 			<div className={styles.about}>
 				<div className={styles.container}>
 					<h1 className={styles.title}>О компании</h1>

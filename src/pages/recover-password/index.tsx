@@ -1,5 +1,5 @@
 import Popup from '@/components/Popup/Popup';
-import Head from 'next/head';
+import SEO from '@/components/SEO/SEO';
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { CustomButton } from "../../components/CustomButton/CustomButton";
@@ -49,16 +49,8 @@ const RecoverPasswordPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Восстановление пароля - Beancode</title>
-        <meta name="description" content="Страница восстановления пароля на Beancode. Введите вашу электронную почту, чтобы получить инструкции по сбросу пароля." />
-        <meta name="keywords" content="восстановление пароля, сброс пароля, восстановить доступ, Beancode" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://beancode.ru/recover-password" />
-        <meta property="og:title" content="Восстановление пароля - Beancode" />
-        <meta property="og:description" content="Получите инструкции по восстановлению пароля для вашего аккаунта на Beancode. Введите ваш email, чтобы начать процесс восстановления." />
-        <meta property="og:image" content="https://beancode.ru/api/images/open_graph.jpeg" />
-      </Head>
+      <SEO title="Восстановление пароля - BAYAR" description="Страница восстановления пароля на BAYAR. Введите вашу электронную почту, чтобы получить инструкции по сбросу пароля." keywords="восстановление пароля, сброс пароля, восстановить доступ, BAYAR" />
+
       <div className={styles.signup}>
         <div className={styles.signup__container}>
           <h1 className={styles.signup__title}>Восстановление пароля</h1>
