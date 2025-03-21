@@ -1,6 +1,7 @@
 import CustomInput from "@/components/CustomInput/CustomInput";
 import CustomOptions from '@/components/CustomOptions/CustomOptions';
 import Popup from '@/components/Popup/Popup';
+import SEO from '@/components/SEO/SEO';
 import {
 	BUILDING_LENGTH_VALIDATION_CONFIG,
 	BUILDING_WIDTH_VALIDATION_CONFIG,
@@ -90,119 +91,123 @@ const CalculatorPage = () => {
 	].map((line, index) => <p key={index}>{line}</p>);
 
 	return (
-		<div className={styles.calculator}>
-			<div className={styles.container}>
-				<h1 className={styles.title}>Расчет панелей</h1>
-				<form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
-					<div className={styles.form__container}>
-						{/* <CustomSelect
+		<>
+			<SEO title="Калькулятор - BAYAR" description="Калькулятор для расчета стоимости сэндвич-панелей" keywords="калькулятор сэндвич-панели, калькулятор сэндвич панели, калькулятор стоимость сэндвич-панели, калькулятор" />
+
+			<div className={styles.calculator}>
+				<div className={styles.container}>
+					<h1 className={styles.title}>Расчет панелей</h1>
+					<form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
+						<div className={styles.form__container}>
+							{/* <CustomSelect
 							labelText={"Тип здания"}
 							options={optionsBuilding}
 							selectedValue={buildingType}
 							onChange={setBuildingType}
 						/> */}
-						{/* <CustomSelect
+							{/* <CustomSelect
 							labelText={"Тип кровли"}
 							options={optionsRoof}
 							selectedValue={roofType}
 							onChange={setRoofType}
 						/> */}
-						<CustomInput
-							inputType={CustomInputTypes.building_length}
-							labelText="Длина здания, м"
-							validation={{ ...register("building_length", BUILDING_LENGTH_VALIDATION_CONFIG) }}
-							error={errors?.building_length?.message}
-						/>
-						<CustomInput
-							inputType={CustomInputTypes.building_width}
-							labelText="Ширина здания, м"
-							validation={{ ...register("building_width", BUILDING_WIDTH_VALIDATION_CONFIG) }}
-							error={errors?.building_width?.message}
-						/>
-						<CustomInput
-							inputType={CustomInputTypes.ceiling_height}
-							labelText="Высота до потолка, м"
-							validation={{ ...register("ceiling_height", CEILING_HEIGHT_VALIDATION_CONFIG) }}
-							error={errors?.ceiling_height?.message}
-						/>
-						<CustomInput
-							inputType={CustomInputTypes.door_area}
-							labelText="Площадь проёмов ворот, дверей, кв. м"
-							validation={{ ...register("door_area", DOOR_AREA_VALIDATION_CONFIG) }}
-							error={errors?.door_area?.message}
-						/>
-						<CustomInput
-							inputType={CustomInputTypes.window_area}
-							labelText="Площадь оконных проёмов, кв. м"
-							validation={{ ...register("window_area", WINDOW_AREA_VALIDATION_CONFIG) }}
-							error={errors?.window_area?.message}
-						/>
-						<CustomOptions
-							label="Ширина стеновой панели"
-							options={options_wall_panel_width}
-							selectedValue={wall_panel_width}
-							onChange={setWall_panel_width}
-						/>
-					</div>
-					<div className={styles.form__container}>
-						<CustomInput
-							inputType={CustomInputTypes.wall_panel_thickness}
-							labelText="Толщина стеновых панелей, мм."
-							validation={{ ...register("wall_panel_thickness", WALL_PANEL_THICKNESS_VALIDATION_CONFIG) }}
-							error={errors?.wall_panel_thickness?.message}
-						/>
-						<CustomInput
-							inputType={CustomInputTypes.roof_panel_thickness}
-							labelText="Толщина кровельных панелей, мм."
-							validation={{ ...register("roof_panel_thickness", ROOF_PANEL_THICKNESS_VALIDATION_CONFIG) }}
-							error={errors?.roof_panel_thickness?.message}
-						/>
-						<CustomOptions
-							label="Толщина металла, мм."
-							options={options_metal_thickness}
-							selectedValue={metal_thickness}
-							onChange={setMetal_thickness}
-						/>
-						<CustomOptions
-							label="Тип наполнителя"
-							options={options_insulation_type}
-							selectedValue={insulation_type}
-							onChange={setInsulation_type}
-						/>
-						<CustomOptions
-							label="Плотность утеплителя"
-							options={options_insulation_density}
-							selectedValue={insulation_density}
-							onChange={setInsulation_density}
-						/>
-						{/* <CustomInput
+							<CustomInput
+								inputType={CustomInputTypes.building_length}
+								labelText="Длина здания, м"
+								validation={{ ...register("building_length", BUILDING_LENGTH_VALIDATION_CONFIG) }}
+								error={errors?.building_length?.message}
+							/>
+							<CustomInput
+								inputType={CustomInputTypes.building_width}
+								labelText="Ширина здания, м"
+								validation={{ ...register("building_width", BUILDING_WIDTH_VALIDATION_CONFIG) }}
+								error={errors?.building_width?.message}
+							/>
+							<CustomInput
+								inputType={CustomInputTypes.ceiling_height}
+								labelText="Высота до потолка, м"
+								validation={{ ...register("ceiling_height", CEILING_HEIGHT_VALIDATION_CONFIG) }}
+								error={errors?.ceiling_height?.message}
+							/>
+							<CustomInput
+								inputType={CustomInputTypes.door_area}
+								labelText="Площадь проёмов ворот, дверей, кв. м"
+								validation={{ ...register("door_area", DOOR_AREA_VALIDATION_CONFIG) }}
+								error={errors?.door_area?.message}
+							/>
+							<CustomInput
+								inputType={CustomInputTypes.window_area}
+								labelText="Площадь оконных проёмов, кв. м"
+								validation={{ ...register("window_area", WINDOW_AREA_VALIDATION_CONFIG) }}
+								error={errors?.window_area?.message}
+							/>
+							<CustomOptions
+								label="Ширина стеновой панели"
+								options={options_wall_panel_width}
+								selectedValue={wall_panel_width}
+								onChange={setWall_panel_width}
+							/>
+						</div>
+						<div className={styles.form__container}>
+							<CustomInput
+								inputType={CustomInputTypes.wall_panel_thickness}
+								labelText="Толщина стеновых панелей, мм."
+								validation={{ ...register("wall_panel_thickness", WALL_PANEL_THICKNESS_VALIDATION_CONFIG) }}
+								error={errors?.wall_panel_thickness?.message}
+							/>
+							<CustomInput
+								inputType={CustomInputTypes.roof_panel_thickness}
+								labelText="Толщина кровельных панелей, мм."
+								validation={{ ...register("roof_panel_thickness", ROOF_PANEL_THICKNESS_VALIDATION_CONFIG) }}
+								error={errors?.roof_panel_thickness?.message}
+							/>
+							<CustomOptions
+								label="Толщина металла, мм."
+								options={options_metal_thickness}
+								selectedValue={metal_thickness}
+								onChange={setMetal_thickness}
+							/>
+							<CustomOptions
+								label="Тип наполнителя"
+								options={options_insulation_type}
+								selectedValue={insulation_type}
+								onChange={setInsulation_type}
+							/>
+							<CustomOptions
+								label="Плотность утеплителя"
+								options={options_insulation_density}
+								selectedValue={insulation_density}
+								onChange={setInsulation_density}
+							/>
+							{/* <CustomInput
 							inputType={CustomInputTypes.color}
 							labelText="Цвет панелей"
 							validation={{ ...register("color", COLOR_VALIDATION_CONFIG) }}
 							error={errors?.color?.message}
 						/> TODO добавить выбор цвета*/}
-						<CustomInput
-							inputType={CustomInputTypes.region}
-							labelText="Район строительства"
-							validation={{ ...register("region", REGION_VALIDATION_CONFIG) }}
-							error={errors?.region?.message}
-						/>
-						<CustomButton
-							buttonText={"Рассчитать"}
-							handleButtonClick={handleSubmit(onSubmit)}
-							disabled={!isDirty || !isValid}
-							type="submit"
-						/>
-					</div>
-				</form>
+							<CustomInput
+								inputType={CustomInputTypes.region}
+								labelText="Район строительства"
+								validation={{ ...register("region", REGION_VALIDATION_CONFIG) }}
+								error={errors?.region?.message}
+							/>
+							<CustomButton
+								buttonText={"Рассчитать"}
+								handleButtonClick={handleSubmit(onSubmit)}
+								disabled={!isDirty || !isValid}
+								type="submit"
+							/>
+						</div>
+					</form>
+				</div >
+				<Popup
+					title="Приблизительная стоимость"
+					text={calculator_formatted}
+					isOpened={isPopupOpened}
+					setIsOpened={setIsPopupOpened}
+				/>
 			</div >
-			<Popup
-				title="Приблизительная стоимость"
-				text={calculator_formatted}
-				isOpened={isPopupOpened}
-				setIsOpened={setIsPopupOpened}
-			/>
-		</div >
+		</>
 	);
 };
 

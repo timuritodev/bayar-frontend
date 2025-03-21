@@ -20,6 +20,8 @@ const Page = () => {
 
 	return (
 		<>
+			<SEO title=" - BAYAR" description="" keywords="" />
+
 			<div className={styles.page}>
 				<div className={styles.container}>
 					<CatalogIntro

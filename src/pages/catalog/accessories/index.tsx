@@ -1,5 +1,6 @@
 import { ComponentCardList } from '@/components/ComponentCard/ComponentCardList';
 import { ConsultationForm } from '@/components/ConsultationForm/ConsultationForm';
+import SEO from '@/components/SEO/SEO';
 import { accessories } from '../constants';
 import styles from "./style.module.scss";
 
@@ -7,6 +8,7 @@ const Page = () => { // надо все переименовать с accessorie
 
 	return (
 		<>
+			<SEO title="Комплектующие - BAYAR" description="Покупайте комплектующие по лучшим ценам" keywords="комплектующие купить, комплектующие для сэндвич-панелей купить, комплектующие для сэндвич панелей" />
 			<div className={styles.main}>
 				<div className={styles.container}>
 					<h2 className={styles.title}>Комплектующие для сэндвич-панелей</h2>

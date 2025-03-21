@@ -1,3 +1,4 @@
+import SEO from '@/components/SEO/SEO';
 import { WaterAccList } from '@/components/WaterAcc/WaterAccList';
 import { getWater_accessoryApi } from '@/services/redux/slices/water_accessory/water_accessory';
 import { useAppDispatch, useAppSelector } from "@/services/typeHooks";
@@ -14,6 +15,8 @@ const Page = () => {
 
 	return (
 		<>
+			<SEO title="Гидроизоляция/Ветрозащита - BAYAR" description="Покупайте комплектующие по лучшим ценам" keywords="гидроизоляция купить, ветрозащита купить, гидроизоляция ветрозащита купить" />
+
 			<div className={styles.page}>
 				<div className={styles.container}>
 					<h1 className={styles.title}>Гидроизоляция, ветрозащита</h1>

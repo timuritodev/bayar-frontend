@@ -1,9 +1,11 @@
+import SEO from '@/components/SEO/SEO';
 import styles from "./style.module.scss";
 
 const Page = () => {
 	return (
 		<>
-			<SEO title="О компании - BAYAR" description="" keywords="" />
+			<SEO title="О компании - BAYAR" description="Сэндвич-панели по лучшим ценам в РФ" keywords="сэндвич-панели, сэндвич панели купить, панели для строительства, строительные материалы, утепленные панели" />
+
 			<div className={styles.about}>
 				<div className={styles.container}>
 					<h1 className={styles.title}>О компании</h1>
