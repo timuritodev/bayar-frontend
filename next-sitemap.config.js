@@ -16,9 +16,9 @@ module.exports = {
 	additionalPaths: async (config) => [
 		{ loc: '/about', changefreq: 'weekly', priority: 0.7 },
 		{ loc: '/calculator', changefreq: 'weekly', priority: 0.7 },
-		{ loc: '/catalog/accessories', changefreq: 'daily', priority: 0.7 },
+		{ loc: '/catalog/components', changefreq: 'daily', priority: 0.7 },
 		{
-			loc: '/catalog/accessories/water-wind-proofing',
+			loc: '/catalog/components/water-wind-proofing',
 			changefreq: 'daily',
 			priority: 0.7,
 		},

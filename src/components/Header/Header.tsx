@@ -78,7 +78,7 @@ const Header: FC = () => { // TODO хедер съехал из-за того ч
                   <Link href="/catalog/wall-panels" className={styles.header__sub_link}>
                     Стеновые сэндвич-панели
                   </Link>
-                  <Link href="/catalog/accessories" className={styles.header__sub_link}>
+                  <Link href="/catalog/components" className={styles.header__sub_link}>
                     Комплектующие для сэндвич-панелей
                   </Link>
                 </div>

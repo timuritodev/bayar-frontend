@@ -67,14 +67,14 @@ export const roof: IUniCard[] = [
 	},
 ]
 
-export const accessories: IUniCard[] = [
+export const components: IUniCard[] = [
 	{
 		id: 1,
 		title: 'Гидроизоляция, ветрозащита',
 		img: waterproof,
 		width: 460,
 		height: 440,
-		link: 'accessories/water-wind-proofing'
+		link: 'components/water-wind-proofing'
 	},
 	{
 		id: 2,
