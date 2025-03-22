@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { FC } from 'react';
+import { jsonld } from './jsonld';
 
 interface SEOProps {
 	title: string;
@@ -41,6 +42,10 @@ const SEO: FC<SEOProps> = ({ title, description, keywords }) => {
 			<meta name="twitter:title" content={title} />
 			<meta name="twitter:description" content={description} />
 			<meta name="twitter:image" content={og_image} />
+
+			<script type="application/ld+json">
+				{JSON.stringify(jsonld)}
+			</script>
 		</Head>
 	);
 };

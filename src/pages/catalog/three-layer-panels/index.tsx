@@ -1,6 +1,7 @@
 import { BenefitsList } from '@/components/Benefits/BenefitsList';
 import { CatalogIntro } from '@/components/CatalogIntro/CatalogIntro';
 import { ConsultationForm } from '@/components/ConsultationForm/ConsultationForm';
+import SEO from '@/components/SEO/SEO';
 import { UniCardsList } from '@/components/UniCard/UniCardList';
 import { useRef } from 'react';
 import pic from '../../../images/catalog/three_layer.jpg';
@@ -16,7 +17,7 @@ const Page = () => {
 
 	return (
 		<>
-			<SEO title=" - BAYAR" description="" keywords="" />
+			<SEO title="Трёхслойные сэндвич-панели - BAYAR" description="Покупайте трёхслойные сэндвич-панели по лучшим ценам в рф" keywords="трёхслойные сэндвич-панели, трёхслойные сэндвич-панели купить, трёхслойные сэндвич панели купить, BAYAR" />
 
 			<div className={styles.page}>
 				<div className={styles.container}>

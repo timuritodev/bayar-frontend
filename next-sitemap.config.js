@@ -1,9 +1,12 @@
-/** @type {import('next-sitemap').IConfig} */
-const config = {
-    siteUrl: 'https://tatbayar.ru',  // Укажите URL вашего сайта
-    generateRobotsTxt: true,  // Опция для генерации robots.txt
-    // exclude: ['/admin'],  // Исключенные страницы (настройте под свои нужды)
-  };
-  
-  module.exports = config;
-  
+module.exports = {
+	siteUrl: 'https://tatbayar.ru',
+	generateRobotsTxt: true,
+	exclude: [
+		'/profile',
+		'/sign-in',
+		'/sign-up',
+		'/reset-password',
+		'/recover-password',
+		'/change-password',
+	],
+};

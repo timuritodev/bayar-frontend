@@ -4,7 +4,7 @@ import styles from "./style.module.scss";
 const Page = () => {
 	return (
 		<>
-			<SEO title="О компании - BAYAR" description="Сэндвич-панели по лучшим ценам в РФ" keywords="сэндвич-панели, сэндвич панели купить, панели для строительства, строительные материалы, утепленные панели" />
+			<SEO title="О компании - BAYAR" description="Завод изготовитель сэндвич-панелей по лучшим ценам в РФ" keywords="сэндвич-панели, сэндвич панели купить, панели для строительства, строительные материалы, утепленные панели" />
 
 			<div className={styles.about}>
 				<div className={styles.container}>
@@ -19,7 +19,7 @@ const Page = () => {
 						Фактический адрес - Россия, РТ, муниципальное образование Елабуга, промышленная площадка АЛАБУГА, ул.20, 1
 					</p>
 					<p className={styles.text}>ИНН - 1684022989</p>
-					<p className={styles.text}>Телефон - 88005503190; +79272499942</p>
+					<p className={styles.text}>Телефон - +78005503190; +79272499942</p>
 					<p className={styles.text}>Почта - info@tatbayar.ru</p>
 				</div>
 			</div>

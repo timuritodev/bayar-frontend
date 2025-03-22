@@ -2,6 +2,7 @@ import { BenefitsList } from '@/components/Benefits/BenefitsList';
 import { CatalogIntro } from '@/components/CatalogIntro/CatalogIntro';
 import { ConsultationForm } from '@/components/ConsultationForm/ConsultationForm';
 import { RalColorSlider } from '@/components/RalColorSlider/RalColorSlider';
+import SEO from '@/components/SEO/SEO';
 import { WallTable } from '@/components/Table/WallTable';
 import { UniCardsList } from '@/components/UniCard/UniCardList';
 import { useResize } from '@/hooks/useResize';
@@ -20,7 +21,7 @@ const Page = () => {
 
 	return (
 		<>
-			<SEO title=" - BAYAR" description="" keywords="" />
+			<SEO title="Стеновые сэндвич-панели - BAYAR" description="Покупайте стеновые сэндвич-панели по лучшим ценам в рф" keywords="стеновые сэндвич-панели, стеновые сэндвич-панели купить, стеновые сэндвич панели купить, BAYAR" />
 
 			<div className={styles.page}>
 				<div className={styles.container}>

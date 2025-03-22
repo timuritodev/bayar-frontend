@@ -1,9 +1,15 @@
 # *
 User-agent: *
-Allow: /
+Disallow: /profile
+Disallow: /sign-in
+Disallow: /sign-up
+Disallow: /reset-password
+Disallow: /recover-password
+Disallow: /change-password
+
 
 # Host
-Host: https://beancode.ru
+Host: https://tatbayar.ru
 
 # Sitemaps
-Sitemap: https://beancode.ru/sitemap.xml
+Sitemap: https://tatbayar.ru/sitemap.xml

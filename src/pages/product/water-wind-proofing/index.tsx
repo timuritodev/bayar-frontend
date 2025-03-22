@@ -1,4 +1,5 @@
 
+import SEO from '@/components/SEO/SEO';
 import Image from "next/image";
 import waterproof from '../../../images/catalog/waterproofing.png';
 import { useAppDispatch, useAppSelector } from "../../../services/typeHooks";
@@ -12,7 +13,7 @@ const Page = () => {
 
 	return (
 		<>
-			<SEO title=" - BAYAR" description="" keywords="" />
+			<SEO title={`${product.title} - BAYAR`} description={`Покупайте ${product.title} по лучшим ценам с доставкой по всей рф. ${product.description}`} keywords={`${product.title}, купить ${product.title}, BAYAR`} />
 
 			<div className={styles.product}>
 				<div className={styles.container}>
