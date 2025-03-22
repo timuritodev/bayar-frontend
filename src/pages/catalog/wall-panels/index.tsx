@@ -8,7 +8,7 @@ import { UniCardsList } from '@/components/UniCard/UniCardList';
 import { useResize } from '@/hooks/useResize';
 import { useRef } from 'react';
 import pic from '../../../images/catalog/wall.jpg';
-import { benefits, roof } from '../constants';
+import { benefits, roof } from '../_constants';
 import styles from "./style.module.scss";
 
 const Page = () => {
