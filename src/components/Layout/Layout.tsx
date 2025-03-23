@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { FC, ReactNode } from "react";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
@@ -7,11 +8,17 @@ interface LayoutProps {
 }
 
 const Layout: FC<LayoutProps> = ({ children }) => {
+  const router = useRouter();
+
   return (
     <div>
-      <Header />
-      <div>{children}</div>
-      <Footer />
+      {router.pathname === '/' ?
+        <div>{children}</div>
+        : <>
+          <Header />
+          <div>{children}</div>
+          <Footer />
+        </>}
     </div>
   );
 };

@@ -93,5 +93,5 @@ const RecoverPasswordPage = () => {
     </>
   );
 };
-// TODO проверить восстановление пароля
+
 export default RecoverPasswordPage;

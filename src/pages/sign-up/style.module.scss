@@ -57,6 +57,20 @@
 	opacity: 0.7;
 }
 
+.text_privacy {
+	font-size: 20px;
+}
+
+.link_privacy {
+	color: #007bff;
+	text-decoration: none;
+}
+
+.link_privacy:hover {
+	transition: 0.1s ease;
+	text-decoration: underline;
+}
+
 @media screen and (max-width: 767px) {
 	.signup {
 		width: 100%;

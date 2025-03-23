@@ -1,6 +1,8 @@
+import CustomCheckbox from '@/components/CustomCheckbox/CustomCheckbox';
 import CustomSelect from '@/components/CustomSelect/CustomSelect';
 import Popup from '@/components/Popup/Popup';
 import SEO from '@/components/SEO/SEO';
+import Link from 'next/link';
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { CustomButton } from "../../components/CustomButton/CustomButton";
@@ -31,6 +33,7 @@ const SignUpPage = () => {
   const [isSavedPopupOpened, setIsSavedPopupOpened] = useState<boolean>(false);
   const [isErrorPopupOpened, setIsErrorPopupOpened] = useState<boolean>(false);
   const [userType, setUserType] = useState<string>('физ');
+  const [isPrivacyAccepted, setIsPrivacyAccepted] = useState<boolean>(false);
 
   const options: ISelectOption[] = [
     { value: 'физ', label: 'Физ. лицо' },
@@ -192,8 +195,20 @@ const SignUpPage = () => {
             <CustomButton
               buttonText={"Зарегистрироваться"}
               handleButtonClick={handleSubmit(onSubmit)}
-              disabled={!isDirty || !isValid}
+              disabled={!isDirty || !isValid || !isPrivacyAccepted}
               type="button"
+            />
+            <CustomCheckbox
+              checked={isPrivacyAccepted}
+              onChange={setIsPrivacyAccepted}
+              label={
+                <p className={styles.text_privacy}>
+                  Я согласен с{" "}
+                  <Link href="/privacy-policy" target="_blank" className={styles.link_privacy}>
+                    политикой конфиденциальности
+                  </Link>
+                </p>
+              }
             />
           </form>
         </div>
