@@ -13,7 +13,7 @@
 
 .wrapper {
 	display: grid;
-	grid-template-columns: 620px 524px; // TODO работает только до 1280px надо поправить под 1024px
+	grid-template-columns: repeat(2, minmax(300px, 1fr));
 	align-items: flex-end;
 	gap: 30px;
 }

@@ -200,7 +200,7 @@ const SignUpPage = () => {
         <Popup
           title="Регистрация"
           text="Вы были успешно зарегистрированы"
-          link="catalog"
+          link="/"
           isOpened={isSavedPopupOpened}
           setIsOpened={setIsSavedPopupOpened}
         />

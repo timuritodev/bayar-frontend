@@ -6,6 +6,7 @@ import icon from "../../images/profile.svg";
 import { selectUser } from "../../services/redux/slices/user/user";
 import { useAppSelector } from "../../services/typeHooks";
 // import Search from "../Search/Search";
+import { useResize } from '@/hooks/useResize';
 import styles from "./style.module.scss";
 
 interface BurgerProps {
@@ -15,6 +16,7 @@ interface BurgerProps {
 
 export const Burger: FC<BurgerProps> = ({ isPopupOpen, switchPopup }) => {
   const user = useAppSelector(selectUser);
+  const { width } = useResize();
 
   const [values, setValues] = useState("");
   const [isOpenSearch, setIsOpenSearch] = useState(false);
@@ -41,6 +43,18 @@ export const Burger: FC<BurgerProps> = ({ isPopupOpen, switchPopup }) => {
       setIsOpenSearch(false);
     }
   }, [values]);
+
+  useEffect(() => {
+    if (isPopupOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isPopupOpen]);
+
   return (
     <div className={`${styles.burger} ${isPopupOpen ? styles.burger_opened : ""}`}>
       <div className={styles.burger__content}>
@@ -145,8 +159,7 @@ export const Burger: FC<BurgerProps> = ({ isPopupOpen, switchPopup }) => {
                     href="/catalog/components"
                     className={styles.burger__link}
                     onClick={handleLinkClick}>
-                    {/*TODO тут все съезжает при открытии, пофиксить и еще надо залочить прокрутку страницы при открытом бургере */}
-                    Комплектующие для сэндвич-панелей
+                    Комплектующие{width < 374 ? <br /> : ''}для сэндвич-панелей
                   </Link>
                 </div>
               </ul>

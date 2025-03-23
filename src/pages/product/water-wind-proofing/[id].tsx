@@ -1,15 +1,26 @@
 
 import SEO from '@/components/SEO/SEO';
+import { getWater_accessorybyidApi } from '@/services/redux/slices/water_accessory/water_accessory';
 import Image from "next/image";
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 import waterproof from '../../../images/catalog/waterproofing.png';
 import { useAppDispatch, useAppSelector } from "../../../services/typeHooks";
 import styles from "./style.module.scss";
 
 const Page = () => {
 	const dispatch = useAppDispatch();
-	const product = useAppSelector((state) => state.water_accessory.product); // сейчас в пути не пишется id, надо попробовать перейти на этот способ
-	console.log(product, 'products');
+	const router = useRouter();
+	const { id } = router.query; // Получаем id из URL
+	const product = useAppSelector((state) => state.water_accessory.product);
 
+	useEffect(() => {
+		if (id) {
+			dispatch(getWater_accessorybyidApi(Number(id)));
+		}
+	}, [id, dispatch]);
+
+	if (!product.title) return <p>Загрузка...</p>;
 
 	return (
 		<>

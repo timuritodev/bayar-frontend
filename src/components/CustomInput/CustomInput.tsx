@@ -29,11 +29,9 @@ const CustomInput: FC<ICustomInput> = ({
   const mask = inputType === "phone" ? "+7 (999) 999-99-99" : undefined;
 
   const inputTextType =
-    inputType === "password" || inputType === "oldPassword" || inputType === "newPassword" && isPasswordHidden === false
-      ? "text"
-      : inputType === "repeatPassword"
-        ? "password" // TODO check
-        : inputType;
+    (inputType === "password" || inputType === "oldPassword" || inputType === "newPassword")
+      ? (isPasswordHidden ? "password" : "text")
+      : inputType;
 
   const InputComponent = inputType === "phone" ? InputMask : "input";
 
@@ -41,7 +39,7 @@ const CustomInput: FC<ICustomInput> = ({
     <div className={styles.input__wrapper}>
       <div className={styles.input__hints}>
         {labelText ? (
-          <label
+          <label // TODO проверить подсказки и ошибки
             className={`${styles.input__label} ${styles[`input__label_color_${color}`]}`}
             htmlFor={inputType}
           >

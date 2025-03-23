@@ -1,5 +1,3 @@
-import { getWater_accessorybyidApi } from '@/services/redux/slices/water_accessory/water_accessory';
-import { useAppDispatch } from '@/services/typeHooks';
 import { IWaterAcc } from '@/types/WaterAcc.types';
 import Image from "next/image";
 import router from 'next/router';
@@ -12,11 +10,8 @@ interface IWaterAccProps {
 }
 
 export const WaterAcc: FC<IWaterAccProps> = ({ data }) => {
-	const dispatch = useAppDispatch();
-
 	const handleClickImage = () => {
-		router.push("/product/water-wind-proofing");
-		dispatch(getWater_accessorybyidApi(data.id));
+		router.push(`/product/water-wind-proofing/${data.id}`);
 	};
 
 	return (
