@@ -1,3 +1,4 @@
+import CalculatorPicture from '@/components/CalculatorPicture/CalculatorPicture';
 import CustomInput from "@/components/CustomInput/CustomInput";
 import CustomOptions from '@/components/CustomOptions/CustomOptions';
 import Popup from '@/components/Popup/Popup';
@@ -33,6 +34,7 @@ const CalculatorPage = () => {
 	const [insulation_density, setInsulation_density] = useState('95');
 	const [buildingType, setBuildingType] = useState("односкатная");
 	const [roofType, setRoofType] = useState("с");
+	const [selectedColor, setSelectedColor] = useState('#FFFFFF');
 
 	const {
 		register,
@@ -40,6 +42,7 @@ const CalculatorPage = () => {
 		reset,
 		formState: { errors, isDirty, isValid },
 		getValues,
+		watch,
 	} = useForm<ICalculator>({
 		mode: "onChange",
 	});
@@ -90,6 +93,10 @@ const CalculatorPage = () => {
 		`Общая стоимость: ${formatPrice(calculator.total_cost)} ₽`
 	].map((line, index) => <p key={index}>{line}</p>);
 
+	const buildingLength = watch('building_length') || 6;
+	const buildingWidth = watch('building_width') || 4;
+	const ceilingHeight = watch('ceiling_height') || 3;
+
 	return (
 		<>
 			<SEO title="Калькулятор - BAYAR" description="Калькулятор для расчета стоимости сэндвич-панелей" keywords="калькулятор сэндвич-панели, калькулятор сэндвич панели, калькулятор стоимость сэндвич-панели, калькулятор" />
@@ -97,6 +104,7 @@ const CalculatorPage = () => {
 			<div className={styles.calculator}>
 				<div className={styles.container}>
 					<h1 className={styles.title}>Расчет панелей</h1>
+					<CalculatorPicture />
 					<form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
 						<div className={styles.form__container}>
 							{/* <CustomSelect
