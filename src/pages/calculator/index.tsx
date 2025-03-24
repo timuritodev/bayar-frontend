@@ -103,7 +103,7 @@ const CalculatorPage = () => {
 							labelText={"Тип здания"}
 							options={optionsBuilding}
 							selectedValue={buildingType}
-							onChange={setBuildingType}
+							onChange={setBuildingType} // TODO добавить анимацию
 						/> */}
 							{/* <CustomSelect
 							labelText={"Тип кровли"}

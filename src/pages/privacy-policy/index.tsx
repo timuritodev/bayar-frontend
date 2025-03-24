@@ -5,7 +5,7 @@ const PrivacyPolicyPage = () => {
 	return (
 		<>
 			<SEO
-				title="Политика конфиденциальности"
+				title="Политика конфиденциальности - BAYAR"
 				description="Узнайте, как мы обрабатываем ваши персональные данные на сайте."
 				keywords="политика конфиденциальности, защита данных"
 			/>
@@ -101,6 +101,10 @@ const PrivacyPolicyPage = () => {
 							Если у вас есть вопросы или запросы относительно этой Политики конфиденциальности, вы можете связаться с нами по адресу:
 						</p>
 						<p className={styles.text}>Email: <a className={styles.link} href="mailto:support@bayar.com">info@bayar.com</a></p>
+					</section>
+
+					<section className={styles.section}>
+						<h2 className={styles.subtitle}>Обновлено 23.03.2025</h2>
 					</section>
 				</div>
 			</div>

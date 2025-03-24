@@ -13,7 +13,7 @@ import { BurgerButton } from "../BurgerButton/BurgerButton";
 // import Search from "../Search/Search";
 import styles from "./style.module.scss";
 
-const Header: FC = () => { // TODO хедер съехал из-за того что я убрад поиск
+const Header: FC = () => {
   const user = useAppSelector(selectUser);
   const router = useRouter();
 
