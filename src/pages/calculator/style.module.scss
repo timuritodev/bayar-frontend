@@ -1,0 +1,94 @@
+.calculator {
+	width: 100%;
+	margin: 0 auto;
+	background: #f4f6ff;
+}
+
+.container {
+	max-width: 1280px;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	align-items: center;
+	padding: 48px 0 120px 0;
+}
+
+.form {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 44px;
+	width: 100%;
+}
+
+.form__container {
+	display: flex;
+	gap: 30px;
+	flex-direction: column;
+}
+
+.title {
+	font-family: ClearSans;
+	font-weight: 700;
+	font-size: 48px;
+	line-height: 113.99999999999999%;
+	letter-spacing: 0%;
+	text-align: center;
+}
+
+.select__container {
+	display: flex;
+	flex-direction: row;
+	border: 2px solid #000;
+	border-radius: 32px;
+}
+
+.select {
+	flex: 1;
+	padding: 20px 5px;
+	border-radius: 30px;
+	cursor: pointer;
+	transition: background-color 0.3s, border-color 0.3s;
+}
+
+.selected {
+	background-color: #6975b3;
+	color: white;
+}
+
+.not_selected {
+	background-color: transparent;
+	color: #000;
+}
+
+.select__text {
+	margin: 0;
+	font-family: Ubuntu;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 32.45px;
+	text-align: center;
+}
+
+@media screen and (max-width: 1023px) {
+	.form {
+		flex-wrap: wrap;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.form {
+		width: 90%;
+		gap: 15px;
+	}
+
+	.form__container {
+		gap: 15px;
+		width: 90%;
+	}
+
+	.title {
+		font-size: 20px;
+		line-height: 100%;
+	}
+}

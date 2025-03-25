@@ -1,0 +1,47 @@
+.list {
+	display: flex;
+	gap: 120px;
+	flex-wrap: wrap;
+}
+
+.container {
+	background-color: #6975b3;
+	padding: 7px 7px 22.75px 7px;
+	border-radius: 24.28px;
+	color: #fff;
+	cursor: pointer;
+}
+
+.img {
+	border-radius: 24.28px;
+}
+
+.title {
+	font-family: ClearSans;
+	font-weight: 400;
+	font-size: 30px;
+	line-height: 40.56px;
+	letter-spacing: 0%;
+	text-align: center;
+	margin: 10px 0 0 0;
+}
+
+@media screen and (max-width: 767px) {
+	.container {
+		border-radius: 12.95px;
+	}
+	.list {
+		justify-content: center;
+		gap: 20px;
+	}
+	.img {
+		width: 244px;
+		height: 230px;
+		border-radius: 12.95px;
+	}
+
+	.title {
+		font-size: 16px;
+		line-height: 100%;
+	}
+}

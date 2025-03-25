@@ -1,0 +1,42 @@
+.list {
+	display: flex;
+	gap: 120px;
+	flex-wrap: wrap;
+}
+
+.container {
+	background-color: #6975b3;
+	padding: 7px 7px 22.75px 7px;
+	border-radius: 34.5px;
+	color: #fff;
+}
+
+.img {
+	border-radius: 34.5px;
+}
+
+.title {
+	font-family: ClearSans;
+	font-weight: 400;
+	font-size: 30px;
+	line-height: 40.56px;
+	letter-spacing: 0%;
+	text-align: center;
+	margin: 10px 0 0 0;
+}
+
+@media screen and (max-width: 767px) {
+	.list {
+		justify-content: center;
+		gap: 20px;
+	}
+	.img {
+		width: 267px;
+		height: 182px;
+	}
+
+	.title {
+		font-size: 16px;
+		line-height: 100%;
+	}
+}

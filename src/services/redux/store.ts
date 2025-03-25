@@ -1,19 +1,25 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
-import storage from 'redux-persist/lib/storage';
 import {
-  persistReducer,
-  persistStore,
-  PERSIST,
-  REHYDRATE,
   FLUSH,
   PAUSE,
+  PERSIST,
+  persistReducer,
+  persistStore,
   PURGE,
   REGISTER,
+  REHYDRATE,
 } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import { calculatorReducer } from './slices/calculator/calculator';
+import { userReducer } from './slices/user/user';
+import { water_accessoryReducer } from './slices/water_accessory/water_accessory';
 
 
 const rootReducer = combineReducers({
+  user: userReducer,
+  calculator: calculatorReducer,
+  water_accessory: water_accessoryReducer
 });
 
 const persistConfig = {
