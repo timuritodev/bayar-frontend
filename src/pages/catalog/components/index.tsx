@@ -1,7 +1,7 @@
 import { ComponentCardList } from '@/components/ComponentCard/ComponentCardList';
 import { ConsultationForm } from '@/components/ConsultationForm/ConsultationForm';
 import SEO from '@/components/SEO/SEO';
-import { components } from '../_constants';
+import { components } from '../../../constants/catalog';
 import styles from "./style.module.scss";
 
 const Page = () => {

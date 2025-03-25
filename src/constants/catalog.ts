@@ -1,16 +1,16 @@
 import { IBenefit } from '@/types/Benefit.types';
 import { IUniCard } from '@/types/UniCard.types';
-import design from '../../images/benefits/design.svg';
-import house from '../../images/benefits/house.svg';
-import leaf from '../../images/benefits/leaf.svg';
-import star from '../../images/benefits/star.svg';
-import sun from '../../images/benefits/sun.svg';
-import fasteners from '../../images/catalog/fasteners.jpeg';
-import mineral from '../../images/catalog/mineral.jpeg';
-import polystyrene from '../../images/catalog/polystyrene.jpeg';
-import roof_panel from '../../images/catalog/roof_panel.png';
-import wall_panel from '../../images/catalog/wall_panel.jpeg';
-import waterproof from '../../images/catalog/waterproofing.png';
+import design from '../images/benefits/design.svg';
+import house from '../images/benefits/house.svg';
+import leaf from '../images/benefits/leaf.svg';
+import star from '../images/benefits/star.svg';
+import sun from '../images/benefits/sun.svg';
+import fasteners from '../images/catalog/fasteners.jpeg';
+import mineral from '../images/catalog/mineral.jpeg';
+import polystyrene from '../images/catalog/polystyrene.jpeg';
+import roof_panel from '../images/catalog/roof_panel.png';
+import wall_panel from '../images/catalog/wall_panel.jpeg';
+import waterproof from '../images/catalog/waterproofing.png';
 
 
 export const benefits: IBenefit[] = [

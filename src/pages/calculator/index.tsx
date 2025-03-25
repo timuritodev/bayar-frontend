@@ -18,8 +18,8 @@ import { CustomInputTypes } from "@/types/CustomInput.types";
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { CustomButton } from "../../components/CustomButton/CustomButton";
+import { options_insulation_density, options_insulation_type, options_metal_thickness, options_wall_panel_width } from '../../constants/calculator';
 import { useAppDispatch, useAppSelector } from "../../services/typeHooks";
-import { options_insulation_density, options_insulation_type, options_metal_thickness, options_wall_panel_width } from './_constants';
 import styles from "./style.module.scss";
 
 const CalculatorPage = () => {

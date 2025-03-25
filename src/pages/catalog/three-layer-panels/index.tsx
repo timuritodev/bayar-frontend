@@ -4,8 +4,8 @@ import { ConsultationForm } from '@/components/ConsultationForm/ConsultationForm
 import SEO from '@/components/SEO/SEO';
 import { UniCardsList } from '@/components/UniCard/UniCardList';
 import { useRef } from 'react';
+import { benefits, panels } from '../../../constants/catalog';
 import pic from '../../../images/catalog/three_layer.jpg';
-import { benefits, panels } from '../_constants';
 import styles from "./style.module.scss";
 
 const Page = () => {
