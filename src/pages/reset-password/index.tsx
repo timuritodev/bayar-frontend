@@ -95,7 +95,7 @@ const ResetPasswordPage = () => {
         <Popup
           title="Восстановление пароля"
           text="Вы успешно изменили пароль"
-          link="/"
+          link="/main"
           isOpened={isSavedPopupOpened}
           setIsOpened={setIsSavedPopupOpened}
         />
