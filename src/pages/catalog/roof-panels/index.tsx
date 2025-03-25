@@ -7,8 +7,8 @@ import { RoofTable } from '@/components/Table/RoofTable';
 import { UniCardsList } from '@/components/UniCard/UniCardList';
 import { useResize } from '@/hooks/useResize';
 import { useRef } from 'react';
+import { benefits, roof } from '../../../constants/catalog';
 import pic from '../../../images/catalog/roof.jpg';
-import { benefits, roof } from '../_constants';
 import styles from "./style.module.scss";
 
 const Page = () => {
