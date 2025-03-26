@@ -1,10 +1,25 @@
-import BuildingIllustration from '@/components/CalculatorPicture/CalculatorPicture';
+import CalculatorPicture from '@/components/CalculatorPicture/CalculatorPicture';
+import CustomInput from "@/components/CustomInput/CustomInput";
+import CustomOptions from '@/components/CustomOptions/CustomOptions';
 import Popup from '@/components/Popup/Popup';
 import SEO from '@/components/SEO/SEO';
+import {
+	BUILDING_LENGTH_VALIDATION_CONFIG,
+	BUILDING_WIDTH_VALIDATION_CONFIG,
+	CEILING_HEIGHT_VALIDATION_CONFIG,
+	DOOR_AREA_VALIDATION_CONFIG,
+	REGION_VALIDATION_CONFIG,
+	ROOF_PANEL_THICKNESS_VALIDATION_CONFIG,
+	WALL_PANEL_THICKNESS_VALIDATION_CONFIG,
+	WINDOW_AREA_VALIDATION_CONFIG
+} from "@/constants/validation";
 import { calculateApi } from "@/services/redux/slices/calculator/calculator";
 import { ICalculator } from '@/types/Calculator.types';
+import { CustomInputTypes } from "@/types/CustomInput.types";
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { CustomButton } from "../../components/CustomButton/CustomButton";
+import { options_insulation_density, options_insulation_type, options_metal_thickness, options_wall_panel_width } from '../../constants/calculator';
 import { useAppDispatch, useAppSelector } from "../../services/typeHooks";
 import styles from "./style.module.scss";
 
@@ -89,10 +104,10 @@ const CalculatorPage = () => {
 			<div className={styles.calculator}>
 				<div className={styles.container}>
 					<h1 className={styles.title}>Расчет панелей</h1>
-					<BuildingIllustration />
-					{/* <form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
+					<CalculatorPicture />
+					<form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
 						<div className={styles.form__container}>
-							<CustomSelect
+							{/* <CustomSelect
 							labelText={"Тип здания"}
 							options={optionsBuilding}
 							selectedValue={buildingType}
@@ -103,7 +118,7 @@ const CalculatorPage = () => {
 							options={optionsRoof}
 							selectedValue={roofType}
 							onChange={setRoofType}
-						/> 
+						/>  */}
 							<CustomInput
 								inputType={CustomInputTypes.building_length}
 								labelText="Длина здания, м"
@@ -172,12 +187,12 @@ const CalculatorPage = () => {
 								selectedValue={insulation_density}
 								onChange={setInsulation_density}
 							/>
-							<CustomInput
-							inputType={CustomInputTypes.color}
-							labelText="Цвет панелей"
-							validation={{ ...register("color", COLOR_VALIDATION_CONFIG) }}
-							error={errors?.color?.message}
-						/> TODO добавить выбор цвета
+							{/* <CustomInput
+								inputType={CustomInputTypes.color}
+								labelText="Цвет панелей"
+								validation={{ ...register("color", COLOR_VALIDATION_CONFIG) }}
+								error={errors?.color?.message}
+							/> TODO добавить выбор цвета */}
 							<CustomInput
 								inputType={CustomInputTypes.region}
 								labelText="Район строительства"
@@ -191,7 +206,7 @@ const CalculatorPage = () => {
 								type="submit"
 							/>
 						</div>
-					</form> */}
+					</form>
 				</div >
 				<Popup
 					title="Приблизительная стоимость"
