@@ -1,6 +1,7 @@
 import CalculatorPicture from '@/components/CalculatorPicture/CalculatorPicture';
 import CustomInput from "@/components/CustomInput/CustomInput";
-import CustomOptions from '@/components/CustomOptions/CustomOptions';
+import { default as CustomOptions } from '@/components/CustomOptions/CustomOptions';
+import CustomSelect from '@/components/CustomSelect/CustomSelect';
 import Popup from '@/components/Popup/Popup';
 import SEO from '@/components/SEO/SEO';
 import {
@@ -19,7 +20,7 @@ import { CustomInputTypes } from "@/types/CustomInput.types";
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { CustomButton } from "../../components/CustomButton/CustomButton";
-import { options_insulation_density, options_insulation_type, options_metal_thickness, options_wall_panel_width } from '../../constants/calculator';
+import { options_insulation_density, options_insulation_type, options_metal_thickness, options_wall_panel_width, optionsBuilding, optionsRoof } from '../../constants/calculator';
 import { useAppDispatch, useAppSelector } from "../../services/typeHooks";
 import styles from "./style.module.scss";
 
@@ -104,21 +105,21 @@ const CalculatorPage = () => {
 			<div className={styles.calculator}>
 				<div className={styles.container}>
 					<h1 className={styles.title}>Расчет панелей</h1>
-					<CalculatorPicture />
+					<CalculatorPicture buildingType={buildingType} roofType={roofType} />
 					<form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
 						<div className={styles.form__container}>
-							{/* <CustomSelect
-							labelText={"Тип здания"}
-							options={optionsBuilding}
-							selectedValue={buildingType}
-							onChange={setBuildingType} // TODO добавить анимацию
-						/> 
 							<CustomSelect
-							labelText={"Тип кровли"}
-							options={optionsRoof}
-							selectedValue={roofType}
-							onChange={setRoofType}
-						/>  */}
+								labelText="Тип здания"
+								options={optionsBuilding}
+								selectedValue={buildingType}
+								onChange={setBuildingType} // TODO добавить анимацию
+							/>
+							<CustomSelect
+								labelText={"Тип кровли"}
+								options={optionsRoof}
+								selectedValue={roofType}
+								onChange={setRoofType}
+							/>
 							<CustomInput
 								inputType={CustomInputTypes.building_length}
 								labelText="Длина здания, м"
