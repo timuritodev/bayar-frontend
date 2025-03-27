@@ -57,11 +57,11 @@ const Header: FC = () => {
         {width < 767 && (
           <BurgerButton isPopupOpen={isPopupOpen} switchPopup={switchPopup} />
         )}
-        <Link href="/">
+        <Link href="/main">
           <Image className={styles.header__logo} alt="Логотип BAYAR" src={logo} />
         </Link>
         <div className={styles.header__links}>
-          <Link href="/" className={`${styles.header__link} ${is_active("/") ? styles.active : ""}`}>
+          <Link href="/main" className={`${styles.header__link} ${is_active("/") ? styles.active : ""}`}>
             Главная
           </Link>
           <ul className={styles.header__links_container}>

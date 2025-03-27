@@ -9,9 +9,6 @@ module.exports = {
 		'/reset-password',
 		'/recover-password',
 		'/change-password',
-		'/calculator/_constants',
-		'/catalog/_constants',
-		'/_constants',
 	],
 	additionalPaths: async (config) => [
 		{ loc: '/about', changefreq: 'weekly', priority: 0.7 },
@@ -27,4 +24,4 @@ module.exports = {
 		{ loc: '/catalog/wall-panels', changefreq: 'daily', priority: 0.7 },
 		{ loc: '/product/water-wind-proofing', changefreq: 'daily', priority: 0.7 },
 	],
-};
+}
