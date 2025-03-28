@@ -38,8 +38,8 @@ export const ConsultationForm = () => {
 		dispatch(
 			sendEmailApi({
 				email: getValues("email"),
-				subject: "Кофе машины",
-				text: ``,
+				subject: "Консультация",
+				text: `Запрос на консультацию от ${getValues("fio")}, почта - ${getValues("email")}`,
 				greetings: "",
 			})
 		)

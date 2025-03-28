@@ -29,7 +29,7 @@ const RecoverPasswordPage = () => {
 
   const onSubmit: SubmitHandler<IRecoverPassword> = () => {
     dispatch(
-      recoverPassword({
+      recoverPassword({ // TODO письмо приходит 2 раза
         email: getValues("email"),
       })
     )
