@@ -1,3 +1,4 @@
+import SEO from '@/components/SEO/SEO';
 import { useAppDispatch } from "@/services/typeHooks";
 import Image from "next/image";
 import Countdown from 'react-countdown';
