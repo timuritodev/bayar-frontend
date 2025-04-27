@@ -3,8 +3,11 @@ import Link from 'next/link';
 import { useRouter } from "next/router";
 import { FC } from "react";
 import { useResize } from "../../hooks/useResize";
+import email from "../../images/email.svg";
 import logo from "../../images/logo_s.svg";
+import phone from "../../images/phone.svg";
 import { useAppDispatch } from "../../services/typeHooks";
+import { Contacts } from '../Contacts/Contacts';
 import styles from "./style.module.scss";
 
 const Footer: FC = () => {
@@ -31,7 +34,7 @@ const Footer: FC = () => {
             <div className={styles.block_add}>
               <div className={styles.block}>
                 <h5 className={styles.title}>Навигация</h5>
-                <Link href="/main" className={styles.text}>
+                <Link href="/" className={styles.text}>
                   Главная
                 </Link>
                 <Link href="/catalog" className={styles.text}>
@@ -50,15 +53,15 @@ const Footer: FC = () => {
               <div className={styles.block}>
                 <h5 className={styles.title}>Контакты</h5>
                 <p className={styles.text}>По вопросам:</p>
-                <p className={styles.text}>+7 800 550-31-90</p>
-                <p className={styles.text}>info@tatbayar.ru</p>
+                <Contacts src={email} text="info@tatbayar.ru" f_size="12px" i_size="13px" />
+                <Contacts src={phone} text="+7 800 550-31-909" f_size="12px" i_size="13px" />
               </div>
             </div>
           ) : (
             <>
               <div className={styles.block}>
                 <h5 className={styles.title}>Навигация</h5>
-                <Link href="/main" className={styles.text}>
+                <Link href="/" className={styles.text}>
                   Главная
                 </Link>
                 <Link href="/catalog" className={styles.text}>
@@ -77,8 +80,8 @@ const Footer: FC = () => {
               <div className={styles.block}>
                 <h5 className={styles.title}>Контакты</h5>
                 <p className={styles.text}>По вопросам:</p>
-                <p className={styles.text}>+7 800 550-31-90</p>
-                <p className={styles.text}>info@tatbayar.ru</p>
+                <Contacts src={email} text="info@tatbayar.ru" f_size="24px" i_size="26px" />
+                <Contacts src={phone} text="+7 800 550-31-909" f_size="24px" i_size="26px" />
               </div>
             </>
           )}

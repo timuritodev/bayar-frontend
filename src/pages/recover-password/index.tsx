@@ -79,7 +79,7 @@ const RecoverPasswordPage = () => {
         <Popup
           title="Восстановление пароля"
           text="Письмо отправлено на указанную почту"
-          link="/main"
+          link="/"
           isOpened={isSavedPopupOpened}
           setIsOpened={setIsSavedPopupOpened}
         />
