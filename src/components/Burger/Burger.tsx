@@ -115,6 +115,13 @@ export const Burger: FC<BurgerProps> = ({ isPopupOpen, switchPopup }) => {
             /> 
           </form>*/}
           <div className={styles.burger__links_container}>
+            <Link
+              href="/main"
+              className={styles.burger__link}
+              onClick={handleLinkClick}
+            >
+              Главная
+            </Link>
             {user.token === "" && (
               <>
                 <Link

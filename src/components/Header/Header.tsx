@@ -3,7 +3,9 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
 import { useResize } from "../../hooks/useResize";
+import email from "../../images/email.svg";
 import logo from "../../images/logo_s.svg";
+import phone from "../../images/phone.svg";
 import profile from "../../images/profile.svg";
 import {
   selectUser
@@ -11,6 +13,7 @@ import {
 import { useAppSelector } from "../../services/typeHooks";
 import { BurgerButton } from "../BurgerButton/BurgerButton";
 // import Search from "../Search/Search";
+import { Contacts } from '../Contacts/Contacts';
 import styles from "./style.module.scss";
 
 const Header: FC = () => {
@@ -97,6 +100,12 @@ const Header: FC = () => {
         </div>
 
         <div className={styles.header__search__container}>
+          {width > 767 && (
+            <div className={styles.info}>
+              <Contacts src={email} text="info@tatbayar.ru" f_size="16px" i_size="23px" />
+              <Contacts src={phone} text="+7 800 550-31-909" f_size="16px" i_size="23px" />
+            </div>
+          )}
           <Link href="/profile">
             <Image className={styles.header__profile_icon} alt="Иконка профиля" src={profile} />
           </Link>
