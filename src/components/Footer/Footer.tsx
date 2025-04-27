@@ -34,7 +34,7 @@ const Footer: FC = () => {
             <div className={styles.block_add}>
               <div className={styles.block}>
                 <h5 className={styles.title}>Навигация</h5>
-                <Link href="/main" className={styles.text}>
+                <Link href="/" className={styles.text}>
                   Главная
                 </Link>
                 <Link href="/catalog" className={styles.text}>
@@ -61,7 +61,7 @@ const Footer: FC = () => {
             <>
               <div className={styles.block}>
                 <h5 className={styles.title}>Навигация</h5>
-                <Link href="/main" className={styles.text}>
+                <Link href="/" className={styles.text}>
                   Главная
                 </Link>
                 <Link href="/catalog" className={styles.text}>

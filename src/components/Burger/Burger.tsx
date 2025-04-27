@@ -65,7 +65,7 @@ export const Burger: FC<BurgerProps> = ({ isPopupOpen, switchPopup }) => {
               type="button"
               onClick={switchPopup}
             />
-            <Link href="/main">
+            <Link href="/">
               <Image
                 className={styles.header__logo}
                 alt="Логотип"
@@ -116,7 +116,7 @@ export const Burger: FC<BurgerProps> = ({ isPopupOpen, switchPopup }) => {
           </form>*/}
           <div className={styles.burger__links_container}>
             <Link
-              href="/main"
+              href="/"
               className={styles.burger__link}
               onClick={handleLinkClick}
             >
