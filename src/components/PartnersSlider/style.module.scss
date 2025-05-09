@@ -1,0 +1,26 @@
+.slick_slider {
+	width: 100%;
+	max-width: 1280px;
+	margin: 50px auto;
+}
+
+.container {
+	width: 100%;
+}
+
+.title {
+	font-family: ClearSans;
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 54.85px;
+	text-align: center;
+	letter-spacing: 0%;
+	margin: 0 0 40px 0;
+}
+
+@media screen and (max-width: 767px) {
+	.container {
+		// max-width: 320px;
+		width: 100%;
+	}
+}

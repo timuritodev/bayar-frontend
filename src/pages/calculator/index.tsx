@@ -150,14 +150,15 @@ const CalculatorPage = () => {
 								validation={{ ...register("window_area", WINDOW_AREA_VALIDATION_CONFIG) }}
 								error={errors?.window_area?.message}
 							/>
+
+						</div>
+						<div className={styles.form__container}>
 							<CustomOptions
 								label="Ширина стеновой панели"
 								options={options_wall_panel_width}
 								selectedValue={wall_panel_width}
 								onChange={setWall_panel_width}
 							/>
-						</div>
-						<div className={styles.form__container}>
 							<CustomInput
 								inputType={CustomInputTypes.wall_panel_thickness}
 								labelText="Толщина стеновых панелей, мм."

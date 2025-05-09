@@ -1,4 +1,5 @@
 import { MainSlider } from '@/components/MainSlider/MainSlider';
+import { PartnersSlider } from '@/components/PartnersSlider/PartnersSlider';
 import SEO from '@/components/SEO/SEO';
 import { useAppDispatch } from "@/services/typeHooks";
 import styles from "./index.module.scss";
@@ -13,6 +14,7 @@ const MainPage = () => {
       <div className={styles.main}>
         <div className={styles.container}>
           <MainSlider />
+          <PartnersSlider />
         </div>
       </div>
     </>
