@@ -36,7 +36,6 @@ export const PartnersSlider = () => {
 
 	return (
 		<div className={styles.slick_slider}>
-			<h3 className={styles.title}>Наши партнёры</h3>
 			<Slider {...settings} className={styles.container}>
 				{data.map((item) => (
 					<Partner key={item.id} data={item} />
