@@ -1,0 +1,21 @@
+.container {
+	width: 196px;
+	height: 146px;
+}
+
+.img {
+	width: 196px;
+	height: 146px;
+}
+
+@media screen and (max-width: 767px) {
+	.container {
+		width: 140px;
+		height: 120px;
+	}
+
+	.img {
+		width: 140px;
+		height: 120px;
+	}
+}

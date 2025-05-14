@@ -18,6 +18,18 @@
 	// height: 100vh;
 }
 
+.title {
+	font-family: ClearSans;
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 54.85px;
+	text-align: center;
+	letter-spacing: 0%;
+	padding: 40px 0 0 0;
+	margin: 0;
+	width: 100%;
+}
+
 .subtitle {
 	font-size: 55px;
 	color: #fff;
@@ -78,6 +90,16 @@
 }
 
 @media screen and (max-width: 1024px) {
+	.title {
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 100%;
+		letter-spacing: 0%;
+		text-align: center;
+		padding: 20px 0 0 0;
+		margin: 0;
+	}
+
 	.subtitle {
 		font-size: 45px;
 		color: #fff;
