@@ -35,17 +35,19 @@
 }
 
 @media screen and (max-width: 767px) {
-	.container {
-		border-radius: 12.95px;
-	}
 	.list {
 		justify-content: center;
 		gap: 20px;
+		padding: 20px 0;
 	}
+
+	.container {
+		height: 306px;
+	}
+
 	.img {
 		width: 244px;
 		height: 230px;
-		border-radius: 12.95px;
 	}
 
 	.title {
