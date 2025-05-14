@@ -9,7 +9,6 @@ import {
 	BUILDING_WIDTH_VALIDATION_CONFIG,
 	CEILING_HEIGHT_VALIDATION_CONFIG,
 	DOOR_AREA_VALIDATION_CONFIG,
-	REGION_VALIDATION_CONFIG,
 	ROOF_PANEL_THICKNESS_VALIDATION_CONFIG,
 	WALL_PANEL_THICKNESS_VALIDATION_CONFIG,
 	WINDOW_AREA_VALIDATION_CONFIG
@@ -31,7 +30,7 @@ const CalculatorPage = () => {
 	const [isPopupOpened, setIsPopupOpened] = useState<boolean>(false);
 	const [insulation_type, setInsulation_type] = useState('mineral_wool');
 	const [wall_panel_width, setWall_panel_width] = useState('1');
-	const [metal_thickness, setMetal_thickness] = useState('0,45');
+	const [metal_thickness, setMetal_thickness] = useState('0.45');
 	const [insulation_density, setInsulation_density] = useState('95');
 	const [buildingType, setBuildingType] = useState("односкатная");
 	const [roofType, setRoofType] = useState("с");
@@ -195,12 +194,12 @@ const CalculatorPage = () => {
 								validation={{ ...register("color", COLOR_VALIDATION_CONFIG) }}
 								error={errors?.color?.message}
 							/> TODO добавить выбор цвета */}
-							<CustomInput
+							{/* <CustomInput
 								inputType={CustomInputTypes.region}
 								labelText="Район строительства"
 								validation={{ ...register("region", REGION_VALIDATION_CONFIG) }}
 								error={errors?.region?.message}
-							/>
+							/> */}
 							<CustomButton
 								buttonText={"Рассчитать"}
 								handleButtonClick={handleSubmit(onSubmit)}
