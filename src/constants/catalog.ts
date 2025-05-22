@@ -70,17 +70,34 @@ export const roof: IUniCard[] = [
 export const components: IUniCard[] = [
 	{
 		id: 1,
-		title: 'Гидроизоляция, ветрозащита',
+		title: 'Теплоизоляция',
 		img: waterproof,
 		width: 460,
 		height: 440,
-		link: 'components/water-wind-proofing'
+		link: 'components/thermal_insulation'
 	},
 	{
 		id: 2,
-		title: 'Крепёж',
+		title: 'Крепёжные элементы',
 		img: fasteners,
 		width: 460,
 		height: 440,
+		link: 'components/fasteners'
+	},
+	{
+		id: 3,
+		title: 'Фасонные элементы',
+		img: waterproof,
+		width: 460,
+		height: 440,
+		link: 'components/profiled_sheeting'
+	},
+	{
+		id: 3,
+		title: 'Профнастил',
+		img: waterproof,
+		width: 460,
+		height: 440,
+		link: 'components/shaped_elements'
 	},
 ]
