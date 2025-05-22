@@ -12,6 +12,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { calculatorReducer } from './slices/calculator/calculator';
+import { productsReducer } from './slices/products/products';
 import { userReducer } from './slices/user/user';
 import { water_accessoryReducer } from './slices/water_accessory/water_accessory';
 
@@ -19,6 +20,7 @@ import { water_accessoryReducer } from './slices/water_accessory/water_accessory
 const rootReducer = combineReducers({
   user: userReducer,
   calculator: calculatorReducer,
+  products: productsReducer,
   water_accessory: water_accessoryReducer
 });
 
