@@ -15,7 +15,7 @@ const Page = () => {
 
 	return (
 		<>
-			<SEO title="Гидроизоляция/Ветрозащита - BAYAR" description="Покупайте комплектующие по лучшим ценам" keywords="гидроизоляция купить, ветрозащита купить, гидроизоляция ветрозащита купить" />
+			<SEO title="Крепежные элементы - BAYAR" description="Покупайте комплектующие по лучшим ценам" keywords="крепежные элементы купить, крепеж купить" />
 
 			<div className={styles.page}>
 				<div className={styles.container}>
