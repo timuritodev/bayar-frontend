@@ -1,3 +1,4 @@
+import { API_BASE_URL } from '@/constants/constants';
 import { IProduct } from '@/types/Product.types';
 import Image from "next/image";
 import router from 'next/router';
@@ -13,10 +14,11 @@ export const Product: FC<IProductProps> = ({ data }) => {
 		router.push(`/product/water-wind-proofing/${data.id}`);
 	};
 
+	const imageUrl = API_BASE_URL + data.picture;
+
 	return (
 		<div className={styles.container}>
-			{/* <Image className={styles.img} alt={data.title} src={data.h_picture} width={383} height={370} onClick={handleClickImage}/> */}
-			<Image className={styles.img} alt={data.title} src={''} width={383} height={370} />
+			<Image className={styles.img} alt={data.title} src={imageUrl} width={383} height={370} />
 			<p className={styles.text}>{data.title}</p>
 			<button className={styles.button}>Заказать</button> {/*TODO сделать кнопку рабочей +- */}
 		</div>
