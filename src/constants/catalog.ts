@@ -5,13 +5,14 @@ import house from '../images/benefits/house.svg';
 import leaf from '../images/benefits/leaf.svg';
 import star from '../images/benefits/star.svg';
 import sun from '../images/benefits/sun.svg';
-import fasteners from '../images/catalog/fasteners.jpeg';
 import mineral from '../images/catalog/mineral.jpeg';
 import polystyrene from '../images/catalog/polystyrene.jpeg';
 import roof_panel from '../images/catalog/roof_panel.png';
 import wall_panel from '../images/catalog/wall_panel.jpeg';
-import waterproof from '../images/catalog/waterproofing.png';
-
+import fasteners from '../images/components/fasteners.jpeg';
+import profiled_sheeting from '../images/components/profiled_sheeting.jpg';
+import shaped_elements from '../images/components/shaped_elements.jpg';
+import thermal_insulation from '../images/components/thermal_insulation.jpg';
 
 export const benefits: IBenefit[] = [
 	{
@@ -71,7 +72,7 @@ export const components: IUniCard[] = [
 	{
 		id: 1,
 		title: 'Теплоизоляция',
-		img: waterproof,
+		img: thermal_insulation,
 		width: 460,
 		height: 440,
 		link: 'components/thermal_insulation'
@@ -87,7 +88,7 @@ export const components: IUniCard[] = [
 	{
 		id: 3,
 		title: 'Фасонные элементы',
-		img: waterproof,
+		img: shaped_elements,
 		width: 460,
 		height: 440,
 		link: 'components/profiled_sheeting'
@@ -95,7 +96,7 @@ export const components: IUniCard[] = [
 	{
 		id: 3,
 		title: 'Профнастил',
-		img: waterproof,
+		img: profiled_sheeting,
 		width: 460,
 		height: 440,
 		link: 'components/shaped_elements'
