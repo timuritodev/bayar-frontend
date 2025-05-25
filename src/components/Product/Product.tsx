@@ -11,14 +11,14 @@ interface IProductProps {
 
 export const Product: FC<IProductProps> = ({ data }) => {
 	const handleClickImage = () => {
-		router.push(`/product/water-wind-proofing/${data.id}`);
+		router.push(`/product/${data.id}`);
 	};
 
 	const imageUrl = API_BASE_URL + data.picture;
 
 	return (
 		<div className={styles.container}>
-			<Image className={styles.img} alt={data.title} src={imageUrl} width={383} height={370} />
+			<Image className={styles.img} alt={data.title} src={imageUrl} width={383} height={370} onClick={handleClickImage} />
 			<p className={styles.text}>{data.title}</p>
 			<button className={styles.button}>Заказать</button> {/*TODO сделать кнопку рабочей +- */}
 		</div>

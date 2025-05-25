@@ -19,7 +19,7 @@ const fetchData = (url: string) => {
 };
 
 export const fetchAllProducts = (type: string): Promise<IProduct[]> => {
-	return fetchData(`${API_BASE_URL}/products/${type}`);
+	return fetchData(`${API_BASE_URL}/products/type/${type}`);
 };
 
 export const fetchProductById = (id: number): Promise<IProduct> => {
