@@ -35,6 +35,7 @@ const initialState: IProductsState = {
 		title: "",
 		description: "",
 		picture: "",
+		product_type: "",
 	},
 };
 
