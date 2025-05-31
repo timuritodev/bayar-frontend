@@ -21,7 +21,7 @@ export const RoofTable = () => {
 					<td rowSpan={3} className={`${styles.td}`}>1000 см</td>
 					<td rowSpan={3} className={`${styles.td} ${styles.td_small_padding}`}>
 						Точную стоимость можно<br />узнать у наших менеджеров<br />по телефону<br />
-						<strong>+79600000000</strong>
+						<strong>+7 800 550-31-90</strong>
 					</td>
 				</tr>
 				<tr>

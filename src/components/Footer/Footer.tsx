@@ -40,9 +40,6 @@ const Footer: FC = () => {
                 <Link href="/catalog" className={styles.text}>
                   Каталог
                 </Link>
-                <Link href="/about" className={styles.text}>
-                  О нас
-                </Link>
                 <Link href="/contacts" className={styles.text}>
                   Контакты
                 </Link>
@@ -54,7 +51,7 @@ const Footer: FC = () => {
                 <h5 className={styles.title}>Контакты</h5>
                 <p className={styles.text}>По вопросам:</p>
                 <Contacts src={email} text="info@tatbayar.ru" f_size="12px" i_size="13px" />
-                <Contacts src={phone} text="+7 800 550-31-909" f_size="12px" i_size="13px" />
+                <Contacts src={phone} text="+7 800 550-31-90" f_size="12px" i_size="13px" />
               </div>
             </div>
           ) : (
@@ -81,7 +78,7 @@ const Footer: FC = () => {
                 <h5 className={styles.title}>Контакты</h5>
                 <p className={styles.text}>По вопросам:</p>
                 <Contacts src={email} text="info@tatbayar.ru" f_size="24px" i_size="26px" />
-                <Contacts src={phone} text="+7 800 550-31-909" f_size="24px" i_size="26px" />
+                <Contacts src={phone} text="+7 800 550-31-90" f_size="24px" i_size="26px" />
               </div>
             </>
           )}

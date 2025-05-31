@@ -57,7 +57,7 @@ const Header: FC = () => {
   return (
     <header className={styles.header}>
       <div className={styles.header__container}>
-        {width < 767 && (
+        {width < 1023 && (
           <BurgerButton isPopupOpen={isPopupOpen} switchPopup={switchPopup} />
         )}
         <Link href="/">
@@ -88,8 +88,8 @@ const Header: FC = () => {
               </ul>
             </li>
           </ul>
-          <Link href="/about" className={`${styles.header__link} ${is_active("/about") ? styles.active : ""}`}>
-            О нас
+          <Link href="/contacts" className={`${styles.header__link} ${is_active("/contacts") ? styles.active : ""}`}>
+            Контакты
           </Link>
           <Link href="/calculator" className={`${styles.header__link} ${is_active("/calculator") ? styles.active : ""}`}>
             Калькулятор
@@ -100,10 +100,10 @@ const Header: FC = () => {
         </div>
 
         <div className={styles.header__search__container}>
-          {width > 767 && (
+          {width > 1023 && (
             <div className={styles.info}>
               <Contacts src={email} text="info@tatbayar.ru" f_size="16px" i_size="23px" />
-              <Contacts src={phone} text="+7 800 550-31-909" f_size="16px" i_size="23px" />
+              <Contacts src={phone} text="+7 800 550-31-90" f_size="16px" i_size="23px" />
             </div>
           )}
           <Link href="/profile">
