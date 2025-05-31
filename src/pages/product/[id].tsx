@@ -1,5 +1,6 @@
 
 import SEO from '@/components/SEO/SEO';
+import { API_BASE_URL } from '@/constants/constants';
 import { getProductById } from '@/services/redux/slices/products/products';
 import Image from "next/image";
 import { useRouter } from 'next/router';
@@ -21,6 +22,8 @@ const Page = () => {
 
 	if (!product.title) return <p>Загрузка...</p>;
 
+	const imageUrl = API_BASE_URL + product.picture;
+
 	return (
 		<>
 			<SEO title={`${product.title} - BAYAR`} description={`Покупайте ${product.title} по лучшим ценам с доставкой по всей рф. ${product.description}`} keywords={`${product.title}, купить ${product.title}, BAYAR`} />
@@ -28,7 +31,7 @@ const Page = () => {
 			<div className={styles.product}>
 				<div className={styles.container}>
 					<div className={styles.block}>
-						<Image className={styles.img} alt={product.title} src={product.picture} width={557} height={532} />
+						<Image className={styles.img} alt={product.title} src={imageUrl} width={557} height={532} />
 						{/*TODO добавить сюда кнопку для заказать +- */}
 					</div>
 					<div className={styles.block}>

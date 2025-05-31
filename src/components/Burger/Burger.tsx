@@ -179,11 +179,11 @@ export const Burger: FC<BurgerProps> = ({ isPopupOpen, switchPopup }) => {
               Калькулятор
             </Link>
             <Link
-              href="/about"
+              href="/contacts"
               className={styles.burger__link}
               onClick={handleLinkClick}
             >
-              О нас
+              Контакты
             </Link>
           </div>
         </div>
