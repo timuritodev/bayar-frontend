@@ -7,17 +7,12 @@ import email from "../../images/email.svg";
 import logo from "../../images/logo_s.svg";
 import phone from "../../images/phone.svg";
 import profile from "../../images/profile.svg";
-import {
-  selectUser
-} from "../../services/redux/slices/user/user";
-import { useAppSelector } from "../../services/typeHooks";
 import { BurgerButton } from "../BurgerButton/BurgerButton";
 // import Search from "../Search/Search";
 import { Contacts } from '../Contacts/Contacts';
 import styles from "./style.module.scss";
 
 const Header: FC = () => {
-  const user = useAppSelector(selectUser);
   const router = useRouter();
 
   const [values, setValues] = useState("");

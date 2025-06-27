@@ -6,12 +6,11 @@ import { useResize } from "../../hooks/useResize";
 import email from "../../images/email.svg";
 import logo from "../../images/logo_s.svg";
 import phone from "../../images/phone.svg";
-import { useAppDispatch } from "../../services/typeHooks";
 import { Contacts } from '../Contacts/Contacts';
 import styles from "./style.module.scss";
 
 const Footer: FC = () => {
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
   const router = useRouter();
 
   const { width } = useResize();
