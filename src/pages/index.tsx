@@ -1,5 +1,5 @@
 import { ExampleList } from '@/components/Examples/ExampleList';
-import { MainSlider } from '@/components/MainSlider/MainSlider';
+import { MainWrapper } from '@/components/MainWrapper/MainWrapper';
 import { Map } from '@/components/Map/Map';
 import { PartnersSlider } from '@/components/PartnersSlider/PartnersSlider';
 import SEO from '@/components/SEO/SEO';
@@ -16,7 +16,8 @@ const MainPage = () => {
 
       <div className={styles.main}>
         <div className={styles.container}>
-          <MainSlider />
+          {/* <MainSlider /> */}
+          <MainWrapper />
           <h3 className={styles.title}>Наши партнёры</h3>
           <PartnersSlider />
           <h3 className={styles.title} style={{ backgroundColor: '#f4f6ff' }}>Примеры реализованных объектов</h3>
