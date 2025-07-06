@@ -3,6 +3,8 @@ import { FC } from 'react';
 import { MainItemList } from './MainItem/MainItemList';
 import styles from './style.module.scss';
 
+// TODO добавить на фон лого
+
 export const MainWrapper: FC = () => {
 	return (
 		<div className={styles.container}>

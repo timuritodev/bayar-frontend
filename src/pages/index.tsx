@@ -6,6 +6,7 @@ import SEO from '@/components/SEO/SEO';
 import { examples } from '@/constants/example';
 import { useAppDispatch } from "@/services/typeHooks";
 import styles from "./index.module.scss";
+import { Features } from '@/components/Features/Features';
 
 const MainPage = () => {
   const dispatch = useAppDispatch();
@@ -18,6 +19,7 @@ const MainPage = () => {
         <div className={styles.container}>
           {/* <MainSlider /> */}
           <MainWrapper />
+          <Features />
           <h3 className={styles.title}>Наши партнёры</h3>
           <PartnersSlider />
           <h3 className={styles.title} style={{ backgroundColor: '#f4f6ff' }}>Примеры реализованных объектов</h3>

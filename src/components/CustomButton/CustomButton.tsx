@@ -42,7 +42,7 @@ export const CustomButton: FC<ICustomButton> = ({
 
   return (
     <button
-      className={styles.button}
+      className={`${styles.button} ${className ? className : ""}`}
       disabled={disabled}
       type={type}
       onClick={handleButtonClick}
