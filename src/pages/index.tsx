@@ -7,6 +7,7 @@ import { examples } from '@/constants/example';
 import { useAppDispatch } from "@/services/typeHooks";
 import styles from "./index.module.scss";
 import { Features } from '@/components/Features/Features';
+import { Details } from '@/components/Details/Details';
 
 const MainPage = () => {
   const dispatch = useAppDispatch();
@@ -17,15 +18,16 @@ const MainPage = () => {
 
       <div className={styles.main}>
         <div className={styles.container}>
-          {/* <MainSlider /> */}
           <MainWrapper />
           <Features />
+          <Details />
+          {/* <MainSlider />
           <h3 className={styles.title}>Наши партнёры</h3>
           <PartnersSlider />
           <h3 className={styles.title} style={{ backgroundColor: '#f4f6ff' }}>Примеры реализованных объектов</h3>
           <ExampleList data={examples} />
           <h3 className={styles.title}>Месторасположение</h3>
-          <Map />
+          <Map /> */}
         </div>
       </div>
     </>

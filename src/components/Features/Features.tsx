@@ -16,7 +16,7 @@ export const Features: FC = () => {
 				// handleButtonClick={handleSubmit(onSubmit)}
 				// disabled={!isDirty || !isValid}
 				type="submit"
-				className={styles.button}
+				className={styles.features_button}
 			/>
 		</div>
 	);

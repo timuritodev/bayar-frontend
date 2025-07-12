@@ -1,6 +1,7 @@
 import { FC } from "react";
 import styles from "./style.module.scss";
 import Image, { StaticImageData } from "next/image";
+import { useHighlightParser } from '@/hooks/useHighlightParser';
 
 
 export interface IFeaturesItem {
@@ -20,6 +21,7 @@ export const FeaturesItem: FC<IFeaturesItemProps> = ({ data }) => (
 			alt="feature"
 			className={styles.img}
 		/>
-		<p className={styles.description}>{data.description}</p>
+		{/* <p className={styles.description}>{data.description}</p> */}
+		<p className={styles.description}>{useHighlightParser(data.description, '#f28c00')}</p>
 	</div>
 );
