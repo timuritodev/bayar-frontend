@@ -9,9 +9,9 @@ import transneft from '../images/examples/transneft.webp';
 import ts_perviy from '../images/examples/ts_perviy.webp';
 
 export const examples: IExample[] = [
-	{ id: 2, title: 'Индустриальный парк "CHELNY" г.Набережные Челны', img: indsustrial_park_chelny },
-	{ id: 5, title: 'Нефтеперерабатывающий Комплекс "ТАНЕКО" г.Нижнекамск', img: taneko },
-	{ id: 7, title: 'Производственные объекты «Транснефть Поволжье»', img: transneft },
+	{ id: 2, title: 'Индустриальный парк "CHELNY" г.Набережные Челны', description: 'Индустриальный парк CHELNY г. Набережные Челны, поставлено и смонтировано более 1000 м²', img: indsustrial_park_chelny },
+	{ id: 5, title: 'Комплекс "ТАНЕКО" г.Нижнекамск', description: 'Нефтеперерабатывающий комплекс «ТАНЕКО» г. Нижнекамск, поставлено и смонтировано более 5000 м²', img: taneko },
+	{ id: 7, title: '«Транснефть Поволжье»', description: 'Производственные объекты «Транснефть Поволжье», поставлено и смонтировано более 5000 м²', img: transneft },
 	{ id: 8, title: 'ТЦ «Первый», г.Набережные Челны', img: ts_perviy },
 	{ id: 6, title: 'Производственный корпус металлургического комбината "ТЭМПО»', img: tempo },
 	{ id: 1, title: 'Жилой комплекс «EUROPA TOWER», г. Набережные Челны', img: europa_tower },

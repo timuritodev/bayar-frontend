@@ -1,0 +1,23 @@
+.slick_slider {
+	width: 100%;
+	background-color: #b4b7d4;
+
+	padding: 45px 0;
+}
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+	max-width: 1280px;
+}
+
+@media screen and (max-width: 767px) {
+	.slick_slider {
+		margin: 20px 0;
+	}
+
+	.container {
+		// max-width: 320px;
+		width: 100%;
+	}
+}

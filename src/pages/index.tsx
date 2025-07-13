@@ -8,6 +8,7 @@ import { useAppDispatch } from "@/services/typeHooks";
 import styles from "./index.module.scss";
 import { Features } from '@/components/Features/Features';
 import { Details } from '@/components/Details/Details';
+import { ExamplesSlider } from '@/components/ExamplesSlider/ExamplesSlider';
 
 const MainPage = () => {
   const dispatch = useAppDispatch();
@@ -21,6 +22,7 @@ const MainPage = () => {
           <MainWrapper />
           <Features />
           <Details />
+          <ExamplesSlider />
           {/* <MainSlider />
           <h3 className={styles.title}>Наши партнёры</h3>
           <PartnersSlider />
