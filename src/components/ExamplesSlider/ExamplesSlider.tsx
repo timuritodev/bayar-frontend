@@ -4,6 +4,8 @@ import { examples } from '../../constants/example';
 import { Example } from './Example/Example';
 import styles from './style.module.scss';
 
+// смотри мне надо сделать вот такой вот слайдер я вприницпе все сделал только единственное половина карточки отображается слева а я хочу чтобы было справа и также надо добавить эти точки
+
 export const ExamplesSlider = () => {
 	const settings = {
 		// dots: true,

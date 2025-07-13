@@ -9,6 +9,7 @@ import styles from "./index.module.scss";
 import { Features } from '@/components/Features/Features';
 import { Details } from '@/components/Details/Details';
 import { ExamplesSlider } from '@/components/ExamplesSlider/ExamplesSlider';
+import { Gifts } from '@/components/Gifts/Gifts';
 
 const MainPage = () => {
   const dispatch = useAppDispatch();
@@ -23,6 +24,7 @@ const MainPage = () => {
           <Features />
           <Details />
           <ExamplesSlider />
+          <Gifts />
           {/* <MainSlider />
           <h3 className={styles.title}>Наши партнёры</h3>
           <PartnersSlider />
