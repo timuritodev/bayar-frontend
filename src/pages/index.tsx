@@ -10,6 +10,7 @@ import { Features } from '@/components/Features/Features';
 import { Details } from '@/components/Details/Details';
 import { ExamplesSlider } from '@/components/ExamplesSlider/ExamplesSlider';
 import { Gifts } from '@/components/Gifts/Gifts';
+import { Compound } from '@/components/Compound/Compound';
 
 const MainPage = () => {
   const dispatch = useAppDispatch();
@@ -25,6 +26,7 @@ const MainPage = () => {
           <Details />
           <ExamplesSlider />
           <Gifts />
+          <Compound />
           {/* <MainSlider />
           <h3 className={styles.title}>Наши партнёры</h3>
           <PartnersSlider />
