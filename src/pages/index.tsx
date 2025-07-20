@@ -1,18 +1,15 @@
-import { ExampleList } from '@/components/Examples/ExampleList';
-import { MainWrapper } from '@/feauters/main-block/MainWrapper/MainWrapper';
-import { Map } from '@/components/Map/Map';
-import { PartnersSlider } from '@/feauters/sliders/PartnersSlider/PartnersSlider';
 import SEO from '@/components/SEO/SEO';
-import { examples } from '@/constants/example';
+import { faqItems } from '@/constants/faq';
+import { Compound } from '@/feauters/main-block/Compound/Compound';
+import { ContactsBlock } from '@/feauters/main-block/ContactsBlock/ContactsBlock';
+import { Details } from '@/feauters/main-block/Details/Details';
+import { FAQAccordion } from '@/feauters/main-block/FAQ/FAQAccordion';
+import { Features } from '@/feauters/main-block/Features/Features';
+import { Gifts } from '@/feauters/main-block/Gifts/Gifts';
+import { MainWrapper } from '@/feauters/main-block/MainWrapper/MainWrapper';
+import { ExamplesSlider } from '@/feauters/sliders/ExamplesSlider/ExamplesSlider';
 import { useAppDispatch } from "@/services/typeHooks";
 import styles from "./index.module.scss";
-import { Features } from '@/feauters/main-block/Features/Features';
-import { Details } from '@/feauters/main-block/Details/Details';
-import { ExamplesSlider } from '@/feauters/sliders/ExamplesSlider/ExamplesSlider';
-import { Gifts } from '@/feauters/main-block/Gifts/Gifts';
-import { Compound } from '@/feauters/main-block/Compound/Compound';
-import { FAQAccordion } from '@/feauters/main-block/FAQ/FAQAccordion';
-import { faqItems } from '@/constants/faq';
 
 const MainPage = () => {
   const dispatch = useAppDispatch();
@@ -30,6 +27,7 @@ const MainPage = () => {
           <Gifts />
           <Compound />
           <FAQAccordion items={faqItems} />
+          <ContactsBlock />
           {/* <MainSlider />
           <h3 className={styles.title}>Наши партнёры</h3>
           <PartnersSlider />
