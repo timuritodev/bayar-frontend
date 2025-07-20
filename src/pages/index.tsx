@@ -11,6 +11,8 @@ import { Details } from '@/feauters/main-block/Details/Details';
 import { ExamplesSlider } from '@/feauters/sliders/ExamplesSlider/ExamplesSlider';
 import { Gifts } from '@/feauters/main-block/Gifts/Gifts';
 import { Compound } from '@/feauters/main-block/Compound/Compound';
+import { FAQAccordion } from '@/feauters/main-block/FAQ/FAQAccordion';
+import { faqItems } from '@/constants/faq';
 
 const MainPage = () => {
   const dispatch = useAppDispatch();
@@ -27,6 +29,7 @@ const MainPage = () => {
           <ExamplesSlider />
           <Gifts />
           <Compound />
+          <FAQAccordion items={faqItems} />
           {/* <MainSlider />
           <h3 className={styles.title}>Наши партнёры</h3>
           <PartnersSlider />
