@@ -1,8 +1,8 @@
 import { IFirstScreen } from '@/types/FirstScreen.types';
-import first_img from '../../images/first_screen/first.png';
+import first_img from '../../../images/first_screen/first.png';
 // import second_img from '../../images/first_screen/second.jpg'
-import fifth_img from '../../images/first_screen/fifth.jpg';
-import third_img from '../../images/first_screen/third.jpg';
+import fifth_img from '../../../images/first_screen/fifth.jpg';
+import third_img from '../../../images/first_screen/third.jpg';
 
 export const data: IFirstScreen[] = [
 	{

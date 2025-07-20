@@ -2,7 +2,7 @@ import { features } from '@/constants/mock';
 import { FC } from 'react';
 import styles from './style.module.scss';
 import { FeaturesItemList } from './FeaturesItem/FeaturesItemList';
-import { CustomButton } from '../CustomButton/CustomButton';
+import { CustomButton } from '../../../components/CustomButton/CustomButton';
 
 // TODO добавить на фон лого
 

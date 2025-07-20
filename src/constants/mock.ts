@@ -1,5 +1,5 @@
-import { IFeaturesItem } from '@/components/Features/FeaturesItem/FeaturesItem';
-import { IMainItem } from '@/components/MainWrapper/MainItem/MainItem';
+import { IFeaturesItem } from '@/feauters/main-block/Features/FeaturesItem/FeaturesItem';
+import { IMainItem } from '@/feauters/main-block/MainWrapper/MainItem/MainItem';
 import first from '../images/features/first.svg'
 import sec from '../images/features/sec.svg'
 import third from '../images/features/third.svg'
@@ -9,7 +9,7 @@ import sixth from '../images/features/sixth.svg'
 import seventh from '../images/features/seventh.svg'
 import eight from '../images/features/eight.svg'
 import nine from '../images/features/nine.svg'
-import { IDetailItem } from '@/components/Details/DetailItem/DetailItem';
+import { IDetailItem } from '@/feauters/main-block/Details/DetailItem/DetailItem';
 
 export const mainItems: IMainItem[] = [
 	{

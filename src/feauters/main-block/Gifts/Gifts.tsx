@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import styles from './style.module.scss';
-import { CustomButton } from '../CustomButton/CustomButton';
+import { CustomButton } from '../../../components/CustomButton/CustomButton';
 import Image from "next/image";
-import pic from "../../images/gifts/gift.png"
+import pic from "../../../images/gifts/gift.png"
 // TODO добавить на фон лого
 
 export const Gifts: FC = () => {

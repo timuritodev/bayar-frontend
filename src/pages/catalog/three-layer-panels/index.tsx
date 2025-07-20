@@ -1,6 +1,6 @@
 import { BenefitsList } from '@/components/Benefits/BenefitsList';
 import { CatalogIntro } from '@/components/CatalogIntro/CatalogIntro';
-import { ConsultationForm } from '@/components/ConsultationForm/ConsultationForm';
+import { ConsultationForm } from '@/feauters/forms/ConsultationForm/ConsultationForm';
 import SEO from '@/components/SEO/SEO';
 import { UniCardsList } from '@/components/UniCard/UniCardList';
 import { useRef } from 'react';

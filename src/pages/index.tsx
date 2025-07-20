@@ -1,16 +1,16 @@
 import { ExampleList } from '@/components/Examples/ExampleList';
-import { MainWrapper } from '@/components/MainWrapper/MainWrapper';
+import { MainWrapper } from '@/feauters/main-block/MainWrapper/MainWrapper';
 import { Map } from '@/components/Map/Map';
-import { PartnersSlider } from '@/components/PartnersSlider/PartnersSlider';
+import { PartnersSlider } from '@/feauters/sliders/PartnersSlider/PartnersSlider';
 import SEO from '@/components/SEO/SEO';
 import { examples } from '@/constants/example';
 import { useAppDispatch } from "@/services/typeHooks";
 import styles from "./index.module.scss";
-import { Features } from '@/components/Features/Features';
-import { Details } from '@/components/Details/Details';
-import { ExamplesSlider } from '@/components/ExamplesSlider/ExamplesSlider';
-import { Gifts } from '@/components/Gifts/Gifts';
-import { Compound } from '@/components/Compound/Compound';
+import { Features } from '@/feauters/main-block/Features/Features';
+import { Details } from '@/feauters/main-block/Details/Details';
+import { ExamplesSlider } from '@/feauters/sliders/ExamplesSlider/ExamplesSlider';
+import { Gifts } from '@/feauters/main-block/Gifts/Gifts';
+import { Compound } from '@/feauters/main-block/Compound/Compound';
 
 const MainPage = () => {
   const dispatch = useAppDispatch();

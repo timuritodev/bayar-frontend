@@ -2,16 +2,16 @@ import { useResize } from '@/hooks/useResize';
 import { sendEmailApi } from '@/services/redux/slices/mailer/mailer';
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import CustomInput from "../../components/CustomInput/CustomInput";
+import CustomInput from "../../../components/CustomInput/CustomInput";
 import {
 	EMAIL_VALIDATION_CONFIG,
 	NAME_VALIDATION_CONFIG
-} from "../../constants/validation";
-import { useAppDispatch } from "../../services/typeHooks";
-import { CustomInputTypes } from "../../types/CustomInput.types";
-import { CustomButton } from '../CustomButton/CustomButton';
-import Popup from '../Popup/Popup';
+} from "../../../constants/validation";
+import { useAppDispatch } from "../../../services/typeHooks";
+import { CustomInputTypes } from "../../../types/CustomInput.types";
 import styles from "./style.module.scss";
+import { CustomButton } from '@/components/CustomButton/CustomButton';
+import Popup from '@/components/Popup/Popup';
 
 interface Form {
 	fio: string;

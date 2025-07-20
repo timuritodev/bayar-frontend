@@ -1,6 +1,6 @@
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
-import { examples } from '../../constants/example';
+import { examples } from '../../../constants/example';
 import { Example } from './Example/Example';
 import styles from './style.module.scss';
 
