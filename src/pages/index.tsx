@@ -22,8 +22,8 @@ const MainPage = () => {
         <div className={styles.container}>
           <MainWrapper />
           <Features />
-          {/*  <Details />
-          <ExamplesSlider />
+          <Details />
+          {/* <ExamplesSlider />
           <Gifts />
           <Compound />
           <FAQAccordion items={faqItems} />
