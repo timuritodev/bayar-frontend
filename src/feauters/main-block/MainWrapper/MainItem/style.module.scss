@@ -62,3 +62,35 @@
 	border-top: 2px solid #6269aa;
 	padding: 10px 0 0 0;
 }
+
+@media screen and (max-width: 767px) {
+	.mainitemlist {
+		gap: 20px;
+	}
+
+	.card {
+		width: 147px;
+		padding: 12px 12px;
+	}
+
+	.value {
+		font-size: 50px;
+	}
+
+	.unit {
+		font-size: 24px;
+	}
+
+	.beforeUnit {
+		font-size: 24px;
+	}
+
+	.smallUnit {
+		font-size: 16px;
+	}
+
+	.description {
+		font-size: 16px;
+		padding: 5px 0 0 0;
+	}
+}

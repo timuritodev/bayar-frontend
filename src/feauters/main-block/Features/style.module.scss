@@ -4,6 +4,7 @@
 	justify-content: center;
 	align-items: center;
 	margin: 100px 0;
+	max-width: 1280px;
 }
 
 .title {
@@ -31,4 +32,33 @@
 
 .features_button:hover {
 	background-color: #975a05 !important;
+}
+
+.readMore {
+	background: none;
+	border: none;
+	padding: 0;
+	color: #1a1a1a;
+	font-size: 16px;
+	font-family: inherit;
+	cursor: pointer;
+	text-decoration: underline;
+	transition: color 0.2s;
+	display: inline;
+	text-decoration: none;
+	color: #9a9a9a;
+}
+
+.readMore:hover {
+	color: #f28c00;
+}
+
+@media screen and (max-width: 767px) {
+	.container {
+		margin: 26px 0;
+	}
+
+	.title {
+		font-size: 16px;
+	}
 }

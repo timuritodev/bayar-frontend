@@ -10,7 +10,7 @@
 	background-image: url('../../../images/main_wrapper/sendvich-paneli-rockwool.jpg.jpg');
 	background-size: cover;
 	background-position: center;
-
+	padding: 45px 0 0 0;
 	/* оверлей */
 	&::before {
 		content: '';
@@ -28,15 +28,29 @@
 
 .title {
 	// font-family: Kelson Sans RU;
-	font-weight: 400;
+	font-weight: 700;
 	font-size: 60px;
 	line-height: 100%;
 	letter-spacing: 0%;
 	color: #fff;
 	text-align: center;
 	max-width: 952px;
+	margin: 0 0 62px 0;
 }
 
 .highlight {
 	color: #f28c00;
+}
+
+@media screen and (max-width: 767px) {
+	.container {
+		height: auto;
+		padding: 20px 0 40px 0;
+	}
+
+	.title {
+		font-size: 24px;
+		margin: 0 0 25px 0;
+		// max-width: 952px;
+	}
 }

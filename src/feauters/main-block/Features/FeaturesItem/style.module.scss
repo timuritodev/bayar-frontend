@@ -8,7 +8,7 @@
 
 .card {
 	display: flex;
-	width: 343px;
+	max-width: 316px;
 	box-sizing: border-box;
 	align-items: center;
 	gap: 15px;
@@ -28,4 +28,23 @@
 	line-height: 100%;
 	letter-spacing: 0%;
 	margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+	.card {
+		gap: 10px;
+	}
+
+	.img {
+		width: 40px;
+		height: 40px;
+	}
+
+	.list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 24px;
+		justify-content: center;
+		margin: 28px 0;
+	}
 }

@@ -22,12 +22,12 @@ const MainPage = () => {
         <div className={styles.container}>
           <MainWrapper />
           <Features />
-          <Details />
+          {/*  <Details />
           <ExamplesSlider />
           <Gifts />
           <Compound />
           <FAQAccordion items={faqItems} />
-          <ContactsBlock />
+          <ContactsBlock /> */}
           {/* <MainSlider />
           <h3 className={styles.title}>Наши партнёры</h3>
           <PartnersSlider />
