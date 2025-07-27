@@ -1,9 +1,13 @@
-import { ExampleList } from '@/components/Examples/ExampleList';
-import { MainSlider } from '@/components/MainSlider/MainSlider';
-import { Map } from '@/components/Map/Map';
-import { PartnersSlider } from '@/components/PartnersSlider/PartnersSlider';
 import SEO from '@/components/SEO/SEO';
-import { examples } from '@/constants/example';
+import { faqItems } from '@/constants/faq';
+import { Compound } from '@/feauters/main-block/Compound/Compound';
+import { ContactsBlock } from '@/feauters/main-block/ContactsBlock/ContactsBlock';
+import { Details } from '@/feauters/main-block/Details/Details';
+import { FAQAccordion } from '@/feauters/main-block/FAQ/FAQAccordion';
+import { Features } from '@/feauters/main-block/Features/Features';
+import { Gifts } from '@/feauters/main-block/Gifts/Gifts';
+import { MainWrapper } from '@/feauters/main-block/MainWrapper/MainWrapper';
+import { ExamplesSlider } from '@/feauters/sliders/ExamplesSlider/ExamplesSlider';
 import { useAppDispatch } from "@/services/typeHooks";
 import styles from "./index.module.scss";
 
@@ -16,13 +20,21 @@ const MainPage = () => {
 
       <div className={styles.main}>
         <div className={styles.container}>
-          <MainSlider />
+          <MainWrapper />
+          <Features />
+          <Details />
+          <ExamplesSlider />
+          <Gifts />
+          <Compound />
+          <FAQAccordion items={faqItems} />
+          <ContactsBlock />
+          {/* <MainSlider />
           <h3 className={styles.title}>Наши партнёры</h3>
           <PartnersSlider />
           <h3 className={styles.title} style={{ backgroundColor: '#f4f6ff' }}>Примеры реализованных объектов</h3>
           <ExampleList data={examples} />
           <h3 className={styles.title}>Месторасположение</h3>
-          <Map />
+          <Map /> */}
         </div>
       </div>
     </>

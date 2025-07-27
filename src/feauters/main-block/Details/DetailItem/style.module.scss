@@ -1,0 +1,23 @@
+.list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 40px;
+}
+
+.card {
+	display: flex;
+	width: 250px;
+	height: 214px;
+	box-sizing: border-box;
+	padding: 24px;
+	background-color: #fff;
+	border-radius: 10px;
+}
+
+.text {
+	font-family: ClearSans;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 100%;
+	margin: 0;
+}

@@ -1,7 +1,6 @@
 import { BenefitsList } from '@/components/Benefits/BenefitsList';
 import { CatalogIntro } from '@/components/CatalogIntro/CatalogIntro';
-import { ConsultationForm } from '@/components/ConsultationForm/ConsultationForm';
-import { RalColorSlider } from '@/components/RalColorSlider/RalColorSlider';
+import { RalColorSlider } from '@/feauters/sliders/RalColorSlider/RalColorSlider';
 import SEO from '@/components/SEO/SEO';
 import { RoofTable } from '@/components/Table/RoofTable';
 import { UniCardsList } from '@/components/UniCard/UniCardList';
@@ -10,6 +9,7 @@ import { useRef } from 'react';
 import { benefits, roof } from '../../../constants/catalog';
 import pic from '../../../images/catalog/roof.jpg';
 import styles from "./style.module.scss";
+import { ConsultationForm } from '@/feauters/forms/ConsultationForm/ConsultationForm';
 
 const Page = () => {
 	const formRef = useRef<HTMLDivElement | null>(null);

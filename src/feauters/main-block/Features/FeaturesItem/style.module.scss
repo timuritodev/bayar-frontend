@@ -1,0 +1,50 @@
+.list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 40px;
+	justify-content: center;
+	margin: 54px 0 80px 0;
+}
+
+.card {
+	display: flex;
+	max-width: 316px;
+	box-sizing: border-box;
+	align-items: center;
+	gap: 15px;
+}
+
+.img {
+	width: 60px;
+	height: 60px;
+}
+
+.description {
+	// font-family: KelsonSans;
+	font-family: ClearSans;
+	font-weight: 400;
+	font-style: Regular;
+	font-size: 16px;
+	line-height: 100%;
+	letter-spacing: 0%;
+	margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+	.card {
+		gap: 10px;
+	}
+
+	.img {
+		width: 40px;
+		height: 40px;
+	}
+
+	.list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 24px;
+		justify-content: center;
+		margin: 28px 0;
+	}
+}

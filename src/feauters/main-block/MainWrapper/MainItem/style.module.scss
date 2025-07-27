@@ -1,0 +1,96 @@
+.mainitemlist {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	justify-content: center;
+}
+
+.card {
+	width: 200px;
+	background-color: #f5f4f4;
+	border-radius: 5px;
+	padding: 24px 24px;
+	box-sizing: border-box;
+}
+
+.wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.value {
+	font-family: ClearSans;
+	font-weight: 700;
+	font-size: 80px;
+	line-height: 100%;
+	letter-spacing: 0%;
+	color: #f28c00;
+}
+
+.unit {
+	font-family: ClearSans;
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 100%;
+	letter-spacing: 0%;
+}
+
+.beforeUnit {
+	font-family: ClearSans;
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 100%;
+	letter-spacing: 0%;
+}
+
+.smallUnit {
+	font-family: ClearSans;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 100%;
+	letter-spacing: 0%;
+}
+
+.description {
+	font-family: ClearSans;
+	font-weight: 400;
+	font-size: 19px;
+	line-height: 100%;
+	letter-spacing: 0%;
+	text-align: center;
+	margin: 0;
+	border-top: 2px solid #6269aa;
+	padding: 10px 0 0 0;
+}
+
+@media screen and (max-width: 767px) {
+	.mainitemlist {
+		gap: 20px;
+	}
+
+	.card {
+		width: 147px;
+		padding: 12px 12px;
+	}
+
+	.value {
+		font-size: 50px;
+	}
+
+	.unit {
+		font-size: 24px;
+	}
+
+	.beforeUnit {
+		font-size: 24px;
+	}
+
+	.smallUnit {
+		font-size: 16px;
+	}
+
+	.description {
+		font-size: 16px;
+		padding: 5px 0 0 0;
+	}
+}
