@@ -1,6 +1,7 @@
 import SEO from '@/components/SEO/SEO';
 import { faqItems } from '@/constants/faq';
 import { Compound } from '@/feauters/main-block/Compound/Compound';
+import { ContactsBlock } from '@/feauters/main-block/ContactsBlock/ContactsBlock';
 import { Details } from '@/feauters/main-block/Details/Details';
 import { FAQAccordion } from '@/feauters/main-block/FAQ/FAQAccordion';
 import { Features } from '@/feauters/main-block/Features/Features';
@@ -26,7 +27,7 @@ const MainPage = () => {
           <Gifts />
           <Compound />
           <FAQAccordion items={faqItems} />
-          {/*<ContactsBlock /> */}
+          <ContactsBlock />
           {/* <MainSlider />
           <h3 className={styles.title}>Наши партнёры</h3>
           <PartnersSlider />
