@@ -1,11 +1,6 @@
 import SEO from '@/components/SEO/SEO';
-import { faqItems } from '@/constants/faq';
-import { Compound } from '@/feauters/main-block/Compound/Compound';
-import { ContactsBlock } from '@/feauters/main-block/ContactsBlock/ContactsBlock';
 import { Details } from '@/feauters/main-block/Details/Details';
-import { FAQAccordion } from '@/feauters/main-block/FAQ/FAQAccordion';
 import { Features } from '@/feauters/main-block/Features/Features';
-import { Gifts } from '@/feauters/main-block/Gifts/Gifts';
 import { MainWrapper } from '@/feauters/main-block/MainWrapper/MainWrapper';
 import { ExamplesSlider } from '@/feauters/sliders/ExamplesSlider/ExamplesSlider';
 import { useAppDispatch } from "@/services/typeHooks";
@@ -23,8 +18,8 @@ const MainPage = () => {
           <MainWrapper />
           <Features />
           <Details />
-          {/* <ExamplesSlider />
-          <Gifts />
+          <ExamplesSlider />
+          {/*<Gifts />
           <Compound />
           <FAQAccordion items={faqItems} />
           <ContactsBlock /> */}

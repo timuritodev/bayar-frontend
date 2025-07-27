@@ -16,21 +16,25 @@ export const ExamplesSlider = () => {
 		autoplay: true,
 		autoplaySpeed: 4000,
 		arrows: false,
+		centerMode: true,
+		centerPadding: '20vw',
 		responsive: [
-			{
-				breakpoint: 1320,
-				settings: {
-					slidesToShow: 4,
-					slidesToScroll: 2,
-				},
-			},
 			{
 				breakpoint: 767,
 				settings: {
-					slidesToShow: 2,
+					slidesToShow: 1,
 					slidesToScroll: 1,
-					// centerMode: true,
-					// centerPadding: "35px",
+					centerMode: true,
+					centerPadding: '20px',
+				},
+			},
+			{
+				breakpoint: 349,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					centerMode: true,
+					centerPadding: '0px',
 				},
 			},
 		],
@@ -38,6 +42,7 @@ export const ExamplesSlider = () => {
 
 	return (
 		<div className={styles.slick_slider}>
+			<h3 className={styles.title}>Реализованные объекты</h3>
 			<Slider {...settings} className={styles.container}>
 				{examples.map((item) => (
 					<Example key={item.id} data={item} />
