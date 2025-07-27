@@ -1,8 +1,8 @@
 import { ComponentCardList } from '@/components/ComponentCard/ComponentCardList';
-import { ConsultationForm } from '@/components/ConsultationForm/ConsultationForm';
 import SEO from '@/components/SEO/SEO';
 import { components } from '../../../constants/catalog';
 import styles from "./style.module.scss";
+import { ConsultationForm } from '@/feauters/forms/ConsultationForm/ConsultationForm';
 
 const Page = () => {
 
