@@ -1,6 +1,7 @@
 import SEO from '@/components/SEO/SEO';
 import { Details } from '@/feauters/main-block/Details/Details';
 import { Features } from '@/feauters/main-block/Features/Features';
+import { Gifts } from '@/feauters/main-block/Gifts/Gifts';
 import { MainWrapper } from '@/feauters/main-block/MainWrapper/MainWrapper';
 import { ExamplesSlider } from '@/feauters/sliders/ExamplesSlider/ExamplesSlider';
 import { useAppDispatch } from "@/services/typeHooks";
@@ -19,8 +20,8 @@ const MainPage = () => {
           <Features />
           <Details />
           <ExamplesSlider />
-          {/*<Gifts />
-          <Compound />
+          <Gifts />
+          {/*<Compound />
           <FAQAccordion items={faqItems} />
           <ContactsBlock /> */}
           {/* <MainSlider />
