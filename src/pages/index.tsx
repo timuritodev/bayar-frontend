@@ -1,6 +1,8 @@
 import SEO from '@/components/SEO/SEO';
+import { faqItems } from '@/constants/faq';
 import { Compound } from '@/feauters/main-block/Compound/Compound';
 import { Details } from '@/feauters/main-block/Details/Details';
+import { FAQAccordion } from '@/feauters/main-block/FAQ/FAQAccordion';
 import { Features } from '@/feauters/main-block/Features/Features';
 import { Gifts } from '@/feauters/main-block/Gifts/Gifts';
 import { MainWrapper } from '@/feauters/main-block/MainWrapper/MainWrapper';
@@ -23,8 +25,8 @@ const MainPage = () => {
           <ExamplesSlider />
           <Gifts />
           <Compound />
-          {/*<FAQAccordion items={faqItems} />
-          <ContactsBlock /> */}
+          <FAQAccordion items={faqItems} />
+          {/*<ContactsBlock /> */}
           {/* <MainSlider />
           <h3 className={styles.title}>Наши партнёры</h3>
           <PartnersSlider />
