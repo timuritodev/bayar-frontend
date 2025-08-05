@@ -13,6 +13,8 @@ import { CustomInputTypes } from "@/types/CustomInput.types";
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import styles from "./style.module.scss";
+import Image from 'next/image';
+import logo from "../../../images/form_logo.png";
 
 interface FeedbackFormValues {
 	objectType: string;
@@ -75,6 +77,7 @@ export const FeedbackForm = () => {
 	return (
 		<div className={styles.container}>
 			<form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
+				<h2 className={styles.title}>Форма обратной связи</h2>
 				<div className={styles.wrapper}>
 					<CustomInput
 						inputType={CustomInputTypes.text}
@@ -145,19 +148,40 @@ export const FeedbackForm = () => {
 				</div>
 
 				<div className={styles.buttons}>
-					<CustomButton
-						buttonText="Рассчитать стоимость"
+					<button
 						type="submit"
+						className={styles.orangeButton}
 						disabled={!isDirty || !isValid}
-					/>
-					{/* <CustomButton
-            buttonText="Рассчитать в WhatsApp"
-            icon="whatsapp" // если в CustomButton поддерживается иконка
-            handleButtonClick={handleSubmit(onSubmit)}
-            disabled={!isDirty || !isValid}
-          /> */}
+					>
+						Рассчитать стоимость
+					</button>
+					<button
+						type="button"
+						className={styles.whatsappButton}
+						onClick={handleSubmit(onSubmit)}
+						disabled={!isDirty || !isValid}
+					>
+						<Image
+							src="/icons/whatsapp.svg"
+							alt="WhatsApp"
+							width={24}
+							height={24}
+							className={styles.whatsappIcon}
+						/>
+						Рассчитать стоимость
+					</button>
 				</div>
 			</form>
+
+			<div className={styles.logoContainer}>
+				<Image
+					src={logo}
+					alt="BAYAR"
+					width={205}
+					height={205}
+					className={styles.logo}
+				/>
+			</div>
 
 			<Popup
 				title="Заявка отправлена"
