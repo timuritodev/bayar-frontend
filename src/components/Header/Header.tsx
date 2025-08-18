@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
 import { useResize } from "../../hooks/useResize";
 import email from "../../images/email.svg";
-import logo from "../../images/logo_s.svg";
+import logo from "../../images/logo_b.png";
 import phone from "../../images/phone.svg";
 import profile from "../../images/profile.svg";
 import {
@@ -65,9 +65,6 @@ const Header: FC = () => {
           <Image className={styles.header__logo} alt="Логотип BAYAR" src={logo} />
         </Link>
         <div className={styles.header__links}>
-          <Link href="/" className={`${styles.header__link} ${is_active("/") ? styles.active : ""}`}>
-            Главная
-          </Link>
           <ul className={styles.header__links_container}>
             <li className={`${styles.header__link} ${is_active("/catalog") ? styles.active : ""}`}>
               Каталог
@@ -92,14 +89,15 @@ const Header: FC = () => {
           <Link href="/contacts" className={`${styles.header__link} ${is_active("/contacts") ? styles.active : ""}`}>
             Контакты
           </Link>
-          <Link href="/calculator" className={`${styles.header__link} ${is_active("/calculator") ? styles.active : ""}`}>
+          <Link href="/forms/feedback" className={`${styles.header__link} ${styles.header__link_orange} ${is_active("/forms/feedback") ? styles.active : ""}`}>
             Рассчитать цену
           </Link>
-          <Link href="/profile" className={`${styles.header__link} ${is_active("/profile") ? styles.active : ""}`}>
+          <Link href="/#gift" className={`${styles.header__link} ${is_active("/") ? styles.active : ""}`}>
             Получить подарок
           </Link>
-          <WhatsappButton className={styles.whatsapp} />
         </div>
+
+        <WhatsappButton className={styles.whatsapp} />
 
         <div className={styles.header__search__container}>
           {width > 1023 && (

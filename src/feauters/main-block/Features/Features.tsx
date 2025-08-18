@@ -4,11 +4,13 @@ import styles from './style.module.scss';
 import { FeaturesItemList } from './FeaturesItem/FeaturesItemList';
 import { CustomButton } from '../../../components/CustomButton/CustomButton';
 import { useResize } from '@/hooks/useResize';
+import { useRouter } from 'next/router';
 
 // TODO добавить на фон лого
 
 export const Features: FC = () => {
 	const { width } = useResize();
+	const router = useRouter();
 	const [showMore, setShowMore] = useState(false);
 
 	// Короткий текст для мобилки
@@ -41,8 +43,7 @@ export const Features: FC = () => {
 			<FeaturesItemList data={features} />
 			<CustomButton
 				buttonText={"Получить прайс"}
-				// handleButtonClick={handleSubmit(onSubmit)}
-				// disabled={!isDirty || !isValid}
+				handleButtonClick={() => router.push('/forms/feedback')}
 				type="submit"
 				className={styles.features_button}
 			/>

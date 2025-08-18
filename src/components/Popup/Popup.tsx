@@ -1,16 +1,17 @@
 import { useRouter } from 'next/router';
-import { FC, useEffect } from 'react';
+import { FC, useEffect, ReactNode } from 'react';
 import styles from './style.module.scss';
 
 interface IPopup {
-	title: string;
-	text: string | JSX.Element[];
+	title?: string;
+	text?: string | JSX.Element[];
 	link?: string;
 	isOpened: boolean;
 	setIsOpened: React.Dispatch<React.SetStateAction<boolean>>;
+	children?: ReactNode;
 }
 
-const Popup: FC<IPopup> = ({ title, text, isOpened, link, setIsOpened }) => {
+const Popup: FC<IPopup> = ({ title, text, isOpened, link, setIsOpened, children }) => {
 	const router = useRouter();
 
 	const handleOverlayClick: React.MouseEventHandler<HTMLDivElement> = (evt) => {
@@ -61,14 +62,20 @@ const Popup: FC<IPopup> = ({ title, text, isOpened, link, setIsOpened }) => {
 				<h4 className={styles.popup__title}>
 					{title}
 				</h4>
-				<p className={styles.popup__text}>
-					{text}
-				</p>
-				<button
-					className={styles.popup__close}
-					onClick={handleClickClose}>
-					Закрыть
-				</button>
+				{children ? (
+					children
+				) : (
+					<>
+						<p className={styles.popup__text}>
+							{text}
+						</p>
+						<button
+							className={styles.popup__close}
+							onClick={handleClickClose}>
+							Закрыть
+						</button>
+					</>
+				)}
 			</div>
 		</div>
 	);

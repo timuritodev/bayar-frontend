@@ -10,7 +10,7 @@ export const Gifts: FC = () => {
 	const { width } = useResize();
 
 	return (
-		<div className={styles.container}>
+		<div className={styles.container} id="gift">
 			<div className={styles.sec_container}>
 				<h3 className={styles.title}>Оставьте заявку прямо сейчас и получите подарок при заказе до 30 июня!</h3>
 				{width < 767 && (
