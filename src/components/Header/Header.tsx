@@ -15,6 +15,7 @@ import { BurgerButton } from "../BurgerButton/BurgerButton";
 // import Search from "../Search/Search";
 import { Contacts } from '../Contacts/Contacts';
 import styles from "./style.module.scss";
+import { WhatsappButton } from '../WhatsappButton/WhatsappButton';
 
 const Header: FC = () => {
   const user = useAppSelector(selectUser);
@@ -92,45 +93,24 @@ const Header: FC = () => {
             Контакты
           </Link>
           <Link href="/calculator" className={`${styles.header__link} ${is_active("/calculator") ? styles.active : ""}`}>
-            Калькулятор
+            Рассчитать цену
           </Link>
-          {/* <Link href="/profile" className={`${styles.header__link} ${is_active("/profile") ? styles.active : ""}`}>
-            Профиль
-          </Link> */}
+          <Link href="/profile" className={`${styles.header__link} ${is_active("/profile") ? styles.active : ""}`}>
+            Получить подарок
+          </Link>
+          <WhatsappButton className={styles.whatsapp} />
         </div>
 
         <div className={styles.header__search__container}>
           {width > 1023 && (
             <div className={styles.info}>
-              <Contacts src={email} text="info@tatbayar.ru" f_size="16px" i_size="23px" />
+              {/* <Contacts src={email} text="info@tatbayar.ru" f_size="16px" i_size="23px" /> */}
               <Contacts src={phone} text="+7 800 550-31-90" f_size="16px" i_size="23px" />
             </div>
           )}
-          <Link href="/profile">
+          {/* <Link href="/profile">
             <Image className={styles.header__profile_icon} alt="Иконка профиля" src={profile} />
-          </Link>
-          {/*<form className={styles.header__search}>
-            <Image
-              className={styles.header__search_button_search}
-              src={loop}
-              alt="Кнопка поиска"
-            />
-            <input
-              className={styles.header__search_input}
-              id="name"
-              name="name"
-              type="text"
-              placeholder="Поиск"
-              onChange={handleChange}
-              value={values}
-              autoComplete="off"
-            />
-            <Search
-                isOpenSearch={isOpenSearch}
-                isClose={setSearchClose}
-                values={values}
-              />
-          </form>*/}
+          </Link> */}
         </div>
       </div>
     </header>

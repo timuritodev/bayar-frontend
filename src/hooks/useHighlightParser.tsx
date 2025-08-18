@@ -7,7 +7,7 @@ export function useHighlightParser(text: string, color: string) {
 				const children = node.children as unknown as DOMNode[];
 
 				return (
-					<span style={{ color: `${color}`, fontWeight: 600 }}>
+					<span style={{ color: `${color}`, fontWeight: 700 }}>
 						{domToReact(children)}
 					</span>
 				);

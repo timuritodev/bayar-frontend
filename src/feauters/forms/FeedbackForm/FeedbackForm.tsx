@@ -1,6 +1,7 @@
 import { CustomButton } from '@/components/CustomButton/CustomButton';
 import CustomInput from "@/components/CustomInput/CustomInput";
 import Popup from '@/components/Popup/Popup';
+import { WhatsappButton } from '@/components/WhatsappButton/WhatsappButton';
 import {
 	EMAIL_VALIDATION_CONFIG,
 	NAME_VALIDATION_CONFIG,
@@ -155,21 +156,10 @@ export const FeedbackForm = () => {
 					>
 						Рассчитать стоимость
 					</button>
-					<button
-						type="button"
-						className={styles.whatsappButton}
-						onClick={handleSubmit(onSubmit)}
-						disabled={!isDirty || !isValid}
-					>
-						<Image
-							src="/icons/whatsapp.svg"
-							alt="WhatsApp"
-							width={24}
-							height={24}
-							className={styles.whatsappIcon}
-						/>
-						Рассчитать стоимость
-					</button>
+					<WhatsappButton
+						size="medium"
+						phoneNumber="79272499942"
+					/>
 				</div>
 			</form>
 

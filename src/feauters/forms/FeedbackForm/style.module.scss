@@ -6,7 +6,11 @@
 	margin: 0 auto;
 	gap: 40px;
 	padding: 40px 20px;
-	background-color: #f8f9fc;
+	background: white;
+	border-radius: 12px;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+	position: relative;
+	z-index: 1;
 }
 
 .logoContainer {
@@ -23,11 +27,18 @@
 	width: 205px;
 	height: 205px;
 	object-fit: contain;
+	background: white;
+	padding: 20px;
 }
 
 .form {
 	width: 550px;
 	flex-shrink: 0;
+	background: transparent;
+	border-radius: 12px;
+	padding: 32px;
+	position: relative;
+	z-index: 1;
 }
 
 .title {
@@ -77,40 +88,4 @@
 		background: #9ca3af;
 		cursor: not-allowed;
 	}
-}
-
-.whatsappButton {
-	background: white;
-	color: #1f2937;
-	border: 2px solid #e5e7eb;
-	border-radius: 8px;
-	padding: 16px 24px;
-	font-family: 'Ubuntu', sans-serif;
-	font-size: 16px;
-	font-weight: 500;
-	cursor: pointer;
-	transition: all 0.2s ease;
-	flex: 1;
-	height: 56px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 8px;
-
-	&:hover {
-		border-color: #d1d5db;
-		background: #f9fafb;
-	}
-
-	&:disabled {
-		background: #f3f4f6;
-		color: #9ca3af;
-		border-color: #e5e7eb;
-		cursor: not-allowed;
-	}
-}
-
-.whatsappIcon {
-	filter: brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%)
-		hue-rotate(86deg) brightness(118%) contrast(119%);
 }
