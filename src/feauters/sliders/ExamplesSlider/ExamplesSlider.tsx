@@ -4,11 +4,9 @@ import { examples } from '../../../constants/example';
 import { Example } from './Example/Example';
 import styles from './style.module.scss';
 
-// смотри мне надо сделать вот такой вот слайдер я вприницпе все сделал только единственное половина карточки отображается слева а я хочу чтобы было справа и также надо добавить эти точки
-
 export const ExamplesSlider = () => {
 	const settings = {
-		// dots: true,
+		dots: true,
 		infinite: true,
 		speed: 500,
 		slidesToShow: 2.5,
@@ -22,6 +20,7 @@ export const ExamplesSlider = () => {
 			{
 				breakpoint: 767,
 				settings: {
+					dots: false,
 					slidesToShow: 1,
 					slidesToScroll: 1,
 					centerMode: true,
@@ -31,6 +30,7 @@ export const ExamplesSlider = () => {
 			{
 				breakpoint: 349,
 				settings: {
+					dots: false,
 					slidesToShow: 1,
 					slidesToScroll: 1,
 					centerMode: true,
@@ -43,11 +43,13 @@ export const ExamplesSlider = () => {
 	return (
 		<div className={styles.slick_slider}>
 			<h3 className={styles.title}>Реализованные объекты</h3>
-			<Slider {...settings} className={styles.container}>
-				{examples.map((item) => (
-					<Example key={item.id} data={item} />
-				))}
-			</Slider>
+			<div className={styles.slider_container}>
+				<Slider {...settings} className={styles.container}>
+					{examples.map((item) => (
+						<Example key={item.id} data={item} />
+					))}
+				</Slider>
+			</div>
 		</div>
 	);
 };

@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { FC, useEffect, ReactNode } from 'react';
+import { FC, useEffect, ReactNode, CSSProperties } from 'react';
 import styles from './style.module.scss';
 
 interface IPopup {
@@ -9,9 +9,10 @@ interface IPopup {
 	isOpened: boolean;
 	setIsOpened: React.Dispatch<React.SetStateAction<boolean>>;
 	children?: ReactNode;
+	style?: CSSProperties;
 }
 
-const Popup: FC<IPopup> = ({ title, text, isOpened, link, setIsOpened, children }) => {
+const Popup: FC<IPopup> = ({ title, text, isOpened, link, setIsOpened, children, style }) => {
 	const router = useRouter();
 
 	const handleOverlayClick: React.MouseEventHandler<HTMLDivElement> = (evt) => {
@@ -53,7 +54,7 @@ const Popup: FC<IPopup> = ({ title, text, isOpened, link, setIsOpened, children 
 			className={`${styles.popup} ${isOpened ? styles.popup_opened : ''}`}
 			onClick={handleOverlayClick}
 		>
-			<div className={styles.popup__container}>
+			<div className={styles.popup__container} style={style}>
 				<button
 					type="button"
 					className={styles.btn_close}
