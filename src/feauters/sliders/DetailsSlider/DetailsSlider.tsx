@@ -12,12 +12,24 @@ export const DetailsSlider = () => {
 		infinite: true,
 		speed: 500,
 		centerMode: true,
-		centerPadding: '20px',
+		centerPadding: '40px',
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		autoplay: true,
 		autoplaySpeed: 4000,
 		arrows: false,
+		responsive: [
+			{
+				breakpoint: 349,
+				settings: {
+					dots: false,
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					centerMode: true,
+					centerPadding: '20px',
+				},
+			},
+		],
 	};
 
 	return (

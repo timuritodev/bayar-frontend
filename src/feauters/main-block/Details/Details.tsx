@@ -39,9 +39,14 @@ export const Details: FC = () => {
 		<>
 			<div className={styles.container}>
 				<div className={styles.wrapper}>
-					<h5 className={styles.title}>Мы знаем, что важно: ТОП-качество в сжатые сроки</h5>
-					<p className={styles.text}>Прорабы знают, чем заканчивается экономия на утеплителе — грибок, ржавчина, жалобы от заказчиков. Мы <br /> хотим, чтобы вы к нам возвращались с новыми проектами! Поэтому делаем акцент на качестве сэндвич-панелей.</p>
-					{width < 767 ? <DetailsSlider /> : <DetailItemList data={details} />}
+					<div className={styles.text_wrapper}>
+						<h5 className={styles.title}>Мы знаем, что важно: ТОП-качество в сжатые сроки</h5>
+						<p className={styles.text}>Прорабы знают, чем заканчивается экономия на утеплителе — грибок, ржавчина, жалобы от заказчиков. Мы <br /> хотим, чтобы вы к нам возвращались с новыми проектами! Поэтому делаем акцент на качестве сэндвич-панелей.</p>
+					</div>
+					{width < 767 ?
+						<DetailsSlider /> :
+						<DetailItemList data={details} />
+					}
 				</div>
 			</div>
 

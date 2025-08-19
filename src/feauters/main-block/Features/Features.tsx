@@ -38,6 +38,10 @@ export const Features: FC = () => {
 					<>
 						{shortText} <button className={styles.readMore} onClick={() => setShowMore(true)}>Читать далее</button>
 					</>
+				) : width < 768 && showMore ? (
+					<>
+						{fullText} <button className={styles.readMore} onClick={() => setShowMore(false)}>Свернуть</button>
+					</>
 				) : fullText}
 			</h5>
 			<FeaturesItemList data={features} />
