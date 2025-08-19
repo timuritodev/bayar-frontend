@@ -1,11 +1,11 @@
+import Popup from '@/components/Popup/Popup';
 import { useResize } from '@/hooks/useResize';
 import Image from "next/image";
+import Link from 'next/link';
 import { FC, useEffect, useState } from "react";
 import pic from "../../../images/main_wrapper/compound.png";
 import pic_small from "../../../images/main_wrapper/compound_small.png";
 import styles from "./style.module.scss";
-import Popup from '@/components/Popup/Popup';
-import Link from 'next/link';
 
 export const Compound: FC = () => {
 	const { width } = useResize();
@@ -35,7 +35,7 @@ export const Compound: FC = () => {
 	return (
 		<>
 			<div className={styles.container}>
-				<h2 className={styles.title}>Из чего состоит сэндвич-панель Sandwel™<br /> производства "Баяр"</h2>
+				{width < 767 ? <h2 className={styles.title}>Из чего состоит сэндвич-<br />панель Sandwel™<br /> производства "Баяр"</h2> : <h2 className={styles.title}>Из чего состоит сэндвич-панель Sandwel™<br /> производства "Баяр"</h2>}
 				<Image
 					src={width > 767 ? pic : pic_small}
 					alt="Изображение с составом сэндвич-панели"
