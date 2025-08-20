@@ -1,4 +1,5 @@
 .accordion {
+	position: relative;
 	width: 100%;
 	background: #28285a;
 	text-align: center;
@@ -7,6 +8,24 @@
 	justify-items: center;
 	flex-direction: column;
 	padding: 178px 0 105px 0;
+
+	/* фоновые ромбы */
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-image: url('../../../images/rombs/faqRombs.svg');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		opacity: 0.3;
+		z-index: 1;
+	}
+
+	& > * {
+		position: relative;
+		z-index: 2;
+	}
 }
 
 .list {
