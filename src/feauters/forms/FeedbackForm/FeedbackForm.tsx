@@ -179,17 +179,17 @@ export const FeedbackForm = () => {
 					/>
 				</div>
 			</form>
-
-			<div className={styles.logoContainer}>
-				<Image
-					src={logo}
-					alt="BAYAR"
-					width={205}
-					height={205}
-					className={styles.logo}
-				/>
-			</div>
-
+			{width > 767 && (
+				<div className={styles.logoContainer}>
+					<Image
+						src={logo}
+						alt="BAYAR"
+						width={205}
+						height={205}
+						className={styles.logo}
+					/>
+				</div>
+			)}
 			<Popup
 				title="Заявка отправлена"
 				text="Мы свяжемся с вами в ближайшее время"

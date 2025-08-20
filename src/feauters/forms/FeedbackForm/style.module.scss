@@ -89,3 +89,16 @@
 		cursor: not-allowed;
 	}
 }
+
+@media screen and (max-width: 767px) {
+	.container {
+		padding: 10px;
+	}
+
+	.form {
+		width: 100%;
+		box-sizing: border-box;
+		border-radius: 12px;
+		padding: 5px;
+	}
+}
