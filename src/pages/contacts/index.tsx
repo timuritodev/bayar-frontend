@@ -20,7 +20,7 @@ const Page = () => {
 					</p>
 					<p className={styles.text}><strong>ИНН</strong> - 1684022989</p>
 					<p className={styles.text}><strong>Телефон</strong> - +78005503190; +79272499942</p>
-					<p className={styles.text}><strong>Почта</strong> - info@tatbayar.ru</p>
+					<p className={styles.text}><strong>Почта</strong> - market@tatbayar.ru</p>
 				</div>
 			</div>
 		</>

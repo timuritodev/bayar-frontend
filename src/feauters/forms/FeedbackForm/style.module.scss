@@ -1,0 +1,104 @@
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	max-width: 960px;
+	margin: 0 auto;
+	gap: 40px;
+	padding: 40px 20px;
+	background: white;
+	border-radius: 12px;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+	position: relative;
+	z-index: 1;
+}
+
+.logoContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	// flex: 1;
+	margin-top: 40px;
+}
+
+.logo {
+	border-radius: 50%;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+	width: 205px;
+	height: 205px;
+	object-fit: contain;
+	background: white;
+	padding: 20px;
+}
+
+.form {
+	width: 550px;
+	flex-shrink: 0;
+	background: transparent;
+	border-radius: 12px;
+	padding: 32px;
+	position: relative;
+	z-index: 1;
+}
+
+.title {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 24px;
+	font-weight: 600;
+	color: #1f2937;
+	margin-bottom: 24px;
+	text-align: left;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	margin-bottom: 24px;
+}
+
+.buttons {
+	display: flex;
+	gap: 12px;
+	width: 100%;
+}
+
+.orangeButton {
+	background: #ff6b35;
+	color: white;
+	border: none;
+	border-radius: 8px;
+	padding: 16px 24px;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+	flex: 1;
+	height: 56px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&:hover {
+		background: #e55a2b;
+	}
+
+	&:disabled {
+		background: #9ca3af;
+		cursor: not-allowed;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.container {
+		padding: 10px;
+	}
+
+	.form {
+		width: 100%;
+		box-sizing: border-box;
+		border-radius: 12px;
+		padding: 5px;
+	}
+}

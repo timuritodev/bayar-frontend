@@ -1,7 +1,7 @@
 .mainitemlist {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 16px;
+	gap: 100px;
 	justify-content: center;
 }
 
@@ -22,7 +22,7 @@
 	font-family: ClearSans;
 	font-weight: 700;
 	font-size: 80px;
-	line-height: 100%;
+	line-height: 150%;
 	letter-spacing: 0%;
 	color: #f28c00;
 }
@@ -31,7 +31,7 @@
 	font-family: ClearSans;
 	font-weight: 400;
 	font-size: 32px;
-	line-height: 100%;
+	line-height: 150%;
 	letter-spacing: 0%;
 }
 
@@ -39,7 +39,7 @@
 	font-family: ClearSans;
 	font-weight: 400;
 	font-size: 32px;
-	line-height: 100%;
+	line-height: 150%;
 	letter-spacing: 0%;
 }
 
@@ -47,7 +47,7 @@
 	font-family: ClearSans;
 	font-weight: 400;
 	font-size: 16px;
-	line-height: 100%;
+	line-height: 150%;
 	letter-spacing: 0%;
 }
 
@@ -55,7 +55,7 @@
 	font-family: ClearSans;
 	font-weight: 400;
 	font-size: 19px;
-	line-height: 100%;
+	line-height: 150%;
 	letter-spacing: 0%;
 	text-align: center;
 	margin: 0;
@@ -69,7 +69,7 @@
 	}
 
 	.card {
-		width: 147px;
+		width: 155px;
 		padding: 12px 12px;
 	}
 

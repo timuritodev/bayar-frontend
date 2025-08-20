@@ -9,6 +9,13 @@
 	background: #e3e5e4;
 }
 
+.header__burger__container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 10px;
+}
+
 .header__container {
 	max-width: 1280px;
 	display: flex;
@@ -45,6 +52,14 @@
 }
 
 .header__link:hover {
+	border-color: #f08b23;
+}
+
+.header__link_orange {
+	color: #f08b23 !important;
+}
+
+.header__link_orange:hover {
 	border-color: #f08b23;
 }
 
@@ -149,23 +164,43 @@
 	gap: 10px;
 }
 
+.whatsapp {
+	// padding: 0 0 30px 0;
+	align-self: center;
+}
+
+.header__burger__container {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
 @media screen and (max-width: 1023px) {
 	.header__links {
 		display: none;
 	}
+
+	.whatsapp {
+		padding: 0;
+	}
 }
+
+// .active {
+// 	color: #f08b23 !important;
+// }
 
 @media screen and (max-width: 767px) {
 	.header {
-		padding: 15px 0 10px 0;
+		padding: 15px 20px 10px 20px;
+		box-sizing: border-box;
 	}
 
 	.header__container {
 		max-width: 768px;
 		display: flex;
 		align-items: center;
-		justify-content: space-around;
-		height: 41px;
+		justify-content: space-between;
+		height: 60px;
 	}
 
 	.header__links {
@@ -173,12 +208,16 @@
 	}
 
 	.header__logo {
-		width: 97px;
-		height: 41px;
+		width: 138px;
+		height: 55px;
 	}
 
 	.header__profile_icon {
 		width: 15px;
 		height: 15px;
+	}
+
+	.whatsapp {
+		padding: 0;
 	}
 }

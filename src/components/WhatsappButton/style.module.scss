@@ -1,0 +1,101 @@
+.button {
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	padding: 8px;
+	&:hover {
+		transform: scale(1.05);
+	}
+
+	&:active {
+		transform: scale(0.95);
+	}
+}
+
+.iconContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.small {
+	.whatsappIcon {
+		width: 32px;
+		height: 32px;
+	}
+
+	.buttonText {
+		font-size: 12px;
+	}
+}
+
+.medium {
+	.whatsappIcon {
+		width: 48px;
+		height: 48px;
+	}
+
+	.buttonText {
+		font-size: 14px;
+	}
+}
+
+.large {
+	.whatsappIcon {
+		width: 64px;
+		height: 64px;
+	}
+
+	.buttonText {
+		font-size: 16px;
+	}
+}
+
+.buttonText {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 500;
+	color: #1f2937;
+	text-align: center;
+	line-height: 1.2;
+}
+
+@media screen and (max-width: 600px) {
+	.small {
+		.whatsappIcon {
+			width: 28px;
+			height: 28px;
+		}
+
+		.buttonText {
+			font-size: 10px;
+		}
+	}
+
+	.medium {
+		.whatsappIcon {
+			width: 40px;
+			height: 40px;
+		}
+
+		.buttonText {
+			font-size: 12px;
+		}
+	}
+
+	.large {
+		.whatsappIcon {
+			width: 56px;
+			height: 56px;
+		}
+
+		.buttonText {
+			font-size: 14px;
+		}
+	}
+}
