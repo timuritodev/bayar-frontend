@@ -29,7 +29,9 @@ jobs:
           script: |
             set -e 
             cd /home/bayar/bayar-frontend
-            git pull origin main
+            git fetch origin main
+            git reset --hard origin/main
+
             npm ci
             npm run build
             pm2 restart frontend
