@@ -9,6 +9,7 @@ import phone from "../../images/phone.svg";
 import { useAppDispatch } from "../../services/typeHooks";
 import { Contacts } from '../Contacts/Contacts';
 import styles from "./style.module.scss";
+import { WhatsappButton } from '../WhatsappButton/WhatsappButton';
 
 const Footer: FC = () => {
   const dispatch = useAppDispatch();
@@ -43,15 +44,16 @@ const Footer: FC = () => {
                 <Link href="/contacts" className={styles.text}>
                   Контакты
                 </Link>
-                <Link href="/profile" className={styles.text}>
-                  Профиль
+                <Link href="/forms/feedback" className={styles.text}>
+                  Рассчитать цену
                 </Link>
               </div>
               <div className={styles.block}>
                 <h5 className={styles.title}>Контакты</h5>
                 <p className={styles.text}>По вопросам:</p>
-                <Contacts src={email} text="info@tatbayar.ru" f_size="12px" i_size="13px" />
-                <Contacts src={phone} text="+7 800 550-31-90" f_size="12px" i_size="13px" />
+                <Contacts src={email} text="market@tatbayar.ru" f_size="12px" i_size="13px" type="mail" />
+                <Contacts src={phone} text="+7 800 550-31-90" f_size="12px" i_size="13px" type="phone" />
+                <WhatsappButton className={styles.whatsapp} size="small" />
               </div>
             </div>
           ) : (
@@ -70,15 +72,19 @@ const Footer: FC = () => {
                 <Link href="/contacts" className={styles.text}>
                   Контакты
                 </Link>
-                <Link href="/profile" className={styles.text}>
-                  Профиль
+                <Link href="/forms/feedback" className={styles.text}>
+                  Рассчитать цену
                 </Link>
+                {/* <Link href="/profile" className={styles.text}>
+                  Профиль
+                </Link> */}
               </div>
               <div className={styles.block}>
                 <h5 className={styles.title}>Контакты</h5>
                 <p className={styles.text}>По вопросам:</p>
-                <Contacts src={email} text="info@tatbayar.ru" f_size="24px" i_size="26px" />
-                <Contacts src={phone} text="+7 800 550-31-90" f_size="24px" i_size="26px" />
+                <Contacts src={email} text="market@tatbayar.ru" f_size="24px" i_size="26px" type="mail" />
+                <Contacts src={phone} text="+7 800 550-31-90" f_size="24px" i_size="26px" type="phone" />
+                <WhatsappButton className={styles.whatsapp} />
               </div>
             </>
           )}

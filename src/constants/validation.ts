@@ -277,6 +277,60 @@ export const VALIDATION_SETTINGS = {
 			tooLong: "Слишком длинная номер",
 		},
 	},
+	text: {
+		pattern: /^[a-zа-яё\s\0-9]+$/iu,
+		minLength: 1,
+		maxLength: 42,
+		messages: {
+			noText: "Необходимо ввести текст",
+			invalid: "Только кириллица или латинские буквы",
+			tooLong: "Слишком много текста",
+		},
+	},
+	area: {
+		pattern: /^[0-9]+$/iu,
+		minLength: 1,
+		maxLength: 10,
+		messages: {
+			noArea: "Необходимо ввести площадь",
+			invalid: "Только цифры",
+			tooShort: "Слишком маленькая площадь",
+			tooLong: "Слишком большая площадь",
+		},
+	},
+	object_type: {
+		pattern: /^[a-zа-яё\s\0-9]+$/iu,
+		minLength: 1,
+		maxLength: 42,
+		messages: {
+			noObject_type: "Необходимо ввести тип объекта",
+			invalid: "Только кириллица или латинские буквы",
+			tooShort: "Слишком маленькая длина",
+			tooLong: "Слишком много текста",
+		},
+	},
+	panel_purpose: {
+		pattern: /^[a-zа-яё\s\0-9]+$/iu,
+		minLength: 1,
+		maxLength: 42,
+		messages: {
+			noPanel_purpose: "Необходимо ввести назначение панелей",
+			invalid: "Только кириллица или латинские буквы",
+			tooShort: "Слишком маленькая длина",
+			tooLong: "Слишком много текста",
+		},
+	},
+	preferred_contact: {
+		pattern: /^[a-zа-яё\s\0-9]+$/iu,
+		minLength: 1,
+		maxLength: 42,
+		messages: {
+			noPreferred_contact: "Необходимо ввести способ связи",
+			invalid: "Только кириллица или латинские буквы",
+			tooShort: "Слишком маленькая длина",
+			tooLong: "Слишком много текста",
+		},
+	},
 };
 
 export const EMAIL_VALIDATION_CONFIG = {
@@ -710,5 +764,97 @@ export const COLOR_VALIDATION_CONFIG = {
 	maxLength: {
 		value: VALIDATION_SETTINGS.color.maxLength,
 		message: VALIDATION_SETTINGS.color.messages.tooLong,
+	},
+};
+
+export const TEXT_VALIDATION_CONFIG = {
+	required: {
+		value: true,
+		message: VALIDATION_SETTINGS.text.messages.noText,
+	},
+	pattern: {
+		value: VALIDATION_SETTINGS.text.pattern,
+		message: VALIDATION_SETTINGS.text.messages.invalid,
+	},
+	maxLength: {
+		value: VALIDATION_SETTINGS.text.maxLength,
+		message: VALIDATION_SETTINGS.text.messages.tooLong,
+	},
+};
+
+export const AREA_VALIDATION_CONFIG = {
+	required: {
+		value: true,
+		message: VALIDATION_SETTINGS.area.messages.noArea,
+	},
+	pattern: {
+		value: VALIDATION_SETTINGS.area.pattern,
+		message: VALIDATION_SETTINGS.area.messages.invalid,
+	},
+	minLength: {
+		value: VALIDATION_SETTINGS.area.minLength,
+		message: VALIDATION_SETTINGS.area.messages.tooShort,
+	},
+	maxLength: {
+		value: VALIDATION_SETTINGS.area.maxLength,
+		message: VALIDATION_SETTINGS.area.messages.tooLong,
+	},
+};
+
+
+export const OBJECT_TYPE_VALIDATION_CONFIG = {
+	required: {
+		value: true,
+		message: VALIDATION_SETTINGS.object_type.messages.noObject_type,
+	},
+	pattern: {
+		value: VALIDATION_SETTINGS.object_type.pattern,
+		message: VALIDATION_SETTINGS.object_type.messages.invalid,
+	},
+	minLength: {
+		value: VALIDATION_SETTINGS.object_type.minLength,
+		message: VALIDATION_SETTINGS.object_type.messages.tooShort,
+	},
+	maxLength: {
+		value: VALIDATION_SETTINGS.object_type.maxLength,
+		message: VALIDATION_SETTINGS.object_type.messages.tooLong,
+	},
+};
+
+export const PANEL_PURPOSE_VALIDATION_CONFIG = {
+	required: {
+		value: true,
+		message: VALIDATION_SETTINGS.panel_purpose.messages.noPanel_purpose,
+	},
+	pattern: {
+		value: VALIDATION_SETTINGS.panel_purpose.pattern,
+		message: VALIDATION_SETTINGS.area.messages.invalid,
+	},
+	minLength: {
+		value: VALIDATION_SETTINGS.panel_purpose.minLength,
+		message: VALIDATION_SETTINGS.panel_purpose.messages.tooLong,
+	},
+	maxLength: {
+		value: VALIDATION_SETTINGS.panel_purpose.maxLength,
+		message: VALIDATION_SETTINGS.panel_purpose.messages.tooLong,
+	},
+};
+
+export const PREFERRED_CONTACT_VALIDATION_CONFIG = {
+	required: {
+		value: false,
+		message: VALIDATION_SETTINGS.preferred_contact.messages.noPreferred_contact,
+	},
+	pattern: {
+		value: VALIDATION_SETTINGS.preferred_contact.pattern,
+		message: VALIDATION_SETTINGS.area.messages.invalid,
+	},
+	minLength: {
+		value: VALIDATION_SETTINGS.preferred_contact.minLength,
+		message: VALIDATION_SETTINGS.preferred_contact.messages.tooLong,
+	},
+	maxLength: {
+		value: VALIDATION_SETTINGS.preferred_contact.maxLength,
+		message: VALIDATION_SETTINGS.preferred_contact.messages.tooLong,
 	},
 };

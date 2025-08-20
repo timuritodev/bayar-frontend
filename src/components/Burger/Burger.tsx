@@ -90,30 +90,6 @@ export const Burger: FC<BurgerProps> = ({ isPopupOpen, switchPopup }) => {
               </Link>
             </div>
           </div>
-          {/*<form className={styles.burger__search}>
-            <Image
-              className={styles.burger__search_button_search}
-              src={loop}
-              alt="Кнопка поиска"
-            />
-            <input
-              className={styles.burger__search_input}
-              id="name"
-              name="name"
-              type="text"
-              placeholder="Поиск"
-              onChange={handleChange}
-              //   onBlur={setSearchClose}
-              value={values}
-              autoComplete="off"
-            />
-             <Search
-              isOpenSearch={isOpenSearch}
-              isClose={setSearchClose}
-              values={values}
-              switchPopup={switchPopup}
-            /> 
-          </form>*/}
           <div className={styles.burger__links_container}>
             <Link
               href="/"
@@ -171,12 +147,11 @@ export const Burger: FC<BurgerProps> = ({ isPopupOpen, switchPopup }) => {
                 </div>
               </ul>
             </li>
-            <Link
-              href="/calculator"
-              className={styles.burger__link}
-              onClick={handleLinkClick}
-            >
-              Калькулятор
+            <Link href="/forms/feedback" className={styles.burger__link}>
+              Рассчитать цену
+            </Link>
+            <Link href="/#gift" className={`${styles.burger__link} ${styles.burger__link_orange}`}>
+              Получить подарок
             </Link>
             <Link
               href="/contacts"

@@ -1,33 +1,86 @@
 .slick_slider {
-    width: 100%;
-    background-color: #b4b7d4;
-    padding: 45px 0;
+	width: 100%;
+	background-color: #b4b7d4;
+	padding: 45px 0 65px 0;
 }
 
 .container {
-    width: 100%;
-    margin: 0 auto;
-    max-width: 1280px;
+	width: 100%;
+	margin: 0 auto;
+	max-width: 1280px;
 }
 
 .title {
-    // font-family: Kelson Sans RU;
-    font-family: ClearSans;
-    font-weight: 700;
-    font-style: Bold;
-    font-size: 32px;
-    text-align: center;
-    line-height: 100%;
-    letter-spacing: 0%;
-    margin: 0 0 40px 0;
+	// font-family: Kelson Sans RU;
+	font-family: ClearSans;
+	font-weight: 700;
+	font-style: Bold;
+	font-size: 32px;
+	text-align: center;
+	line-height: 100%;
+	letter-spacing: 0%;
+	margin: 0 0 40px 0;
+}
+
+.slider_container {
+	// Стили для dots навигации
+	:global(.slick-dots) {
+		position: absolute;
+		bottom: -40px;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex !important;
+		justify-content: center;
+		align-items: center;
+		gap: 8px;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	:global(.slick-dots li) {
+		margin: 0;
+	}
+
+	:global(.slick-dots li button) {
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		background-color: rgba(255, 255, 255, 0.5);
+		border: none;
+		cursor: pointer;
+		font-size: 0;
+		padding: 0;
+		transition: background-color 0.3s ease;
+	}
+
+	:global(.slick-dots li.slick-active button) {
+		background-color: #fff;
+	}
+
+	:global(.slick-dots li button:hover) {
+		background-color: rgba(255, 255, 255, 0.8);
+	}
 }
 
 @media screen and (max-width: 767px) {
-    .container {
-        width: 100%;
-    }
-    .title {
-        font-size: 20px;
-        margin: 0 0 10px 0;
-    }
+	.container {
+		width: 100%;
+	}
+	.title {
+		font-size: 20px;
+		margin: 0 0 10px 0;
+	}
+
+	.slider_container {
+		:global(.slick-dots) {
+			bottom: -30px;
+			gap: 6px;
+		}
+
+		:global(.slick-dots li button) {
+			width: 10px;
+			height: 10px;
+		}
+	}
 }

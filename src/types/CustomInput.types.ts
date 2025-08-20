@@ -31,6 +31,10 @@ export enum CustomInputTypes {
   region = 'region',
   user_type = 'user_type',
   organization_name = 'organization_name',
+  object_type = 'object_type',
+  panel_purpose = 'panel_purpose',
+  area = 'area',
+  preferred_contact = 'preferred_contact',
 }
 
 export enum CustomInputColors {

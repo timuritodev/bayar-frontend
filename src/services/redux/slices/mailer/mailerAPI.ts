@@ -5,11 +5,15 @@ const checkRes = (res: Response) => {
   if (res.ok) {
     return res;
   } else {
+    console.error('API Error:', res.status, res.statusText);
     return Promise.reject(res);
   }
 };
 
 export const fetchData = (url: string, method: string, data: IData) => {
+  console.log('Sending request to:', url);
+  console.log('Request data:', data);
+
   return fetch(url, {
     method,
     headers: {
