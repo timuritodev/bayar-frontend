@@ -101,35 +101,35 @@ export const FeedbackForm = () => {
 				<div className={styles.wrapper}>
 					<CustomInput
 						inputType={CustomInputTypes.object_type}
-						labelText="Тип объекта"
+						labelText="Тип объекта *"
 						placeholder="Например, жилой дом"
 						validation={register("object_type", OBJECT_TYPE_VALIDATION_CONFIG)}
 						error={errors.object_type?.message}
 					/>
 					<CustomInput
 						inputType={CustomInputTypes.panel_purpose}
-						labelText="Назначение панелей"
+						labelText="Назначение панелей *"
 						placeholder="Например, фасад"
 						validation={register("panel_purpose", PANEL_PURPOSE_VALIDATION_CONFIG)}
 						error={errors.panel_purpose?.message}
 					/>
 					<CustomInput
 						inputType={CustomInputTypes.wall_panel_thickness}
-						labelText="Толщина панели"
+						labelText="Толщина панели *"
 						placeholder="мм"
 						validation={register("wall_panel_thickness", WALL_PANEL_THICKNESS_VALIDATION_CONFIG)}
 						error={errors.wall_panel_thickness?.message}
 					/>
 					<CustomInput
 						inputType={CustomInputTypes.area}
-						labelText="Площадь объекта (м²)"
+						labelText="Площадь объекта (м²) *"
 						placeholder="100"
 						validation={register("area", AREA_VALIDATION_CONFIG)}
 						error={errors.area?.message}
 					/>
 					<CustomInput
 						inputType={CustomInputTypes.city}
-						labelText="Город"
+						labelText="Город *"
 						placeholder="Москва"
 						validation={register("city", CITY_VALIDATION_CONFIG)}
 						error={errors.city?.message}
@@ -150,7 +150,7 @@ export const FeedbackForm = () => {
 					/>
 					<CustomInput
 						inputType={CustomInputTypes.email}
-						labelText={"Электронная почта"}
+						labelText={"Электронная почта *"}
 						validation={{
 							...register("email", EMAIL_VALIDATION_CONFIG),
 						}}
@@ -191,7 +191,7 @@ export const FeedbackForm = () => {
 				</div>
 			)}
 			<Popup
-				title="Заявка отправлена"
+				title="Спасибо!"
 				text="Мы свяжемся с вами в ближайшее время"
 				isOpened={isPopupOpened}
 				setIsOpened={setIsPopupOpened}

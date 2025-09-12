@@ -19,16 +19,32 @@ export const ContactsBlock: FC = () => {
 		// Список PDF файлов для загрузки
 		const certificates = [
 			{
-				name: 'Сертификат качества 1',
-				path: '/certificates/certificate1.pdf'
+				name: 'Пожарный сертификат ГОСТ 32603-2021 1 класс',
+				path: '/certificates/Pozharnyj-sertifikat-GOST-32603-2021-1-klass-1.pdf'
 			},
 			{
-				name: 'Сертификат качества 2',
-				path: '/certificates/certificate2.pdf'
+				name: 'Пожарный сертификат ГОСТ 32603-2021 2 класс',
+				path: '/certificates/Pozharnyj-sertifikat-GOST-32603-2021-2-klass.pdf'
 			},
 			{
-				name: 'Сертификат соответствия',
-				path: '/certificates/certificate3.pdf'
+				name: 'Пожарный сертификат ТУ',
+				path: '/certificates/Pozharnyj-sertifikat-TU-ROSS-RU.Z2623.OS03.03088.pdf'
+			},
+			{
+				name: 'Санитарный сертификат',
+				path: '/certificates/Sanitarnyj-sertifikat-TU-GOST-EZ-50.pdf'
+			},
+			{
+				name: 'Сертификат соответствия 1 класс ГОСТ',
+				path: '/certificates/Sertifikat-sootvestviya-1-klass-GOST-32603-2021.pdf'
+			},
+			{
+				name: 'Сертификат соответствия 2 класс ГОСТ',
+				path: '/certificates/Sertifikat-sootvestviya-2-klass-GOST-32603-2021.pdf'
+			},
+			{
+				name: 'Сертификат соответствия ТУ',
+				path: '/certificates/Sertifikat-Sootvetsviya-TU-ROSS-RU.Z2623.OS03.03087.pdf'
 			}
 		];
 

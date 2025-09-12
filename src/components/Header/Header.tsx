@@ -90,9 +90,19 @@ const Header: FC = () => {
                 </ul>
               </li>
             </ul>
-            <Link href="/contacts" className={`${styles.header__link} ${is_active("/contacts") ? styles.active : ""}`}>
+            <a
+              href="#contacts"
+              className={`${styles.header__link} ${is_active("/") ? styles.active : ""}`}
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById('contacts');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
               Контакты
-            </Link>
+            </a>
             <Link href="/forms/feedback" className={`${styles.header__link} ${styles.header__link_orange} ${is_active("/forms/feedback") ? styles.active : ""}`}>
               Рассчитать цену
             </Link>

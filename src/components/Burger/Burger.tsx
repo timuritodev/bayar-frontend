@@ -80,14 +80,14 @@ export const Burger: FC<BurgerProps> = ({ isPopupOpen, switchPopup }) => {
                 alt="Кнопка поиска"
                 onClick={switchPopup}
               /> */}
-              <Link href="/profile">
+              {/* <Link href="/profile">
                 <Image
                   className={styles.header__profile_icon}
                   alt="Иконка с профилем"
                   src={icon}
                   onClick={switchPopup}
                 />
-              </Link>
+              </Link> */}
             </div>
           </div>
           <div className={styles.burger__links_container}>
@@ -98,7 +98,7 @@ export const Burger: FC<BurgerProps> = ({ isPopupOpen, switchPopup }) => {
             >
               Главная
             </Link>
-            {user.token === "" && (
+            {/* {user.token === "" && (
               <>
                 <Link
                   href="/sign-up"
@@ -115,7 +115,7 @@ export const Burger: FC<BurgerProps> = ({ isPopupOpen, switchPopup }) => {
                   Вход в учетную запись
                 </Link>
               </>
-            )}
+            )} */}
             <li className={styles.hover__link}>
               Каталог
               <ul className={styles.hover__menu}>
@@ -147,15 +147,23 @@ export const Burger: FC<BurgerProps> = ({ isPopupOpen, switchPopup }) => {
                 </div>
               </ul>
             </li>
-            <Link href="/forms/feedback" className={styles.burger__link}>
+            <Link
+              href="/forms/feedback"
+              className={styles.burger__link}
+              onClick={handleLinkClick}
+            >
               Рассчитать цену
             </Link>
-            <Link href="/#gift" className={`${styles.burger__link} ${styles.burger__link_orange}`}>
+            <Link
+              href="/#gift"
+              className={`${styles.burger__link} ${styles.burger__link_orange}`}
+              onClick={handleLinkClick}
+            >
               Получить подарок
             </Link>
             <Link
-              href="/contacts"
-              className={styles.burger__link}
+              href="/#contacts"
+              className={`${styles.burger__link}`}
               onClick={handleLinkClick}
             >
               Контакты

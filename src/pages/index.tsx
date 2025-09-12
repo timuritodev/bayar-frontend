@@ -27,7 +27,9 @@ const MainPage = () => {
           <Gifts />
           <Compound />
           <FAQAccordion items={faqItems} />
-          <ContactsBlock />
+          <div id="contacts">
+            <ContactsBlock />
+          </div>
           {/* <MainSlider />
           <h3 className={styles.title}>Наши партнёры</h3>
           <PartnersSlider />

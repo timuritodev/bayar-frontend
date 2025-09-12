@@ -16,7 +16,7 @@ export const Features: FC = () => {
 	// Короткий текст для мобилки
 	const shortText = (
 		<>
-			Компания «Баяр» — единственный в регионе производитель, использующий наполнитель <span className={styles.color}>Rockwool®</span>.
+			Компания «Баяр» — единственный в регионе производитель, использующий наполнитель <span className={styles.color}>Rockwool<sup className={styles.superscript}>®</sup></span>.
 		</>
 	);
 	// Полный текст с разметкой
@@ -25,7 +25,7 @@ export const Features: FC = () => {
 			Компания «Баяр» производит стеновые и кровельные сэндвич-панели<br />
 			<strong>Sandwel</strong> на собственной автоматизированной линии в ОЭЗ «Алабуга»,<br />
 			Татарстан. «Баяр» — <strong>единственный в регионе производитель</strong>,<br />
-			использующий наполнитель <span className={styles.color}>Rockwool®</span>. <strong>Гарантируем</strong> стабильное<br />
+			использующий наполнитель <span className={styles.color}>Rockwool<sup className={styles.superscript}>®</sup></span>. <strong>Гарантируем</strong> стабильное<br />
 			<strong>качество</strong>, точные <strong>размеры</strong> и высокую <strong>жесткость</strong> конструкций из<br />
 			сэндвич-панелей.
 		</>

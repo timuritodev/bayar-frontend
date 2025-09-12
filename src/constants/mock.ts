@@ -29,7 +29,7 @@ export const mainItems: IMainItem[] = [
 		id: 3,
 		value: '20',
 		unit: 'лет',
-		description: 'Отгрузка готовых панелей'
+		description: 'Гарантия на панели'
 	},
 	{
 		id: 4,
