@@ -7,6 +7,9 @@ import email from "../../images/email.svg";
 import logo from "../../images/logo_b.png";
 import phone from "../../images/phone.svg";
 import profile from "../../images/profile.svg";
+import whatsapp from "../../images/icons/whatsapp.svg";
+import avito from "../../images/icons/avito.svg";
+import vk from "../../images/icons/vk.svg";
 import {
   selectUser
 } from "../../services/redux/slices/user/user";
@@ -15,7 +18,7 @@ import { BurgerButton } from "../BurgerButton/BurgerButton";
 // import Search from "../Search/Search";
 import { Contacts } from '../Contacts/Contacts';
 import styles from "./style.module.scss";
-import { WhatsappButton } from '../WhatsappButton/WhatsappButton';
+import { IconButton } from '../IconButton/IconButton';
 
 const Header: FC = () => {
   const user = useAppSelector(selectUser);
@@ -63,7 +66,32 @@ const Header: FC = () => {
         </Link>
         {width < 1023 && (
           <div className={styles.header__burger__container}>
-            <WhatsappButton className={styles.whatsapp} size="small" />
+            <div className={styles.icons}>
+              <IconButton
+                icon={whatsapp}
+                href="https://wa.me/79272499942"
+                className={styles.whatsapp}
+                target="_blank"
+                size="small"
+                alt="WhatsApp"
+              />
+              <IconButton
+                icon={vk}
+                href="https://vk.com/tatbayar"
+                className={styles.whatsapp}
+                target="_blank"
+                size="small"
+                alt="VK"
+              />
+              <IconButton
+                icon={avito}
+                href="https://www.avito.ru/brands/5385ff2b1660104524b6c6278d874d95/all?sellerId=96eb1cebd575daac4645cf4371cd06cc"
+                className={styles.whatsapp}
+                target="_blank"
+                size="small"
+                alt="Avito"
+              />
+            </div>
             <BurgerButton isPopupOpen={isPopupOpen} switchPopup={switchPopup} />
           </div>
         )}
@@ -112,7 +140,32 @@ const Header: FC = () => {
           </div>
         )}
         {width > 1023 && (
-          <WhatsappButton className={styles.whatsapp} />
+          <div className={styles.icons}>
+            <IconButton
+              icon={whatsapp}
+              href="https://wa.me/79272499942"
+              className={styles.whatsapp}
+              target="_blank"
+              size="medium"
+              alt="WhatsApp"
+            />
+            <IconButton
+              icon={vk}
+              href="https://vk.com/tatbayar"
+              className={styles.whatsapp}
+              target="_blank"
+              size="medium"
+              alt="VK"
+            />
+            <IconButton
+              icon={avito}
+              href="https://www.avito.ru/brands/5385ff2b1660104524b6c6278d874d95/all?sellerId=96eb1cebd575daac4645cf4371cd06cc"
+              className={styles.whatsapp}
+              target="_blank"
+              size="medium"
+              alt="Avito"
+            />
+          </div>
         )}
         {width > 1023 && (
           <div className={styles.header__search__container}>

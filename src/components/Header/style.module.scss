@@ -175,6 +175,12 @@
 	gap: 10px;
 }
 
+.icons {
+	display: flex;
+	align-self: center;
+	gap: 6px;
+}
+
 @media screen and (max-width: 1023px) {
 	.header__links {
 		display: none;

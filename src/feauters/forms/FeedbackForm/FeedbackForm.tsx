@@ -1,7 +1,8 @@
 import { CustomButton } from '@/components/CustomButton/CustomButton';
 import CustomInput from "@/components/CustomInput/CustomInput";
 import Popup from '@/components/Popup/Popup';
-import { WhatsappButton } from '@/components/WhatsappButton/WhatsappButton';
+import { IconButton } from '@/components/IconButton/IconButton';
+import whatsapp from '@/images/icons/whatsapp.svg';
 import {
 	AREA_VALIDATION_CONFIG,
 	CITY_VALIDATION_CONFIG,
@@ -173,9 +174,12 @@ export const FeedbackForm = () => {
 						disabled={!isDirty || !isValid}
 						type="submit"
 					/>
-					<WhatsappButton
+					<IconButton
+						icon={whatsapp}
+						href="https://wa.me/79272499942"
 						size="medium"
-						phoneNumber="79272499942"
+						target="_blank"
+						alt="WhatsApp"
 					/>
 				</div>
 			</form>
