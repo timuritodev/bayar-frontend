@@ -1,0 +1,57 @@
+.vkWidgetContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	min-height: 200px;
+}
+
+.vkWidget {
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	background: white;
+
+	// Стили для VK виджета
+	:global(.vk-widget) {
+		border-radius: 8px;
+	}
+
+	// Стили для ошибки
+	.error {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 40px 20px;
+		text-align: center;
+		color: #6b7280;
+		background-color: #f8fafc;
+		border: 1px solid #e2e8f0;
+		border-radius: 8px;
+
+		p {
+			margin: 5px 0;
+			font-size: 0.9rem;
+
+			&:first-child {
+				font-weight: 600;
+				color: #374151;
+			}
+		}
+	}
+}
+
+// Адаптивность
+@media (max-width: 768px) {
+	.vkWidget {
+		width: 100% !important;
+		max-width: 100%;
+	}
+}
+
+@media (max-width: 480px) {
+	.vkWidgetContainer {
+		padding: 0 10px;
+	}
+}
