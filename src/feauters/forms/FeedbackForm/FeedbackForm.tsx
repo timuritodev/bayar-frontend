@@ -1,7 +1,8 @@
 import { CustomButton } from '@/components/CustomButton/CustomButton';
 import CustomInput from "@/components/CustomInput/CustomInput";
 import Popup from '@/components/Popup/Popup';
-import { WhatsappButton } from '@/components/WhatsappButton/WhatsappButton';
+import { IconButton } from '@/components/IconButton/IconButton';
+import whatsapp from '@/images/icons/whatsapp.svg';
 import {
 	AREA_VALIDATION_CONFIG,
 	CITY_VALIDATION_CONFIG,
@@ -101,35 +102,35 @@ export const FeedbackForm = () => {
 				<div className={styles.wrapper}>
 					<CustomInput
 						inputType={CustomInputTypes.object_type}
-						labelText="Тип объекта"
+						labelText="Тип объекта *"
 						placeholder="Например, жилой дом"
 						validation={register("object_type", OBJECT_TYPE_VALIDATION_CONFIG)}
 						error={errors.object_type?.message}
 					/>
 					<CustomInput
 						inputType={CustomInputTypes.panel_purpose}
-						labelText="Назначение панелей"
+						labelText="Назначение панелей *"
 						placeholder="Например, фасад"
 						validation={register("panel_purpose", PANEL_PURPOSE_VALIDATION_CONFIG)}
 						error={errors.panel_purpose?.message}
 					/>
 					<CustomInput
 						inputType={CustomInputTypes.wall_panel_thickness}
-						labelText="Толщина панели"
+						labelText="Толщина панели *"
 						placeholder="мм"
 						validation={register("wall_panel_thickness", WALL_PANEL_THICKNESS_VALIDATION_CONFIG)}
 						error={errors.wall_panel_thickness?.message}
 					/>
 					<CustomInput
 						inputType={CustomInputTypes.area}
-						labelText="Площадь объекта (м²)"
+						labelText="Площадь объекта (м²) *"
 						placeholder="100"
 						validation={register("area", AREA_VALIDATION_CONFIG)}
 						error={errors.area?.message}
 					/>
 					<CustomInput
 						inputType={CustomInputTypes.city}
-						labelText="Город"
+						labelText="Город *"
 						placeholder="Москва"
 						validation={register("city", CITY_VALIDATION_CONFIG)}
 						error={errors.city?.message}
@@ -150,7 +151,7 @@ export const FeedbackForm = () => {
 					/>
 					<CustomInput
 						inputType={CustomInputTypes.email}
-						labelText={"Электронная почта"}
+						labelText={"Электронная почта *"}
 						validation={{
 							...register("email", EMAIL_VALIDATION_CONFIG),
 						}}
@@ -173,9 +174,12 @@ export const FeedbackForm = () => {
 						disabled={!isDirty || !isValid}
 						type="submit"
 					/>
-					<WhatsappButton
+					<IconButton
+						icon={whatsapp}
+						href="https://wa.me/79272499942"
 						size="medium"
-						phoneNumber="79272499942"
+						target="_blank"
+						alt="WhatsApp"
 					/>
 				</div>
 			</form>
@@ -191,7 +195,7 @@ export const FeedbackForm = () => {
 				</div>
 			)}
 			<Popup
-				title="Заявка отправлена"
+				title="Спасибо!"
 				text="Мы свяжемся с вами в ближайшее время"
 				isOpened={isPopupOpened}
 				setIsOpened={setIsPopupOpened}

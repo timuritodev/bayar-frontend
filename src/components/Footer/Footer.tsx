@@ -6,10 +6,13 @@ import { useResize } from "../../hooks/useResize";
 import email from "../../images/email.svg";
 import logo from "../../images/logo_s.svg";
 import phone from "../../images/phone.svg";
+import whatsapp from "../../images/icons/whatsapp.svg";
+import vk from "../../images/icons/vk.svg";
+import avito from "../../images/icons/avito.svg";
 import { useAppDispatch } from "../../services/typeHooks";
 import { Contacts } from '../Contacts/Contacts';
 import styles from "./style.module.scss";
-import { WhatsappButton } from '../WhatsappButton/WhatsappButton';
+import { IconButton } from '../IconButton/IconButton';
 
 const Footer: FC = () => {
   const dispatch = useAppDispatch();
@@ -53,7 +56,32 @@ const Footer: FC = () => {
                 <p className={styles.text}>По вопросам:</p>
                 <Contacts src={email} text="market@tatbayar.ru" f_size="12px" i_size="13px" type="mail" />
                 <Contacts src={phone} text="+7 800 550-31-90" f_size="12px" i_size="13px" type="phone" />
-                <WhatsappButton className={styles.whatsapp} size="small" />
+                <div className={styles.icons}>
+                  <IconButton
+                    icon={whatsapp}
+                    href="https://wa.me/79272499942"
+                    className={styles.whatsapp}
+                    target="_blank"
+                    size="medium"
+                    alt="WhatsApp"
+                  />
+                  <IconButton
+                    icon={vk}
+                    href="https://vk.com/tatbayar"
+                    className={styles.whatsapp}
+                    target="_blank"
+                    size="medium"
+                    alt="VK"
+                  />
+                  <IconButton
+                    icon={avito}
+                    href="https://www.avito.ru/brands/5385ff2b1660104524b6c6278d874d95/all?sellerId=96eb1cebd575daac4645cf4371cd06cc"
+                    className={styles.whatsapp}
+                    target="_blank"
+                    size="medium"
+                    alt="Avito"
+                  />
+                </div>
               </div>
             </div>
           ) : (
@@ -84,7 +112,32 @@ const Footer: FC = () => {
                 <p className={styles.text}>По вопросам:</p>
                 <Contacts src={email} text="market@tatbayar.ru" f_size="24px" i_size="26px" type="mail" />
                 <Contacts src={phone} text="+7 800 550-31-90" f_size="24px" i_size="26px" type="phone" />
-                <WhatsappButton className={styles.whatsapp} />
+                <div className={styles.icons}>
+                  <IconButton
+                    icon={whatsapp}
+                    href="https://wa.me/79272499942"
+                    className={styles.whatsapp}
+                    target="_blank"
+                    size="medium"
+                    alt="WhatsApp"
+                  />
+                  <IconButton
+                    icon={vk}
+                    href="https://vk.com/tatbayar"
+                    className={styles.whatsapp}
+                    target="_blank"
+                    size="medium"
+                    alt="VK"
+                  />
+                  <IconButton
+                    icon={avito}
+                    href="https://www.avito.ru/brands/5385ff2b1660104524b6c6278d874d95/all?sellerId=96eb1cebd575daac4645cf4371cd06cc"
+                    className={styles.whatsapp}
+                    target="_blank"
+                    size="medium"
+                    alt="Avito"
+                  />
+                </div>
               </div>
             </>
           )}

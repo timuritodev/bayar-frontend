@@ -8,7 +8,7 @@
 	align-items: center;
 	justify-content: center;
 	gap: 8px;
-	padding: 8px;
+	padding: 0;
 	&:hover {
 		transform: scale(1.05);
 	}
@@ -25,9 +25,9 @@
 }
 
 .small {
-	.whatsappIcon {
-		width: 32px;
-		height: 32px;
+	.icon {
+		width: 24px;
+		height: 24px;
 	}
 
 	.buttonText {
@@ -36,9 +36,9 @@
 }
 
 .medium {
-	.whatsappIcon {
-		width: 48px;
-		height: 48px;
+	.icon {
+		width: 33px;
+		height: 33px;
 	}
 
 	.buttonText {
@@ -47,7 +47,7 @@
 }
 
 .large {
-	.whatsappIcon {
+	.icon {
 		width: 64px;
 		height: 64px;
 	}
@@ -67,7 +67,7 @@
 
 @media screen and (max-width: 600px) {
 	.small {
-		.whatsappIcon {
+		.icon {
 			width: 28px;
 			height: 28px;
 		}
@@ -78,9 +78,9 @@
 	}
 
 	.medium {
-		.whatsappIcon {
-			width: 40px;
-			height: 40px;
+		.icon {
+			width: 24px;
+			height: 24px;
 		}
 
 		.buttonText {
@@ -89,9 +89,9 @@
 	}
 
 	.large {
-		.whatsappIcon {
-			width: 56px;
-			height: 56px;
+		.icon {
+			width: 32px;
+			height: 32px;
 		}
 
 		.buttonText {

@@ -8,8 +8,11 @@ import home from "../../../images//icons/home.svg";
 import email from "../../../images/email.svg";
 import time from "../../../images/icons/time.svg";
 import whatsapp from "../../../images/icons/whatsapp.svg";
+import vk from "../../../images/icons/vk.svg";
+import avito from "../../../images/icons/avito.svg";
 import logo from "../../../images/logo_BAYAR.png";
 import phone from "../../../images/phone.svg";
+import { IconButton } from '@/components/IconButton/IconButton';
 import styles from "./style.module.scss";
 
 export const ContactsBlock: FC = () => {
@@ -19,16 +22,32 @@ export const ContactsBlock: FC = () => {
 		// Список PDF файлов для загрузки
 		const certificates = [
 			{
-				name: 'Сертификат качества 1',
-				path: '/certificates/certificate1.pdf'
+				name: 'Пожарный сертификат ГОСТ 32603-2021 1 класс',
+				path: '/certificates/Pozharnyj-sertifikat-GOST-32603-2021-1-klass-1.pdf'
 			},
 			{
-				name: 'Сертификат качества 2',
-				path: '/certificates/certificate2.pdf'
+				name: 'Пожарный сертификат ГОСТ 32603-2021 2 класс',
+				path: '/certificates/Pozharnyj-sertifikat-GOST-32603-2021-2-klass.pdf'
 			},
 			{
-				name: 'Сертификат соответствия',
-				path: '/certificates/certificate3.pdf'
+				name: 'Пожарный сертификат ТУ',
+				path: '/certificates/Pozharnyj-sertifikat-TU-ROSS-RU.Z2623.OS03.03088.pdf'
+			},
+			{
+				name: 'Санитарный сертификат',
+				path: '/certificates/Sanitarnyj-sertifikat-TU-GOST-EZ-50.pdf'
+			},
+			{
+				name: 'Сертификат соответствия 1 класс ГОСТ',
+				path: '/certificates/Sertifikat-sootvestviya-1-klass-GOST-32603-2021.pdf'
+			},
+			{
+				name: 'Сертификат соответствия 2 класс ГОСТ',
+				path: '/certificates/Sertifikat-sootvestviya-2-klass-GOST-32603-2021.pdf'
+			},
+			{
+				name: 'Сертификат соответствия ТУ',
+				path: '/certificates/Sertifikat-Sootvetsviya-TU-ROSS-RU.Z2623.OS03.03087.pdf'
 			}
 		];
 
@@ -60,7 +79,35 @@ export const ContactsBlock: FC = () => {
 						/>
 					</div>
 					<div className={styles.wrapper}>
-						<h3 className={styles.title}>Свяжитесь с нами</h3>
+						<div className={styles.titleWithIcons}>
+							<h3 className={styles.title}>Свяжитесь с нами</h3>
+							<div className={styles.icons}>
+								<IconButton
+									icon={whatsapp}
+									href="https://wa.me/79272499942"
+									className={styles.socialIcon}
+									target="_blank"
+									size="medium"
+									alt="WhatsApp"
+								/>
+								<IconButton
+									icon={vk}
+									href="https://vk.com/tatbayar"
+									className={styles.socialIcon}
+									target="_blank"
+									size="medium"
+									alt="VK"
+								/>
+								<IconButton
+									icon={avito}
+									href="https://www.avito.ru/brands/5385ff2b1660104524b6c6278d874d95/all?sellerId=96eb1cebd575daac4645cf4371cd06cc"
+									className={styles.socialIcon}
+									target="_blank"
+									size="medium"
+									alt="Avito"
+								/>
+							</div>
+						</div>
 						<Contacts src={time} text="Время работы: 8:00 - 17:00" f_size="20px" i_size="40px" />
 						<Contacts src={home} text="Республика Татарстан, г. Елабуга, ОЭЗ «Алабуга», улица 20.1, здание 4" f_size="20px" i_size="40px" />
 						<Map />
@@ -74,6 +121,32 @@ export const ContactsBlock: FC = () => {
 						className={styles.but}
 					/>
 					<h3 className={styles.title}>Свяжитесь с нами</h3>
+					<div className={styles.icons}>
+						<IconButton
+							icon={whatsapp}
+							href="https://wa.me/79272499942"
+							className={styles.socialIcon}
+							target="_blank"
+							size="medium"
+							alt="WhatsApp"
+						/>
+						<IconButton
+							icon={vk}
+							href="https://vk.com/tatbayar"
+							className={styles.socialIcon}
+							target="_blank"
+							size="medium"
+							alt="VK"
+						/>
+						<IconButton
+							icon={avito}
+							href="https://www.avito.ru/brands/5385ff2b1660104524b6c6278d874d95/all?sellerId=96eb1cebd575daac4645cf4371cd06cc"
+							className={styles.socialIcon}
+							target="_blank"
+							size="medium"
+							alt="Avito"
+						/>
+					</div>
 					<Contacts src={phone} text="+7 800 550-31-90" f_size="20px" i_size="40px" type="phone" />
 					<Contacts src={whatsapp} text="+7 800 550-31-90" f_size="20px" i_size="40px" />
 					<Contacts src={email} text="market@tatbayar.ru" f_size="20px" i_size="40px" type="mail" />
