@@ -54,8 +54,8 @@ class VKRSSService {
 					description: item.querySelector('description')?.textContent || '',
 					link: item.querySelector('link')?.textContent || '',
 					pubDate: item.querySelector('pubDate')?.textContent || '',
-					author: item.querySelector('author')?.textContent,
-					category: item.querySelector('category')?.textContent
+					author: item.querySelector('author')?.textContent || undefined,
+					category: item.querySelector('category')?.textContent || undefined
 				};
 				posts.push(post);
 			}
