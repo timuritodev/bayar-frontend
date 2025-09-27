@@ -4,15 +4,18 @@ import { API_BASE_URL } from '@/constants/constants';
 import { getProductById } from '@/services/redux/slices/products/products';
 import Image from "next/image";
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from "../../services/typeHooks";
 import styles from "./style.module.scss";
+import { CustomButton } from '@/components/CustomButton/CustomButton';
+import { ProductOrderPopup } from '@/components/ProductOrderPopup/ProductOrderPopup';
 
 const Page = () => {
 	const dispatch = useAppDispatch();
 	const router = useRouter();
 	const { id } = router.query;
 	const product = useAppSelector((state) => state.products.product);
+	const [isOrderPopupOpen, setIsOrderPopupOpen] = useState(false);
 
 	useEffect(() => {
 		if (id) {
@@ -24,6 +27,10 @@ const Page = () => {
 
 	const imageUrl = API_BASE_URL + product.picture;
 
+	const handleOrderClick = () => {
+		setIsOrderPopupOpen(true);
+	};
+
 	return (
 		<>
 			<SEO title={`${product.title} - BAYAR`} description={`Покупайте ${product.title} по лучшим ценам с доставкой по всей рф. ${product.description}`} keywords={`${product.title}, купить ${product.title}, BAYAR`} />
@@ -32,7 +39,11 @@ const Page = () => {
 				<div className={styles.container}>
 					<div className={styles.block}>
 						<Image className={styles.img} alt={product.title} src={imageUrl} width={557} height={532} />
-						{/*TODO добавить сюда кнопку для заказать +- */}
+						<CustomButton
+							buttonText="Заказать"
+							handleButtonClick={handleOrderClick}
+							type="button"
+						/>
 					</div>
 					<div className={styles.block}>
 						<h1 className={styles.title}>{product.title}</h1>
@@ -41,6 +52,11 @@ const Page = () => {
 					</div>
 				</div>
 			</div>
+			<ProductOrderPopup
+				isOpened={isOrderPopupOpen}
+				setIsOpened={setIsOrderPopupOpen}
+				product={product}
+			/>
 		</>
 	);
 };
