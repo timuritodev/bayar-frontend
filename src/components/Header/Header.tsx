@@ -118,11 +118,19 @@ const Header: FC = () => {
                 </ul>
               </li>
             </ul>
-            <a
-              href="#contacts"
+            <Link
+              href="/#contacts"
               className={`${styles.header__link} ${is_active("/") ? styles.active : ""}`}
               onClick={(e) => {
+                // Если мы не на главной странице, переходим на неё с якорем
+                if (router.pathname !== "/") {
+                  router.push("/#contacts");
+                  return;
+                }
+
+                // Если мы на главной странице, прокручиваем к контактам
                 e.preventDefault();
+
                 // Устанавливаем флаг программной прокрутки ДО выполнения прокрутки
                 window.isProgrammaticScroll = true;
                 window.contactsClickTime = Date.now(); // Запоминаем время клика
@@ -142,11 +150,41 @@ const Header: FC = () => {
               }}
             >
               Контакты
-            </a>
+            </Link>
             <Link href="/forms/feedback" className={`${styles.header__link} ${styles.header__link_orange} ${is_active("/forms/feedback") ? styles.active : ""}`}>
               Рассчитать цену
             </Link>
-            <Link href="/#gift" className={`${styles.header__link} ${is_active("/") ? styles.active : ""}`}>
+            <Link
+              href="/#gift"
+              className={`${styles.header__link} ${is_active("/") ? styles.active : ""}`}
+              onClick={(e) => {
+                // Если мы не на главной странице, переходим на неё с якорем
+                if (router.pathname !== "/") {
+                  router.push("/#gift");
+                  return;
+                }
+
+                // Если мы на главной странице, прокручиваем к подарку
+                e.preventDefault();
+
+                // Устанавливаем флаг программной прокрутки ДО выполнения прокрутки
+                (window as any).isProgrammaticScroll = true;
+                (window as any).giftClickTime = Date.now(); // Запоминаем время клика
+
+                // Небольшая задержка перед прокруткой, чтобы флаг успел установиться
+                setTimeout(() => {
+                  const element = document.getElementById('gift');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }, 50);
+
+                // Сбрасываем флаг через более длительное время анимации прокрутки
+                setTimeout(() => {
+                  (window as any).isProgrammaticScroll = false;
+                }, 3000);
+              }}
+            >
               Получить подарок
             </Link>
           </div>
