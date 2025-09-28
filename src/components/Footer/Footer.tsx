@@ -41,7 +41,7 @@ const Footer: FC = () => {
                 <Link href="/" className={styles.text}>
                   Главная
                 </Link>
-                <Link href="/catalog" className={styles.text}>
+                <Link href="/catalog/three-layer-panels" className={styles.text}>
                   Каталог
                 </Link>
                 <Link href="/contacts" className={styles.text}>
