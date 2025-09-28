@@ -123,10 +123,22 @@ const Header: FC = () => {
               className={`${styles.header__link} ${is_active("/") ? styles.active : ""}`}
               onClick={(e) => {
                 e.preventDefault();
-                const element = document.getElementById('contacts');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                }
+                // Устанавливаем флаг программной прокрутки ДО выполнения прокрутки
+                window.isProgrammaticScroll = true;
+                window.contactsClickTime = Date.now(); // Запоминаем время клика
+
+                // Небольшая задержка перед прокруткой, чтобы флаг успел установиться
+                setTimeout(() => {
+                  const element = document.getElementById('contacts');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }, 50);
+
+                // Сбрасываем флаг через более длительное время анимации прокрутки
+                setTimeout(() => {
+                  window.isProgrammaticScroll = false;
+                }, 3000);
               }}
             >
               Контакты

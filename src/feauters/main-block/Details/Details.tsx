@@ -13,15 +13,29 @@ export const Details: FC = () => {
 	const { width } = useResize();
 	const [isCalculatorPopupOpen, setIsCalculatorPopupOpen] = useState(false);
 	const [hasShownPopup, setHasShownPopup] = useState(false);
+	const [isProgrammaticScroll, setIsProgrammaticScroll] = useState(false);
+
+	// Простая проверка программной прокрутки без постоянных интервалов
+	useEffect(() => {
+		// Проверяем только при монтировании компонента
+		if (window.isProgrammaticScroll) {
+			setIsProgrammaticScroll(true);
+		}
+	}, []);
 
 	useEffect(() => {
 		const handleScroll = () => {
 			if (hasShownPopup) return;
 
+			// Игнорируем программную прокрутку (например, через ссылку контакты)
+			const timeSinceContactsClick = window.contactsClickTime ? Date.now() - window.contactsClickTime : Infinity;
+			if (window.isProgrammaticScroll || isProgrammaticScroll || timeSinceContactsClick < 5000) {
+				return;
+			}
+
 			const detailsElement = document.querySelector(`.${styles.container}`);
 			if (detailsElement) {
 				const rect = detailsElement.getBoundingClientRect();
-				const windowHeight = window.innerHeight;
 
 				// Показываем popup когда блок Details полностью проскроллен
 				if (rect.bottom <= 0 && !hasShownPopup) {
