@@ -118,14 +118,34 @@ const Header: FC = () => {
                 </ul>
               </li>
             </ul>
-            <a
-              href="#contacts"
+            <Link
+              href="/#contacts"
               className={`${styles.header__link} ${is_active("/") ? styles.active : ""}`}
               onClick={(e) => {
+                // Если мы не на главной странице, переходим на неё с якорем
+                if (router.pathname !== "/") {
+                  // Устанавливаем флаг программной прокрутки ДО перехода
+                  (window as any).isProgrammaticScroll = true;
+                  (window as any).contactsClickTime = Date.now();
+                  (window as any).isUserClick = true;
+
+                  router.push("/#contacts");
+
+                  // Сбрасываем флаг через время, достаточное для загрузки страницы и прокрутки
+                  setTimeout(() => {
+                    (window as any).isProgrammaticScroll = false;
+                    (window as any).isUserClick = false;
+                  }, 5000);
+                  return;
+                }
+
+                // Если мы на главной странице, прокручиваем к контактам
                 e.preventDefault();
+
                 // Устанавливаем флаг программной прокрутки ДО выполнения прокрутки
-                window.isProgrammaticScroll = true;
-                window.contactsClickTime = Date.now(); // Запоминаем время клика
+                (window as any).isProgrammaticScroll = true;
+                (window as any).contactsClickTime = Date.now(); // Запоминаем время клика
+                (window as any).isUserClick = true; // Флаг что это пользовательский клик
 
                 // Небольшая задержка перед прокруткой, чтобы флаг успел установиться
                 setTimeout(() => {
@@ -137,16 +157,60 @@ const Header: FC = () => {
 
                 // Сбрасываем флаг через более длительное время анимации прокрутки
                 setTimeout(() => {
-                  window.isProgrammaticScroll = false;
+                  (window as any).isProgrammaticScroll = false;
+                  (window as any).isUserClick = false;
                 }, 3000);
               }}
             >
               Контакты
-            </a>
+            </Link>
             <Link href="/forms/feedback" className={`${styles.header__link} ${styles.header__link_orange} ${is_active("/forms/feedback") ? styles.active : ""}`}>
               Рассчитать цену
             </Link>
-            <Link href="/#gift" className={`${styles.header__link} ${is_active("/") ? styles.active : ""}`}>
+            <Link
+              href="/#gift"
+              className={`${styles.header__link} ${is_active("/") ? styles.active : ""}`}
+              onClick={(e) => {
+                // Если мы не на главной странице, переходим на неё с якорем
+                if (router.pathname !== "/") {
+                  // Устанавливаем флаг программной прокрутки ДО перехода
+                  (window as any).isProgrammaticScroll = true;
+                  (window as any).giftClickTime = Date.now();
+                  (window as any).isUserClick = true;
+
+                  router.push("/#gift");
+
+                  // Сбрасываем флаг через время, достаточное для загрузки страницы и прокрутки
+                  setTimeout(() => {
+                    (window as any).isProgrammaticScroll = false;
+                    (window as any).isUserClick = false;
+                  }, 5000);
+                  return;
+                }
+
+                // Если мы на главной странице, прокручиваем к подарку
+                e.preventDefault();
+
+                // Устанавливаем флаг программной прокрутки ДО выполнения прокрутки
+                (window as any).isProgrammaticScroll = true;
+                (window as any).giftClickTime = Date.now(); // Запоминаем время клика
+                (window as any).isUserClick = true; // Флаг что это пользовательский клик
+
+                // Небольшая задержка перед прокруткой, чтобы флаг успел установиться
+                setTimeout(() => {
+                  const element = document.getElementById('gift');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }, 50);
+
+                // Сбрасываем флаг через более длительное время анимации прокрутки
+                setTimeout(() => {
+                  (window as any).isProgrammaticScroll = false;
+                  (window as any).isUserClick = false;
+                }, 3000);
+              }}
+            >
               Получить подарок
             </Link>
           </div>
