@@ -16,7 +16,7 @@ export const Compound: FC = () => {
 	// Простая проверка программной прокрутки без постоянных интервалов
 	useEffect(() => {
 		// Проверяем только при монтировании компонента
-		if (window.isProgrammaticScroll) {
+		if ((window as any).isProgrammaticScroll) {
 			setIsProgrammaticScroll(true);
 		}
 	}, []);
@@ -26,8 +26,9 @@ export const Compound: FC = () => {
 			if (hasShownPopup) return;
 
 			// Игнорируем программную прокрутку (например, через ссылку контакты)
-			const timeSinceContactsClick = window.contactsClickTime ? Date.now() - window.contactsClickTime : Infinity;
-			if (window.isProgrammaticScroll || isProgrammaticScroll || timeSinceContactsClick < 5000) {
+			const timeSinceContactsClick = (window as any).contactsClickTime ? Date.now() - (window as any).contactsClickTime : Infinity;
+			const timeSinceGiftClick = (window as any).giftClickTime ? Date.now() - (window as any).giftClickTime : Infinity;
+			if ((window as any).isProgrammaticScroll || isProgrammaticScroll || timeSinceContactsClick < 5000 || timeSinceGiftClick < 5000 || (window as any).isUserClick) {
 				return;
 			}
 
