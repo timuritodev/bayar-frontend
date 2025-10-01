@@ -43,4 +43,11 @@ const MainPage = () => {
   );
 };
 
+// Используем SSG для главной страницы
+export async function getStaticProps() {
+  return {
+    props: {},
+  };
+}
+
 export default MainPage;
