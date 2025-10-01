@@ -17,7 +17,6 @@ function MyApp({ Component, pageProps }: AppProps) { // TODO проверить 
             <link rel="icon" href="/icons/favicon.ico" />
             <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
             <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
-            <meta name="yandex-verification" content="358b0d3e9b0d657d" />
           </Head>
           <Component {...pageProps} />
         </Layout>
