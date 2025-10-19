@@ -94,9 +94,9 @@ const Footer: FC = () => {
                 <Link href="/catalog" className={styles.text}>
                   Каталог
                 </Link>
-                <Link href="/about" className={styles.text}>
+                {/* <Link href="/about" className={styles.text}>
                   О нас
-                </Link>
+                </Link> */}
                 <Link href="/contacts" className={styles.text}>
                   Контакты
                 </Link>
