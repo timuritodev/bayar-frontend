@@ -1,5 +1,6 @@
 import { CustomButton } from '@/components/CustomButton/CustomButton';
 import CustomInput from "@/components/CustomInput/CustomInput";
+import { default as CustomOptions } from '@/components/CustomOptions/CustomOptions';
 import Popup from '@/components/Popup/Popup';
 import { IconButton } from '@/components/IconButton/IconButton';
 import whatsapp from '@/images/icons/whatsapp.svg';
@@ -16,6 +17,11 @@ import {
 	TEXT_VALIDATION_CONFIG,
 	WALL_PANEL_THICKNESS_VALIDATION_CONFIG
 } from "@/constants/validation";
+import {
+	options_purpose_panels,
+	options_panel_thickness,
+	options_connection_type
+} from "@/constants/form";
 import { useResize } from '@/hooks/useResize';
 import { sendEmailApi } from '@/services/redux/slices/mailer/mailer';
 import { useAppDispatch } from "@/services/typeHooks";
@@ -47,6 +53,7 @@ export const FeedbackForm = () => {
 		register,
 		handleSubmit,
 		reset,
+		setValue,
 		formState: { errors, isDirty, isValid },
 		getValues,
 		watch,
@@ -100,6 +107,11 @@ export const FeedbackForm = () => {
 			<form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
 				<h2 className={styles.title}>Форма обратной связи</h2>
 				<div className={styles.wrapper}>
+					{/* Скрытые поля для валидации */}
+					<input type="hidden" {...register("panel_purpose", PANEL_PURPOSE_VALIDATION_CONFIG)} />
+					<input type="hidden" {...register("wall_panel_thickness", WALL_PANEL_THICKNESS_VALIDATION_CONFIG)} />
+					<input type="hidden" {...register("preferred_contact", PREFERRED_CONTACT_VALIDATION_CONFIG)} />
+
 					<CustomInput
 						inputType={CustomInputTypes.object_type}
 						labelText="Тип объекта *"
@@ -107,20 +119,28 @@ export const FeedbackForm = () => {
 						validation={register("object_type", OBJECT_TYPE_VALIDATION_CONFIG)}
 						error={errors.object_type?.message}
 					/>
-					<CustomInput
-						inputType={CustomInputTypes.panel_purpose}
-						labelText="Назначение панелей *"
-						placeholder="Например, фасад"
-						validation={register("panel_purpose", PANEL_PURPOSE_VALIDATION_CONFIG)}
-						error={errors.panel_purpose?.message}
+					<CustomOptions
+						label="Назначение панелей *"
+						options={options_purpose_panels}
+						selectedValue={getValues("panel_purpose") || ""}
+						onChange={(value) => {
+							setValue("panel_purpose", value, { shouldValidate: true, shouldDirty: true });
+						}}
 					/>
-					<CustomInput
-						inputType={CustomInputTypes.wall_panel_thickness}
-						labelText="Толщина панели *"
-						placeholder="мм"
-						validation={register("wall_panel_thickness", WALL_PANEL_THICKNESS_VALIDATION_CONFIG)}
-						error={errors.wall_panel_thickness?.message}
+					{errors.panel_purpose && (
+						<span className={styles.error}>{errors.panel_purpose.message}</span>
+					)}
+					<CustomOptions
+						label="Толщина панели *"
+						options={options_panel_thickness}
+						selectedValue={getValues("wall_panel_thickness") || ""}
+						onChange={(value) => {
+							setValue("wall_panel_thickness", value, { shouldValidate: true, shouldDirty: true });
+						}}
 					/>
+					{errors.wall_panel_thickness && (
+						<span className={styles.error}>{errors.wall_panel_thickness.message}</span>
+					)}
 					<CustomInput
 						inputType={CustomInputTypes.area}
 						labelText="Площадь объекта (м²) *"
@@ -158,13 +178,17 @@ export const FeedbackForm = () => {
 						placeholder="email@example.com"
 						error={errors?.email?.message}
 					/>
-					<CustomInput
-						inputType={CustomInputTypes.preferred_contact}
-						labelText="Предпочтительный способ связи"
-						placeholder="Телефон / E-mail / WhatsApp"
-						validation={register("preferred_contact", PREFERRED_CONTACT_VALIDATION_CONFIG)}
-						error={errors.preferred_contact?.message}
+					<CustomOptions
+						label="Предпочтительный способ связи"
+						options={options_connection_type}
+						selectedValue={getValues("preferred_contact") || ""}
+						onChange={(value) => {
+							setValue("preferred_contact", value, { shouldValidate: true, shouldDirty: true });
+						}}
 					/>
+					{errors.preferred_contact && (
+						<span className={styles.error}>{errors.preferred_contact.message}</span>
+					)}
 				</div>
 
 				<div className={styles.buttons}>

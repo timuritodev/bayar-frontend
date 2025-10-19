@@ -18,10 +18,10 @@ export const options_wall_panel_width = [
 ];
 
 export const options_metal_thickness = [
-	{ value: "0,45", label: "0,45мм" },
-	{ value: "0,5", label: "0,5мм" },
-	{ value: "0,6", label: "0,6мм" },
-	{ value: "0,7", label: "0,7мм" },
+	{ value: "0,45мм", label: "0,45мм" },
+	{ value: "0,5мм", label: "0,5мм" },
+	{ value: "0,6мм", label: "0,6мм" },
+	{ value: "0,7мм", label: "0,7мм" },
 ];
 
 export const options_insulation_density = [
