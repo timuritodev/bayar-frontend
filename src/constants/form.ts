@@ -12,9 +12,9 @@ export const options_connection_type = [
 ];
 
 export const options_panel_thickness = [
-	{ value: "80мм", label: "80 мм" },
-	{ value: "100мм", label: "100 мм" },
-	{ value: "120мм", label: "120 мм" },
-	{ value: "150мм", label: "150 мм" },
-	{ value: "200мм", label: "200 мм" },
+	{ value: "80", label: "80" },
+	{ value: "100", label: "100" },
+	{ value: "120", label: "120" },
+	{ value: "150", label: "150" },
+	{ value: "200", label: "200" },
 ];
