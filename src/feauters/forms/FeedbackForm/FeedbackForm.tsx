@@ -49,11 +49,15 @@ export const FeedbackForm = () => {
 	const { width } = useResize();
 	const [isPopupOpened, setIsPopupOpened] = useState(false);
 
+	// Состояние для CustomOptions полей
+	const [panel_purpose, setPanel_purpose] = useState('стеновые');
+	const [wall_panel_thickness, setWall_panel_thickness] = useState('100');
+	const [preferred_contact, setPreferred_contact] = useState('whatsapp');
+
 	const {
 		register,
 		handleSubmit,
 		reset,
-		setValue,
 		formState: { errors, isDirty, isValid },
 		getValues,
 		watch,
@@ -61,14 +65,7 @@ export const FeedbackForm = () => {
 		mode: "onChange",
 	});
 
-	// Отслеживаем все значения полей
 	const watchedValues = watch();
-	console.log('=== ФОРМА ДЕБАГ ===');
-	console.log('Все значения полей:', watchedValues);
-	console.log('isDirty:', isDirty);
-	console.log('isValid:', isValid);
-	console.log('Ошибки:', errors);
-	console.log('==================');
 
 	const onSubmit: SubmitHandler<FeedbackFormValues> = () => {
 		const email = getValues("email") || "";
@@ -77,14 +74,14 @@ export const FeedbackForm = () => {
 			subject: "Новая заявка",
 			text: `
         Тип объекта: ${getValues("object_type")}
-        Назначение панелей: ${getValues("panel_purpose")}
-        Толщина панели: ${getValues("wall_panel_thickness")}
+        Назначение панелей: ${panel_purpose}
+        Толщина панели: ${wall_panel_thickness} мм
         Площадь объекта: ${getValues("area")} м²
         Город: ${getValues("city")}
         Имя: ${getValues("fio")}
         Телефон: ${getValues("phone")}
         E-mail: ${email}
-        Способ связи: ${getValues("preferred_contact") || ""}
+        Способ связи: ${preferred_contact || "не указан"}
       `,
 			greetings: "",
 		}))
@@ -107,11 +104,6 @@ export const FeedbackForm = () => {
 			<form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
 				<h2 className={styles.title}>Форма обратной связи</h2>
 				<div className={styles.wrapper}>
-					{/* Скрытые поля для валидации */}
-					<input type="hidden" {...register("panel_purpose", PANEL_PURPOSE_VALIDATION_CONFIG)} />
-					<input type="hidden" {...register("wall_panel_thickness", WALL_PANEL_THICKNESS_VALIDATION_CONFIG)} />
-					<input type="hidden" {...register("preferred_contact", PREFERRED_CONTACT_VALIDATION_CONFIG)} />
-
 					<CustomInput
 						inputType={CustomInputTypes.object_type}
 						labelText="Тип объекта *"
@@ -122,25 +114,15 @@ export const FeedbackForm = () => {
 					<CustomOptions
 						label="Назначение панелей *"
 						options={options_purpose_panels}
-						selectedValue={getValues("panel_purpose") || ""}
-						onChange={(value) => {
-							setValue("panel_purpose", value, { shouldValidate: true, shouldDirty: true });
-						}}
+						selectedValue={panel_purpose}
+						onChange={setPanel_purpose}
 					/>
-					{errors.panel_purpose && (
-						<span className={styles.error}>{errors.panel_purpose.message}</span>
-					)}
 					<CustomOptions
-						label="Толщина панели *"
+						label="Толщина панели (мм) *"
 						options={options_panel_thickness}
-						selectedValue={getValues("wall_panel_thickness") || ""}
-						onChange={(value) => {
-							setValue("wall_panel_thickness", value, { shouldValidate: true, shouldDirty: true });
-						}}
+						selectedValue={wall_panel_thickness}
+						onChange={setWall_panel_thickness}
 					/>
-					{errors.wall_panel_thickness && (
-						<span className={styles.error}>{errors.wall_panel_thickness.message}</span>
-					)}
 					<CustomInput
 						inputType={CustomInputTypes.area}
 						labelText="Площадь объекта (м²) *"
@@ -181,14 +163,9 @@ export const FeedbackForm = () => {
 					<CustomOptions
 						label="Предпочтительный способ связи"
 						options={options_connection_type}
-						selectedValue={getValues("preferred_contact") || ""}
-						onChange={(value) => {
-							setValue("preferred_contact", value, { shouldValidate: true, shouldDirty: true });
-						}}
+						selectedValue={preferred_contact}
+						onChange={setPreferred_contact}
 					/>
-					{errors.preferred_contact && (
-						<span className={styles.error}>{errors.preferred_contact.message}</span>
-					)}
 				</div>
 
 				<div className={styles.buttons}>
